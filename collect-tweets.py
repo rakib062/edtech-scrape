@@ -60,16 +60,6 @@ def tweets_to_df(tweets):
     return df
 
 
-# In[69]:
-
-
-user_df = users_to_df(tweets)
-user_df.head()
-
-
-# In[119]:
-
-
 def search_tweets(query, outdir):
     tweet_count = 0
     for response in tweepy.Paginator(
