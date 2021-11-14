@@ -62,27 +62,32 @@ def tweets_to_df(tweets):
 
 def search_tweets(query, outdir):
     tweet_count = 0
-    for response in tweepy.Paginator(
-            client.search_all_tweets, 
-            query = query, #"COVID hoax -is:retweet lang:en",
-            user_fields = ['username', 'public_metrics', 'description', 'location'],
-            tweet_fields = ['created_at', 'geo', 'public_metrics', 'text'],
-            expansions = ['author_id'],
-            start_time = '2006-03-21T00:00:00Z',
-    #         end_time = '2021-01-21T00:00:00Z',
-            max_results=500):
-        
-        tweet_count+=len(response.data)
-        print('query: {}, tweets: {}, total: {}'.format(
-            query, len(response.data), tweet_count))
+    try:
+        for response in tweepy.Paginator(
+                client.search_all_tweets, 
+                query = query, #"COVID hoax -is:retweet lang:en",
+                user_fields = ['username', 'public_metrics', 'description', 'location'],
+                tweet_fields = ['created_at', 'geo', 'public_metrics', 'text'],
+                expansions = ['author_id'],
+                start_time = '2006-03-21T00:00:00Z',
+        #         end_time = '2021-01-21T00:00:00Z',
+                max_results=500):
+            
+            tweet_count+=len(response.data)
+            print('query: {}, tweets: {}, total: {}'.format(
+                query, len(response.data), tweet_count))
 
-        user_df = users_to_df([response])
-        tweet_df = tweets_to_df([response])
-        user_df.to_csv("{}/users-search-{}-{}.csv".format(
-            outdir, query, datetime.datetime.now()))
-        tweet_df.to_csv("{}/tweets-search-{}-{}.csv".format(
-            outdir, query, datetime.datetime.now()))
-        time.sleep(1)
+            user_df = users_to_df([response])
+            tweet_df = tweets_to_df([response])
+            user_df.to_csv("{}/users-search-{}-{}.csv".format(
+                outdir, query, datetime.datetime.now()))
+            tweet_df.to_csv("{}/tweets-search-{}-{}.csv".format(
+                outdir, query, datetime.datetime.now()))
+            time.sleep(2)
+        except Exception as e:
+            print("query: {}, exception:{}".format(query, e.message))
+            with open('resume-tags.csv', 'a') as file:
+                file.write(','+query)
 
 
 outdir = sys.argv[1]
