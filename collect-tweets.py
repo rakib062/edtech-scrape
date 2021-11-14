@@ -52,7 +52,8 @@ def tweets_to_df(tweets):
                            'retweets': tweet.public_metrics['retweet_count'],
                            'replies': tweet.public_metrics['reply_count'],
                            'likes': tweet.public_metrics['like_count'],
-                           'quote_count': tweet.public_metrics['quote_count']
+                           'quote_count': tweet.public_metrics['quote_count'],
+                           'lang':tweet.lang
                           })
 
     df = pd.DataFrame(result)
@@ -67,7 +68,7 @@ def search_tweets(query, outdir):
                 client.search_all_tweets, 
                 query = query, #"COVID hoax -is:retweet lang:en",
                 user_fields = ['username', 'public_metrics', 'description', 'location'],
-                tweet_fields = ['created_at', 'geo', 'public_metrics', 'text'],
+                tweet_fields = ['created_at', 'geo', 'public_metrics', 'text', 'lang'],
                 expansions = ['author_id'],
                 start_time = '2006-03-21T00:00:00Z',
         #         end_time = '2021-01-21T00:00:00Z',
