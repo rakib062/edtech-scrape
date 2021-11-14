@@ -84,10 +84,10 @@ def search_tweets(query, outdir):
             tweet_df.to_csv("{}/tweets-search-{}-{}.csv".format(
                 outdir, query, datetime.datetime.now()))
             time.sleep(2)
-        except Exception as e:
-            print("query: {}, exception:{}".format(query, e.message))
-            with open('resume-tags.csv', 'a') as file:
-                file.write(','+query)
+    except Exception as e:
+        print("query: {}, exception:{}".format(query, e.message))
+        with open('resume-tags.csv', 'a') as file:
+            file.write(','+query)
 
 
 outdir = sys.argv[1]
