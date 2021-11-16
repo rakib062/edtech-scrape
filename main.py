@@ -22,6 +22,7 @@ print("donetags: ", donetags)
 tags = tags.difference(donetags)
 i=1
 for tag in tags:
+    tag = tag.strip()
     print("Starting search for tag no:{} of {}, tag:{}".format(i, len(tags),tag))
     collect_tweets.search_tweets(tag, outdir)
     donetags.add(tag)
