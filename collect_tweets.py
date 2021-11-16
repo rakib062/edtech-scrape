@@ -145,7 +145,7 @@ def search_tweets(query, outdir):
                 place_fields=['full_name', 'id'],
                 media_fields=['type', 'url', 'alt_text', 
                               'public_metrics', 'duration_ms'],
-                max_results=500):
+                max_results=100):
 
             tweet_count+=len(response.data)
             print('query: {}, tweets: {}, total: {}'.format(
@@ -169,7 +169,7 @@ def search_tweets(query, outdir):
 
     except Exception as e:
         print("Exception for query:{}".format(query))
-        with file in open('exceptions.txt', 'a'):
+        with open('exceptions.txt', 'a') as file:
             print(query+"\n")
 
 
