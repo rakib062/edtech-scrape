@@ -1,4 +1,5 @@
 import sys, csv,os
+import collect_tweets
 
 outdir = sys.argv[1]
 if not os.path.exists(outdir):
@@ -22,7 +23,7 @@ tags = tags.difference(donetags)
 i=1
 for tag in tags:
     print("Starting search for tag no:{} of {}, tag:{}".format(i, len(tags),tag))
-    search_tweets(tag, outdir)
+    collect_tweets.search_tweets(tag, outdir)
     donetags.add(tag)
     with open('donetags.csv', 'w') as csv_file:  
         writer = csv.writer(csv_file)
