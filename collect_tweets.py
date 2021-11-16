@@ -38,6 +38,8 @@ def media_to_df(response):
     Converts Media objects returned with tweets to a dataframe.
     '''
     media = []
+    if "media" not in response.includes:
+        return None
     for m in response.includes['media']:
         media.append(
             { 
@@ -106,6 +108,8 @@ def tweet_to_row(tweet):
 
 def included_tweets_to_df(response):
     result = []
+    if "tweets" not in response.includes:
+        return None
     for tweet in response.includes['tweets']:
         result.append(tweet_to_row(tweet))
 
@@ -115,16 +119,14 @@ def included_tweets_to_df(response):
 
 def tweets_to_df(response):
     result = []
+    if len(response.data)==0:
+        return None
     for tweet in response.data:
         result.append(tweet_to_row(tweet))
 
     df = pd.DataFrame(result)
     df.set_index('tweetid', inplace=True)
     return df
-
-
-# In[114]:
-
 
 def search_tweets(query, outdir):
     tweet_count = 0
@@ -158,36 +160,35 @@ def search_tweets(query, outdir):
             print('query: {}, tweets: {}, total: {}'.format(
                 query, len(response.data), tweet_count))
 
+            if len(response.data)==0:
+                continue
+
             user_df = users_to_df(response)
             tweet_df = tweets_to_df(response)
             media_df = media_to_df(response)
             included_tweet_df = included_tweets_to_df(response)
 
-            user_df.to_csv("{}/users-search-{}-{}.csv".format(
-                outdir, query, datetime.datetime.now()))
-            tweet_df.to_csv("{}/tweets-search-{}-{}.csv".format(
-                outdir, query, datetime.datetime.now()))
-            included_tweet_df.to_csv("{}/inc-tweets-search-{}-{}.csv".format(
-                outdir, query, datetime.datetime.now()))
-            media_df.to_csv("{}/media-search-{}-{}.csv".format(
-                outdir, query, datetime.datetime.now()))
+
+            if user_df is not None:
+                user_df.to_csv("{}/users-search-{}-{}.csv".format(
+                outdir, query, 
+                datetime.datetime.now().strftime("%Y%m%d-%H%M%S")))
+            if tweet_df is not None:
+                tweet_df.to_csv("{}/tweets-search-{}-{}.csv".format(
+                outdir, query, 
+                datetime.datetime.now().strftime("%Y%m%d-%H%M%S")))
+            if included_tweet_df is not None:
+                included_tweet_df.to_csv("{}/inc-tweets-search-{}-{}.csv".format(
+                outdir, query, 
+                datetime.datetime.now().strftime("%Y%m%d-%H%M%S")))
+            if media_df is not None:
+                media_df.to_csv("{}/media-search-{}-{}.csv".format(
+                outdir, query, 
+                datetime.datetime.now().strftime("%Y%m%d-%H%M%S")))
 
             time.sleep(5)
 
     except Exception as e:
-        print("Exception for query:{}.\nError:{}".format(query, e.message))
+        print("Exception for query:{}.\nError:{}".format(query, e))
         with open('exceptions.txt', 'a') as file:
             file.write(query+"\n")
-
-
-# In[138]:
-
-
-# search_tweets(query="#edtech", outdir="tweets/")
-
-
-# In[ ]:
-
-
-
-
