@@ -170,7 +170,7 @@ def search_tweets(query, outdir):
     except Exception as e:
         print("Exception for query:{}.\nError:{}".format(query, e.message))
         with open('exceptions.txt', 'a') as file:
-            print(query+"\n")
+            file.write(query+"\n")
 
 
 # In[138]:
