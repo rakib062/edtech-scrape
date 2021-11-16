@@ -145,7 +145,7 @@ def search_tweets(query, outdir):
                 place_fields=['full_name', 'id'],
                 media_fields=['type', 'url', 'alt_text', 
                               'public_metrics', 'duration_ms'],
-                max_results=10):
+                max_results=500):
 
             tweet_count+=len(response.data)
             print('query: {}, tweets: {}, total: {}'.format(
