@@ -73,7 +73,8 @@ def users_to_df(response):
     return df
 
 def tweet_to_row(tweet):
-    return {
+    tweet_dict = \
+    {
         'tweetid': tweet.id,
         'author_id': tweet.author_id, 
         'text': tweet.text,
@@ -85,17 +86,23 @@ def tweet_to_row(tweet):
         'quote_count': tweet.public_metrics['quote_count'],
         'lang':tweet.lang,
         'conversation_id': tweet.conversation_id,
-        'mentions': [] if 'mentions' not in tweet.entities else tweet.entities['mentions'],
-        'urls': [] if 'urls' not in tweet.entities else tweet.entities['urls'],
-        'hashtags': [] if 'hashtags' not in tweet.entities else tweet.entities['hashtags'],
-        'referenced_tweets': [] if 'referenced_tweets' not in tweet.entities else tweet.entities['referenced_tweets'],
         'context_annotations': tweet.context_annotations,
         'attachments': tweet.attachments,
         'possibly_sensitive': tweet.possibly_sensitive,
         'withheld' : tweet.withheld,
         'reply_settings': tweet.reply_settings,
         'source':tweet.source
-        }
+    }
+    if tweet.entities:
+        tweet_dict['mentions']: [] if 'mentions' not in tweet.entities \
+                                else tweet.entities['mentions']
+        tweet_dict['urls']: [] if 'urls' not in tweet.entities \
+                                else tweet.entities['urls']
+        tweet_dict['hashtags']: [] if 'hashtags' not in tweet.entities \
+                                else tweet.entities['hashtags']
+        tweet_dict['referenced_tweets']: [] if 'referenced_tweets' \
+                not in tweet.entities else tweet.entities['referenced_tweets']
+    return tweet_dict
 
 def included_tweets_to_df(response):
     result = []
