@@ -121,55 +121,66 @@ def tweets_to_df(response):
 
 def search_tweets(query, outdir):
     tweet_count = 0
-    for response in tweepy.Paginator(
-            client.search_all_tweets, 
-            query = query,
-            user_fields = ['username', 'public_metrics', 'description', 
-                           'location', 'protected', 'verified',
-                            'entities', 'url'],
-            tweet_fields = ['id', 'text', 'author_id', 
-                            'created_at', 'geo', 'public_metrics',
-                            'lang', 'conversation_id', 'entities',
-                            'referenced_tweets', 'context_annotations', 
-                            'attachments', 'possibly_sensitive',
-                            'withheld', 'reply_settings', 'source'
-                            #'organic_metrics', #'promoted_metrics', #'non_public_metrics',
-                           ],
-            expansions = ['author_id', 'referenced_tweets.id', 
-                          'referenced_tweets.id.author_id',
-                          'in_reply_to_user_id', 'attachments.media_keys',
-                          'entities.mentions.username'],
-            start_time = '2006-03-21T00:00:00Z',
-    #         end_time = '2021-01-21T00:00:00Z',
-            place_fields=['full_name', 'id'],
-            media_fields=['type', 'url', 'alt_text', 
-                          'public_metrics', 'duration_ms'],
-            max_results=10):
-        
-        tweet_count+=len(response.data)
-        print('query: {}, tweets: {}, total: {}'.format(
-            query, len(response.data), tweet_count))
+    try:
+        for response in tweepy.Paginator(
+                client.search_all_tweets, 
+                query = query,
+                user_fields = ['username', 'public_metrics', 'description', 
+                               'location', 'protected', 'verified',
+                                'entities', 'url'],
+                tweet_fields = ['id', 'text', 'author_id', 
+                                'created_at', 'geo', 'public_metrics',
+                                'lang', 'conversation_id', 'entities',
+                                'referenced_tweets', 'context_annotations', 
+                                'attachments', 'possibly_sensitive',
+                                'withheld', 'reply_settings', 'source'
+                                #'organic_metrics', #'promoted_metrics', #'non_public_metrics',
+                               ],
+                expansions = ['author_id', 'referenced_tweets.id', 
+                              'referenced_tweets.id.author_id',
+                              'in_reply_to_user_id', 'attachments.media_keys',
+                              'entities.mentions.username'],
+                start_time = '2006-03-21T00:00:00Z',
+        #         end_time = '2021-01-21T00:00:00Z',
+                place_fields=['full_name', 'id'],
+                media_fields=['type', 'url', 'alt_text', 
+                              'public_metrics', 'duration_ms'],
+                max_results=10):
 
-        user_df = users_to_df(response)
-        tweet_df = tweets_to_df(response)
-        media_df = media_to_df(response)
-        included_tweet_df = included_tweets_to_df(response)
-        
-        user_df.to_csv("{}/users-search-{}-{}.csv".format(
-            outdir, query, datetime.datetime.now()))
-        tweet_df.to_csv("{}/tweets-search-{}-{}.csv".format(
-            outdir, query, datetime.datetime.now()))
-        included_tweet_df.to_csv("{}/inc-tweets-search-{}-{}.csv".format(
-            outdir, query, datetime.datetime.now()))
-        media_df.to_csv("{}/media-search-{}-{}.csv".format(
-            outdir, query, datetime.datetime.now()))
-        
-        time.sleep(2)
-        break
+            tweet_count+=len(response.data)
+            print('query: {}, tweets: {}, total: {}'.format(
+                query, len(response.data), tweet_count))
+
+            user_df = users_to_df(response)
+            tweet_df = tweets_to_df(response)
+            media_df = media_to_df(response)
+            included_tweet_df = included_tweets_to_df(response)
+
+            user_df.to_csv("{}/users-search-{}-{}.csv".format(
+                outdir, query, datetime.datetime.now()))
+            tweet_df.to_csv("{}/tweets-search-{}-{}.csv".format(
+                outdir, query, datetime.datetime.now()))
+            included_tweet_df.to_csv("{}/inc-tweets-search-{}-{}.csv".format(
+                outdir, query, datetime.datetime.now()))
+            media_df.to_csv("{}/media-search-{}-{}.csv".format(
+                outdir, query, datetime.datetime.now()))
+
+            time.sleep(5)
+
+        except Exception as e:
+            print("Exception for query:{}".format(query))
+            with file in open('exceptions.txt', 'a'):
+                print(query+"\n")
 
 
-# In[137]:
+# In[138]:
 
 
 # search_tweets(query="#edtech", outdir="tweets/")
+
+
+# In[ ]:
+
+
+
 

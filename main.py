@@ -7,12 +7,16 @@ if not os.path.exists(outdir):
 with open('tags.csv') as csv_file:
     reader = csv.reader(csv_file)
     tags = set(list(reader)[0])
+
+print("tags: ", tags)
     
 donetags = set([])
 if os.path.isfile('donetags.csv'): 
     with open('donetags.csv') as csv_file:
         reader = csv.reader(csv_file)
         donetags = set(list(reader)[0])
+
+print("donetags: ", donetags)
 
 tags = tags.difference(donetags)
 i=1
