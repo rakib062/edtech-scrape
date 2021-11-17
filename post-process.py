@@ -1,10 +1,11 @@
 import pandas as pd
-import glob, sys
+import glob, sys, csv
 
 def combine_dfs(indir, tag, outdir):
 	'''
 	Combine all dataframes for a given hastag to one dataframe.
 	'''
+	print("Tag: ", tag)
 	dfs = [pd.read_csv(file, lineterminator='\n') for file in \
 			glob.glob('{}/tweets-search-{}*.csv'.format(indir, tag))]
 
