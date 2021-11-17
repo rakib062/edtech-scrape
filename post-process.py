@@ -29,4 +29,15 @@ def combine_dfs(indir, tag, outdir):
 	if len(dfs)>0:
 		pd.concat(dfs).to_csv('{}/media-search-{}.csv'.format(outdir, tag))
 
-combine_dfs(sys.argv[1], "#{}".format(sys.argv[2]), sys.argv[3])
+
+indir = sys.argv[1]
+tag_file = sys.argv[2]
+outdir = sys.argv[3]
+
+tags = set([])
+with open(tag_file) as csv_file:
+    reader = csv.reader(csv_file)
+    tags = set(list(reader)[0])
+
+for tag in tags:
+	combine_dfs(indir, tag, outdir)
