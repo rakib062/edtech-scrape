@@ -9,6 +9,7 @@ with open('tags.csv') as csv_file:
     reader = csv.reader(csv_file)
     tags = set(list(reader)[0])
 
+tags =  set([t.lower() for t in tags])
 print("tags: ", tags)
     
 donetags = set([])
@@ -17,6 +18,7 @@ if os.path.isfile('donetags.csv'):
         reader = csv.reader(csv_file)
         donetags = set(list(reader)[0])
 
+donetags =  set([t.lower() for t in donetags])
 print("donetags: ", donetags)
 
 tags = tags.difference(donetags)
