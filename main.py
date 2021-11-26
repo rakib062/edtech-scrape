@@ -19,9 +19,9 @@ if os.path.isfile('donetags.csv'):
         donetags = set(list(reader)[0])
 
 donetags =  set([t.lower() for t in donetags])
-print("donetags: ", len(donetags))
-
 tags = tags.difference(donetags)
+print("donetags:{}, tags:{} ".format(len(donetags), len(tags)))
+
 i=1
 for tag in tags:
     tag = tag.strip()
