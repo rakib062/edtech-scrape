@@ -10,7 +10,7 @@ with open('tags.csv') as csv_file:
     tags = set(list(reader)[0])
 
 tags =  set([t.lower() for t in tags])
-print("tags: ", tags)
+print("tags: ", len(tags))
     
 donetags = set([])
 if os.path.isfile('donetags.csv'): 
@@ -19,14 +19,14 @@ if os.path.isfile('donetags.csv'):
         donetags = set(list(reader)[0])
 
 donetags =  set([t.lower() for t in donetags])
-print("donetags: ", donetags)
+print("donetags: ", len(donetags))
 
 tags = tags.difference(donetags)
 i=1
 for tag in tags:
     tag = tag.strip()
     print("Starting search for tag no:{} of {}, tag:{}".format(i, len(tags),tag))
-    collect_tweets.search_tweets(tag, outdir)
+    collect_tweets.search_tweets(tag, outdir, i)
     donetags.add(tag)
     with open('donetags.csv', 'w') as csv_file:  
         writer = csv.writer(csv_file)

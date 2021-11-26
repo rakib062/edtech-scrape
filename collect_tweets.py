@@ -128,7 +128,7 @@ def tweets_to_df(response):
     df.set_index('tweetid', inplace=True)
     return df
 
-def search_tweets(query, outdir):
+def search_tweets(query, outdir, count):
     tweet_count = 0
     try:
         for response in tweepy.Paginator(
@@ -157,8 +157,8 @@ def search_tweets(query, outdir):
                 max_results=100):
 
             tweet_count+=len(response.data)
-            print('query: {}, tweets: {}, total: {}'.format(
-                query, len(response.data), tweet_count))
+            print('query: {} ({}), tweets: {}, total: {}'.format(
+                query, count, len(response.data), tweet_count))
 
             if len(response.data)==0:
                 continue
@@ -191,4 +191,4 @@ def search_tweets(query, outdir):
     except Exception as e:
         print("Exception for query:{}.\nError:{}".format(query, e))
         with open('exceptions.txt', 'a') as file:
-            file.write(query+"\n")
+            file.write("query:{}, exception:{}\n".format(query, e))
