@@ -8,6 +8,10 @@ def combine_dfs(indir, tag, outdir):
 	print("Tag: ", tag)
 	dfs = [pd.read_csv(file, lineterminator='\n') for file in \
 			glob.glob('{}/tweets-search-{}*.csv'.format(indir, tag))]
+    if len(dfs)==0:    
+    	print("No data found.")
+    	return
+
 
 	print("tweet dataframes:{}, tweets:{}, combined shape:{}".format(len(dfs), 
 		sum([len(df) for df in dfs]), pd.concat(dfs).shape))
