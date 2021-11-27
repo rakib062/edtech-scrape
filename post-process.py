@@ -8,9 +8,9 @@ def combine_dfs(indir, tag, outdir):
 	print("Tag: ", tag)
 	dfs = [pd.read_csv(file, lineterminator='\n') for file in \
 			glob.glob('{}/tweets-search-{}*.csv'.format(indir, tag))]
-    if len(dfs)==0:    
-    	print("No data found.")
-    	return
+	if len(dfs)==0:    
+		print("No data found.")
+		return
 
 
 	print("tweet dataframes:{}, tweets:{}, combined shape:{}".format(len(dfs), 
@@ -41,8 +41,8 @@ outdir = sys.argv[3]
 
 tags = set([])
 with open(tag_file) as csv_file:
-    reader = csv.reader(csv_file)
-    tags = set(list(reader)[0])
+	reader = csv.reader(csv_file)
+	tags = set(list(reader)[0])
 
 for tag in tags:
 	combine_dfs(indir, tag, outdir)
