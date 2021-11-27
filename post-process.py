@@ -23,8 +23,8 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 	df['tweetid'] = df.tweetid.astype(int)
 	latest_tweet = df[df.tweetid>=df.tweetid.max()].iloc[0]
 	with open('{}/tweet-stat-{}.csv'.format(stat_dir, tag), 'w') as csv_file:
-    	writer = csv.writer(csv_file)
-    	writer.writerow(latest_tweet.to_dict())
+		writer = csv.writer(csv_file)
+		writer.writerow(latest_tweet.to_dict())
 
 
 	dfs = [pd.read_csv(file, lineterminator='\n') for file in \
