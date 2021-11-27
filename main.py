@@ -9,7 +9,7 @@ with open('tags.csv') as csv_file:
     reader = csv.reader(csv_file)
     tags = set(list(reader)[0])
 
-tags =  set([t.srtip().lower() for t in tags])
+tags =  set([t.strip().lower() for t in tags])
 print("tags: ", len(tags))
     
 donetags = set([])
@@ -26,6 +26,7 @@ i=1
 for tag in tags:
     tag = tag.strip()
     print("Starting search for tag no:{} of {}, tag:{}".format(i, len(tags),tag))
+    i+=1
     collect_tweets.search_tweets(tag, outdir, i)
     donetags.add(tag)
     with open('donetags.csv', 'w') as csv_file:  
