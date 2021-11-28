@@ -49,8 +49,8 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 			glob.glob('{}/media-search-{}*.csv'.format(indir, tag))]
 	if len(dfs)>0:
 		df = pd.concat(dfs)
-		df['tweetid'] = df.tweetid.astype(str)
-		df = df[df.tweetid!='nan']
+		#df['tweetid'] = df.tweetid.astype(str)
+		#df = df[df.tweetid!='nan']
 		df.to_csv('{}/media-search-{}.csv'.format(outdir, tag))
 
 
