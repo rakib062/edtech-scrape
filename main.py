@@ -27,7 +27,7 @@ for tag in tags:
     tag = tag.strip()
     print("Starting search for tag no:{} of {}, tag:{}".format(i, len(tags),tag))
     i+=1
-    collect_tweets.search_tweets(tag, outdir, i)
+    collect_tweets.search_tweets(tag+" -is:retweet", outdir, i)
     donetags.add(tag)
     with open('donetags.csv', 'w') as csv_file:  
         writer = csv.writer(csv_file)
