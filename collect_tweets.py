@@ -30,7 +30,7 @@ import csv
 client = tweepy.Client(bearer_token, wait_on_rate_limit=True)
 
 user_fields = ['username', 'public_metrics', 'description', 'location', 
-                'protected', 'verified', 'entities', 'url'],
+                'protected', 'verified', 'entities', 'url']
 tweet_fields = ['id', 'text', 'author_id', 'created_at', 'geo', 
                 'public_metrics', 'lang', 'conversation_id', 'entities',
                 'referenced_tweets', 'context_annotations', 
@@ -143,7 +143,7 @@ def tweets_to_df(response):
 
 def search_tweets(query, start_time, since_id, outdir, count):
     print('query:{}, start: {}, id:{}'.format(query, start_time, since_id))
-    
+
     tweet_count = 0
     try:
         for response in tweepy.Paginator(
