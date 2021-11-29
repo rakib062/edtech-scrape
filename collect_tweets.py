@@ -29,8 +29,21 @@ import time, os, sys
 import csv
 client = tweepy.Client(bearer_token, wait_on_rate_limit=True)
 
-
-# In[135]:
+user_fields = ['username', 'public_metrics', 'description', 'location', 
+                'protected', 'verified', 'entities', 'url'],
+tweet_fields = ['id', 'text', 'author_id', 'created_at', 'geo', 
+                'public_metrics', 'lang', 'conversation_id', 'entities',
+                'referenced_tweets', 'context_annotations', 
+                'attachments', 'possibly_sensitive',
+                'withheld', 'reply_settings', 'source'
+                #'organic_metrics', #'promoted_metrics', #'non_public_metrics',
+                ]
+expansions = ['author_id', 'referenced_tweets.id', 
+                'referenced_tweets.id.author_id',
+                'in_reply_to_user_id', 'attachments.media_keys',
+                'entities.mentions.username']
+place_fields=['full_name', 'id']
+media_fields=['type', 'url', 'alt_text', 'public_metrics', 'duration_ms']
 
 
 def media_to_df(response):
@@ -128,32 +141,22 @@ def tweets_to_df(response):
     df.set_index('tweetid', inplace=True)
     return df
 
-def search_tweets(query, outdir, count):
+def search_tweets(query, start_time, since_id, outdir, count):
+    print('query:{}, start: {}, id:{}'.format(query, start_time, since_id))
+    
     tweet_count = 0
     try:
         for response in tweepy.Paginator(
                 client.search_all_tweets, 
                 query = query,
-                user_fields = ['username', 'public_metrics', 'description', 
-                               'location', 'protected', 'verified',
-                                'entities', 'url'],
-                tweet_fields = ['id', 'text', 'author_id', 
-                                'created_at', 'geo', 'public_metrics',
-                                'lang', 'conversation_id', 'entities',
-                                'referenced_tweets', 'context_annotations', 
-                                'attachments', 'possibly_sensitive',
-                                'withheld', 'reply_settings', 'source'
-                                #'organic_metrics', #'promoted_metrics', #'non_public_metrics',
-                               ],
-                expansions = ['author_id', 'referenced_tweets.id', 
-                              'referenced_tweets.id.author_id',
-                              'in_reply_to_user_id', 'attachments.media_keys',
-                              'entities.mentions.username'],
-                start_time = '2006-03-21T00:00:00Z',
+                user_fields = user_fields,
+                tweet_fields = tweet_fields,
+                expansions = expansions,
+                start_time = start_time,
+                since_id = since_id,
         #         end_time = '2021-01-21T00:00:00Z',
-                place_fields=['full_name', 'id'],
-                media_fields=['type', 'url', 'alt_text', 
-                              'public_metrics', 'duration_ms'],
+                place_fields= place_fields,
+                media_fields= media_fields,
                 max_results=100):
 
             tweet_count+=len(response.data)
