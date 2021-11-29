@@ -3,6 +3,7 @@ import collect_tweets
 
 outdir = sys.argv[1]
 tagfile=sys.argv[2]
+stat_dir=sys.argv[3]
 if not os.path.exists(outdir):
         os.makedirs(outdir)
         
