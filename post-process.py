@@ -25,6 +25,9 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 
 	df['tweetid'] = df.tweetid.astype(int)
 	latest_tweet = df[df.tweetid>=df.tweetid.max()].iloc[0]
+
+	with open('tweet_count.txt', 'a') as f:
+		f.write('tag: {}, count: {}\n'.format(tag, len(df)))
 	
 	with open('{}/tweet-stat-{}.json'.format(stat_dir, tag), 'w') as fp:
 		json.dump(latest_tweet.to_json(), fp)
