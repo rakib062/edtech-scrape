@@ -37,9 +37,8 @@ for tag in tags:
     since_id = None
     if os.path.isfile('{}/tweet-stat-{}.json'.format(stat_dir, tag)):
         with open('{}/tweet-stat-{}.json'.format(stat_dir, tag), 'r') as fp:
-            tweet = json.loads(json.load((latest_tweet.to_json(), fp)))
-            since_id = tweet.tweetid
-
+            latest_tweet = json.loads(json.load( fp))
+            since_id = latest_tweet['tweetid']
 
     collect_tweets.search_tweets(tag, 
                                 start_time, since_id,outdir, i)
