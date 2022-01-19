@@ -40,7 +40,7 @@ for tag in tags:
             since_id = tweet.tweetid
 
 
-    collect_tweets.search_tweets(tag+" -is:retweet", 
+    collect_tweets.search_tweets(tag, 
                                 start_time, since_id,outdir, i)
 
     donetags.add(tag)

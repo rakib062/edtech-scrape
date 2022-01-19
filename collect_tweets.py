@@ -148,7 +148,7 @@ def search_tweets(query, start_time, since_id, outdir, count):
     try:
         for response in tweepy.Paginator(
                 client.search_all_tweets, 
-                query = query,
+                query = query + " -is:retweet",
                 user_fields = user_fields,
                 tweet_fields = tweet_fields,
                 expansions = expansions,
