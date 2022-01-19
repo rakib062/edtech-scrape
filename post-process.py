@@ -18,11 +18,12 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 	df = pd.concat(dfs)
 	df['tweetid'] = df.tweetid.astype(str)
 	df = df[df.tweetid!='nan']
-	df.set_index(tweetid, inplace=True)
+	df.set_index("tweetid", inplace=True)
 	df[~df.index.duplicated(keep='first')]
 	print("number of unique tweets: {}".format(len(df)))
 	df.to_csv('{}/tweets-search-{}.csv'.format(outdir, tag))
 
+	df.reset_index(inplace=True, drop=False)
 	df['tweetid'] = df.tweetid.astype(int)
 	latest_tweet = df[df.tweetid>=df.tweetid.max()].iloc[0]
 
