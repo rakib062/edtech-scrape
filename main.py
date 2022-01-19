@@ -1,5 +1,6 @@
 import sys, csv,os
 import collect_tweets
+import json
 
 outdir = sys.argv[1]
 tagfile=sys.argv[2]
