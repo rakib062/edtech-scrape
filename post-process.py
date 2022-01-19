@@ -23,7 +23,7 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 	df.reset_index(inplace=True, drop=False)
 	df['tweetid'] = df.tweetid.astype(int)
 	print("number of unique tweets: {}".format(len(df)))
-	df.to_csv('{}/tweets-search-{}.csv'.format(outdir, tag))
+	df.to_pickle('{}/tweets-search-{}.pkl'.format(outdir, tag))
 
 	latest_tweet = df[df.tweetid>=df.tweetid.max()].iloc[0]
 
@@ -43,7 +43,7 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 		df.set_index('userid', inplace=True)
 		df[~df.index.duplicated(keep='first')]
 		print("number of unique users: {}".format(len(df)))
-		df.to_csv('{}/users-search-{}.csv'.format(outdir, tag))
+		df.to_pickle('{}/users-search-{}.pkl'.format(outdir, tag))
 
 	dfs = [pd.read_csv(file, lineterminator='\n') for file in \
 			glob.glob('{}/inc-tweets-search-{}*.csv'.format(indir, tag))]
@@ -54,7 +54,7 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 		df.set_index('tweetid', inplace=True)
 		df[~df.index.duplicated(keep='first')]
 		print("number of inc. unique tweets: {}".format(len(df)))
-		df.to_csv('{}/inc-tweets-search-{}.csv'.format(outdir, tag))
+		df.to_pickle('{}/inc-tweets-search-{}.pkl'.format(outdir, tag))
 
 	dfs = [pd.read_csv(file, lineterminator='\n') for file in \
 			glob.glob('{}/media-search-{}*.csv'.format(indir, tag))]
@@ -64,7 +64,7 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 		df = df[df.media_key!='nan']
 		df.set_index('media_key', inplace=True)
 		df[~df.index.duplicated(keep='first')]
-		df.to_csv('{}/media-search-{}.csv'.format(outdir, tag))
+		df.to_pickle('{}/media-search-{}.pkl'.format(outdir, tag))
 
 
 indir = sys.argv[1]
