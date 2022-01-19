@@ -142,6 +142,9 @@ def tweets_to_df(response):
     return df
 
 def search_tweets(query, start_time, since_id, outdir, count):
+    if since_id is not None:
+        start_time=None
+        
     print('query:{}, start: {}, id:{}'.format(query, start_time, since_id))
 
     tweet_count = 0
