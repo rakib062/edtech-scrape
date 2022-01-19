@@ -40,7 +40,7 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 		df = pd.concat(dfs)
 		df['userid'] = df.userid.astype(str)
 		df = df[df.userid!='nan']
-		df.set_index(userid, inplace=True)
+		df.set_index('userid', inplace=True)
 		df[~df.index.duplicated(keep='first')]
 		print("number of unique users: {}".format(len(df)))
 		df.to_csv('{}/users-search-{}.csv'.format(outdir, tag))
@@ -51,7 +51,7 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 		df = pd.concat(dfs)
 		df['tweetid'] = df.tweetid.astype(str)
 		df = df[df.tweetid!='nan']
-		df.set_index(tweetid, inplace=True)
+		df.set_index('tweetid', inplace=True)
 		df[~df.index.duplicated(keep='first')]
 		print("number of inc. unique tweets: {}".format(len(df)))
 		df.to_csv('{}/inc-tweets-search-{}.csv'.format(outdir, tag))
@@ -62,7 +62,7 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 		df = pd.concat(dfs)
 		df['media_key'] = df.media_key.astype(str)
 		df = df[df.media_key!='nan']
-		df.set_index(media_key, inplace=True)
+		df.set_index('media_key', inplace=True)
 		df[~df.index.duplicated(keep='first')]
 		df.to_csv('{}/media-search-{}.csv'.format(outdir, tag))
 
