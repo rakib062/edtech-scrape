@@ -78,4 +78,4 @@ with open(tag_file) as csv_file:
 	tags = set(list(reader)[0])
 
 for tag in tags:
-	combine_dfs(indir, tag, outdir, stat_dir)
+	combine_dfs(indir, tag.strip().lower(), outdir, stat_dir)
