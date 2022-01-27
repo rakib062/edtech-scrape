@@ -102,6 +102,7 @@ def tweet_to_row(tweet):
         'lang':tweet.lang,
         'conversation_id': tweet.conversation_id,
         'context_annotations': tweet.context_annotations,
+        'entities': tweet.entities,
         'attachments': tweet.attachments,
         'possibly_sensitive': tweet.possibly_sensitive,
         'withheld' : tweet.withheld,
