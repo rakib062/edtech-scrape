@@ -16,6 +16,7 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 		sum([len(df) for df in dfs]), pd.concat(dfs).shape))
 
 	df = pd.concat(dfs)
+	df = df[df.apply(lambda tweet: tweet.text.startswith("RT")==False, axis=1 )]
 	df['tweetid'] = df.tweetid.astype(str)
 	df = df[df.tweetid!='nan']
 	df.set_index("tweetid", inplace=True)
