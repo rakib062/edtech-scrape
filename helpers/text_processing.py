@@ -195,3 +195,23 @@ def n_word_block(word_list, n=2):
     '''
     for i in range(0, len(word_list) - n + 1):
         yield word_list[i:i+n]
+
+def create_preprocessed_tweet_data(data_frame_file, outfile, append=False):
+    '''
+    Preprocess tweets and write preprocessed text from a tweet in a line
+    '''
+    #outfile = join(outpath, 'preprocessed_tweet_texts')
+    if append:
+        f= open(outfile,'a')
+    else:
+        f= open(outfile,'w')
+
+    tweet_df = pd.read_pickle(data_frame_file)
+    tweet_df=tweet_df[tweet_df.lang=='en']
+    for i in tqdm(range(len(tweet_df))):
+        t = tweet_df.iloc[i]
+        corpus = [token for token in preprocess_tweet(t, pos=False)]
+        if len(corpus)>0:
+            f.write(' '.join(corpus)+'\n')
+    f.close()
+    
