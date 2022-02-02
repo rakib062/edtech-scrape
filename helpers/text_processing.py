@@ -1,6 +1,8 @@
+from tqdm import tqdm
 import pickle
 import time
-import sys
+import pandas as pd
+import sys, os
 from tweetokenize import *
 from collections import defaultdict
 import re
@@ -18,9 +20,13 @@ stopwords.update({'http','https','www','amp','etc','com','co','th', 'hey', 'i','
 
 tokenizer = Tokenizer() 
 
-custom_stopwords = pickle.load(open('final-stopwords.pkl','rb'))
+curdir = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+custom_stopwords = pickle.load(open(os.path.join(curdir, 'final-stopwords.pkl'),'rb'))
 custom_stopwords.update({'USER', 'NUMBER', 'URL'})
 custom_stopwords.update({'http','https','www','etc','amp','com','co','th', 'hey', 'i','a','s','t','d','m','o','y','rt','RT'})
+
+
 
 def preprocess_text(document, stem=False):
         # Remove all the special characters
@@ -214,4 +220,3 @@ def create_preprocessed_tweet_data(data_frame_file, outfile, append=False):
         if len(corpus)>0:
             f.write(' '.join(corpus)+'\n')
     f.close()
-    
