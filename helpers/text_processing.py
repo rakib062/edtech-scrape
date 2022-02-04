@@ -8,12 +8,15 @@ from collections import defaultdict
 import re
 import string
 import nltk
-regex = re.compile('[^a-zA-Z ]')
-#calculate text similarity of tweets t1 and t2 
+
+import langdetect, langid, fasttext, cld3
+
 from nltk.corpus import stopwords
 from nltk.stem.lancaster import LancasterStemmer
 from nltk import bigrams
 from urllib.parse import urlparse
+
+regex = re.compile('[^a-zA-Z ]')
 stemmer = LancasterStemmer()
 stopwords = set(stopwords.words('english'))
 stopwords.update({'http','https','www','amp','etc','com','co','th', 'hey', 'i','a','s','t','d','m','o','y','rt','RT'})
@@ -21,6 +24,8 @@ stopwords.update({'http','https','www','amp','etc','com','co','th', 'hey', 'i','
 tokenizer = Tokenizer() 
 
 curdir = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+fasttext_lang_detect_model = fasttext.load_model(os.path.join(curdir, 'models', 'fasttext-lang-detect-model.bin'))
 
 custom_stopwords = pickle.load(open(os.path.join(curdir, 'final-stopwords.pkl'),'rb'))
 custom_stopwords.update({'USER', 'NUMBER', 'URL'})
@@ -54,10 +59,10 @@ def preprocess_text(document, stem=False):
 def preprocess_tweet(tweet, pos=True, stem = False):
  
     text= tweet.text
-    # replace short urls with expanded version
-    # if tweet.urls:
-    #     for url in tweet.urls:
-    #         text = text.replace(url['url'], urlparse(url['expanded_url']).netloc.replace('.',' url '))
+    # if tweet has urls, replace short urls with expanded version
+    if 'urls' in tweet.columns and  tweet.urls:
+        for url in tweet.urls:
+            text = text.replace(url['url'], urlparse(url['expanded_url']).netloc.replace('.',' url '))
     # remove all single characters
     text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text)
 
@@ -212,11 +217,28 @@ def create_preprocessed_tweet_data(data_frame_file, outfile, append=False):
     else:
         f= open(outfile,'w')
 
+    print('Loading dataframe file...')
     tweet_df = pd.read_pickle(data_frame_file)
-    tweet_df=tweet_df[tweet_df.lang=='en']
+    print('Processing dataframe')
     for i in tqdm(range(len(tweet_df))):
         t = tweet_df.iloc[i]
         corpus = [token for token in preprocess_tweet(t, pos=False)]
         if len(corpus)>0:
             f.write(' '.join(corpus)+'\n')
     f.close()
+
+
+def detect_lang(text, detector='fasttext'):
+    try:
+        if detector=='langdetect':
+            return langdetect.detect(text)
+        if detector=='fasttext':
+            return fasttext_lang_detect_model.predict(text)[0][0][-2:]
+        if detector=='langid':
+            return langid.classify(text)[0]
+        if detector=='cld3':
+            return  cld3.get_language(text).language
+    except Exception as e:
+        print('Text: {} \ndetector: {} \nerror:{}'.format(text, detector, e))
+        return 'NA'
+
