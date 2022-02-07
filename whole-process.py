@@ -13,11 +13,13 @@ topic_modeling_dir = join(data_root, 'topic_modeling')
 
 if not os.path.exists(topic_modeling_dir):
 	os.makedirs(topic_modeling_dir)
+if not os.path.exists(join(topic_modeling_dir, 'ldamodels')):
+	os.makedirs(join(topic_modeling_dir, 'ldamodels'))
 
 
 #################### TOPIC MODELING ####################
 print('#################### TOPIC MODELING ####################\n')
-#text_processing.create_preprocessed_data(outfile=preprocessed_tweet_file, data_frame_file=tweet_df_file, append=False)
+text_processing.create_preprocessed_tweet_data(outfile=preprocessed_tweet_file, data_frame_file=tweet_df_file, append=False)
 
 print('creating trigrams...')
 topic_modeling.create_trigrams(textfile=preprocessed_tweet_file, outpath=topic_modeling_dir)
