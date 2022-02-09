@@ -1,3 +1,10 @@
+helpters/fastText/**
+twitter_authentication.py
+helpers/models/**
 /edenv/**
+helpers/__pycache__/**
 .ipynb_checkpoints/**
+/processed-data/**
+helpers/bot_auth.py
+helpers/fastText/**
 .DS_Store
