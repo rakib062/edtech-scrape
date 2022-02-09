@@ -229,7 +229,7 @@ def create_preprocessed_tweet_data(data_frame_file, outfile, append=False):
     clean_text_dict = {}
     for i in tqdm(range(len(tweet_df))):
         tweet = tweet_df.iloc[i]
-        clean_text_dict[tweet.tweetid] = ' '.join(preprocess_tweet(tweet, pos=False))
+        clean_text_dict[tweet.name] = ' '.join(preprocess_tweet(tweet, pos=False))
     print('done.')
     
     print('Saving clean text dictionary...', end='')
