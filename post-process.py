@@ -1,5 +1,5 @@
 import pandas as pd
-import glob, sys, csv, json
+import glob, sys, csv, json, os
 
 def combine_dfs(indir, tag, outdir, stat_dir):
 	'''
