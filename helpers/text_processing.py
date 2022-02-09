@@ -226,11 +226,14 @@ def create_preprocessed_tweet_data(data_frame_file, outfile, append=False):
     print('done.')
     
     print('Generating clean text ...', end='')
-    tweet_df['clean_text'] = tweet_df.progress_apply(lambda tweet:  ' '.join(preprocess_tweet(tweet, pos=False)), axis=1)
+    clean_text_dict = {}
+    for i in tqdm(range(len(tweet_df))):
+        tweet = tweet_df.iloc[i]
+        clean_text_dict[tweet.tweetid] = ' '.join(preprocess_tweet(tweet, pos=False))
     print('done.')
     
-    print('Saving dataframe...', end='')
-    tweet_df.to_pickle(data_frame_file)
+    print('Saving clean text dictionary...', end='')
+    pickle.dump(clean_text_dict, open(outfile+'.pkl', 'wb'))
     print('done.')
 
     print('Writing clean text to file...', end='')
