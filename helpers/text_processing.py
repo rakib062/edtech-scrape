@@ -221,16 +221,19 @@ def create_preprocessed_tweet_data(data_frame_file, outfile, append=False):
     Preprocess tweets and write preprocessed text from a tweet in a line
     '''
     
-    print('Loading dataframe file...')
+    print('Loading dataframe file: {} ...'.format(data_frame_file), end='')
     tweet_df = pd.read_pickle(data_frame_file)
+    print('done.')
     
-    print('Preprocessing text...')
+    print('Generating clean text ...', end='')
     tweet_df['clean_text'] = tweet_df.progress_apply(lambda tweet:  ' '.join(preprocess_tweet(tweet, pos=False)), axis=1)
+    print('done.')
     
-    print('Saving dataframe...')
+    print('Saving dataframe...', end='')
     tweet_df.to_pickle(data_frame_file)
+    print('done.')
 
-    print('writing clean text to file...')
+    print('Writing clean text to file...', end='')
     if append:
         f= open(outfile,'a')
     else:
@@ -240,6 +243,7 @@ def create_preprocessed_tweet_data(data_frame_file, outfile, append=False):
         if len(clean_text)>0:
             f.write(clean_text+'\n')
     f.close()
+    print('all done.')
 
     
 
