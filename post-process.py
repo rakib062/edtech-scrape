@@ -73,6 +73,9 @@ tag_file = sys.argv[2]
 outdir = sys.argv[3]
 stat_dir=sys.argv[4]
 
+if not os.path.exists(outdir):
+        os.makedirs(outdir)
+
 tags = set([])
 with open(tag_file) as csv_file:
 	reader = csv.reader(csv_file)
