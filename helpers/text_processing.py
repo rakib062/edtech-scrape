@@ -16,21 +16,19 @@ from nltk.stem.lancaster import LancasterStemmer
 from nltk import bigrams
 from urllib.parse import urlparse
 
-regex = re.compile('[^a-zA-Z ]')
-stemmer = LancasterStemmer()
-stopwords = set(stopwords.words('english'))
-stopwords.update({'http','https','www','amp','etc','com','co','th', 'hey', 'i','a','s','t','d','m','o','y','rt','RT'})
-
-tokenizer = Tokenizer() 
+tqdm.pandas()
 
 curdir = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
+regex = re.compile('[^a-zA-Z ]')
+stemmer = LancasterStemmer()
+stopwords = set(stopwords.words('english'))
+custom_stopwords = [line.strip() for line in open(os.path.join(curdir, 'stopwords-en.txt'))]
+stopwords.update(set(custom_stopwords))
+
+
+#model downloaded from: https://fasttext.cc/docs/en/language-identification.html 
 fasttext_lang_detect_model = fasttext.load_model(os.path.join(curdir, 'models', 'fasttext-lang-detect-model.bin'))
-
-custom_stopwords = pickle.load(open(os.path.join(curdir, 'final-stopwords.pkl'),'rb'))
-custom_stopwords.update({'USER', 'NUMBER', 'URL'})
-custom_stopwords.update({'http','https','www','etc','amp','com','co','th', 'hey', 'i','a','s','t','d','m','o','y','rt','RT'})
-
 
 
 def preprocess_text(document, stem=False):
@@ -56,21 +54,35 @@ def preprocess_text(document, stem=False):
 
         return tokens
 
-def preprocess_tweet(tweet, pos=True, stem = False):
- 
-    text= tweet.text
-    # if tweet has urls, replace short urls with expanded version
-    if 'urls' in tweet.columns and  tweet.urls:
-        for url in tweet.urls:
-            text = text.replace(url['url'], urlparse(url['expanded_url']).netloc.replace('.',' url '))
+def remove_url(text, replacement=''):
+    return re.sub(r'(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))', replacement, text)
+
+
+def preprocess_tweet(tweet, pos=False,  stem = False):
+
+    #tokenizer will remove the parameters
+    tokenizer = Tokenizer(usernames="USERNAME", urls='URL', hashtags=False, phonenumbers='', 
+                times='', numbers='', ignorequotes=True, ignorestopwords=False) 
+
+
+    text= remove_url(tweet.text, ' URL ')
+    # if remove_url:
+    #     remove_url(text)
+    # elif 'urls' in tweet and tweet.urls: #replace short urls with expanded version
+    #     for url in tweet.urls:
+    #         text = text.replace(url['url'], urlparse(url['expanded_url']).netloc.replace('.',' url '))
+
+    #remove all special characters
+    # text = re.sub(r'\W+',' ', text)
+
     # remove all single characters
-    text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text)
+    # text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text)
 
-    # Remove single characters from the start
-    text = re.sub(r'\^[a-zA-Z]\s+', ' ', text)
+    # # Remove single characters from the start
+    # text = re.sub(r'\^[a-zA-Z]\s+', ' ', text)
 
-    # Substituting multiple spaces with single space
-    text = re.sub(r'\s+', ' ', text, flags=re.I)
+    # # Substituting multiple spaces with single space
+    # text = re.sub(r'\s+', ' ', text, flags=re.I)
 
     # Removing prefixed 'b'
     text = re.sub(r'^b\s+', '', text)
@@ -79,7 +91,7 @@ def preprocess_tweet(tweet, pos=True, stem = False):
     tokens = tokenizer.tokenize(text)
     
     # remove stop words and words less than 3 characters
-    tokens = [token.lower() for token in tokens if token not in stopwords and len(token.strip())>2] 
+    tokens = [re.sub(r"\W+", '', token.lower()) for token in tokens if token not in stopwords and len(token.strip())>2] 
 
 
     if pos: # calculate POS
@@ -115,10 +127,7 @@ def remove_entities(tweet):
     for m in tweet.mentions:
         text = text.replace('@'+m['screen_name'], '')
     return text
-    
-def remove_url(text):
-    return re.sub(r'(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))', '', text)
-    
+        
 def important_words(text):
     text = ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",text).split())
     return [word for word in text.lower().split() if word not in stopwords and len(word)>=3]
@@ -211,21 +220,29 @@ def create_preprocessed_tweet_data(data_frame_file, outfile, append=False):
     '''
     Preprocess tweets and write preprocessed text from a tweet in a line
     '''
-    #outfile = join(outpath, 'preprocessed_tweet_texts')
+    
+    print('Loading dataframe file...')
+    tweet_df = pd.read_pickle(data_frame_file)
+    
+    print('Preprocessing text...')
+    tweet_df['clean_text'] = tweet_df.progress_apply(lambda tweet:  ' '.join(preprocess_tweet(tweet, pos=False)), axis=1)
+    
+    print('Saving dataframe...')
+    tweet_df.to_pickle(data_frame_file)
+
+    print('writing clean text to file...')
     if append:
         f= open(outfile,'a')
     else:
         f= open(outfile,'w')
-
-    print('Loading dataframe file...')
-    tweet_df = pd.read_pickle(data_frame_file)
-    print('Processing dataframe')
     for i in tqdm(range(len(tweet_df))):
-        t = tweet_df.iloc[i]
-        corpus = [token for token in preprocess_tweet(t, pos=False)]
-        if len(corpus)>0:
-            f.write(' '.join(corpus)+'\n')
+        clean_text = tweet_df.iloc[i].clean_text
+        if len(clean_text)>0:
+            f.write(clean_text+'\n')
     f.close()
+
+    
+
 
 
 def detect_lang(text, detector='fasttext'):

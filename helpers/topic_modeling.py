@@ -16,6 +16,8 @@ from urllib.parse import urlparse
 import pandas as pd
 from os.path import join
 import text_processing
+import fasttext as ft
+from sklearn.cluster import DBSCAN,KMeans
 #from gensim.models import CoherenceModel
 from gensim.models.coherencemodel import CoherenceModel
 
@@ -23,7 +25,7 @@ from gensim.models.coherencemodel import CoherenceModel
 
 tokenizer = Tokenizer()
 
-
+tqdm.pandas()
 
 class TextIterator(object):
     def __init__(self, fname):
@@ -105,6 +107,20 @@ def calculate_topic_similarities(reference_tweet_words, tweets_words, model, dic
         scores.append(1 - spatial.distance.cosine(ref_topic, topic))
     return scores
 
+def build_fasttext_topic_clusters(tweet_dataframe_path, ft_model_path, outfile,  n_clusters):
+    print('loading data frame...')
+    df=pd.read_pickle(tweet_dataframe_path)
+    print('loading fasttext model...')
+    model = ft.load_model(ft_model_path)
+    print('computing senetence vectors...')
+    vector_df = df.progress_apply(lambda tweet: model.get_sentence_vector(
+                    ' '.join(text_processing.preprocess_tweet(tweet, pos=False, stem=False))), axis=1)
+    print('saving sentence vectors...')
+    vector_df.to_pickle(outfile)
+    print('training clustering model...')
+    clustering = KMeans(n_clusters=n_clusters, random_state=0).fit(x)
+    clustering=clustering.fit()
+    print()
 
 def compute_coherence_values(preprocessed_text_file, dictionary_file, corpus_file,
                          out_dir, limit=500, start=100, step=100):
