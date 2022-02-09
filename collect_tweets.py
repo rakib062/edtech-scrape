@@ -195,7 +195,10 @@ def search_tweets(query, start_time, since_id, outdir, count):
 
             time.sleep(5)
 
+            return True
+
     except Exception as e:
         print("Exception for query:{}.\nError:{}".format(query, e))
         with open('exceptions.txt', 'a') as file:
             file.write("query:{}, exception:{}\n".format(query, e))
+        return False

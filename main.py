@@ -40,10 +40,12 @@ for tag in tags:
             latest_tweet = json.loads(json.load( fp))
             since_id = latest_tweet['tweetid']
 
-    collect_tweets.search_tweets(tag, 
+
+    success = collect_tweets.search_tweets(tag, 
                                 start_time, since_id,outdir, i)
 
-    donetags.add(tag)
-    with open('donetags.csv', 'w') as csv_file:  
-        writer = csv.writer(csv_file)
-        writer.writerow(donetags)
+    if success:
+        donetags.add(tag)
+        with open('donetags.csv', 'w') as csv_file:  
+            writer = csv.writer(csv_file)
+            writer.writerow(donetags)
