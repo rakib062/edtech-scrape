@@ -233,15 +233,16 @@ def create_preprocessed_tweet_data(data_frame_file, outfile):
     clean_text_df = tweet_df.progress_apply(lambda  tweet: ' '.join(preprocess_tweet(tweet, pos=False)), axis=1)
     print('done.')
 
+    printf('Saving dataframe...')
+    clean_text_df.to_pickle(outfile+'.pkl')
+    print('done.')
+
     printf('Writing clean text to file...')
     clean_text_df=pd.DataFrame({'tweetid':clean_text_df.index, 'clean_text':clean_text_df.values})
     with open(outfile,'w') as file:
-        for index, clean_text in clean_text_df.iter_items():
+        for index, clean_text in clean_text_df.items():
             file.write(clean_text+'\n')
-    print('done.')
-
-    printf('Saving dataframe...')
-    clean_text_df.to_pickle(outfile+'.pkl')
+    
     print('\n all done.')
     
 
