@@ -2,7 +2,7 @@ from tqdm import tqdm
 import pickle
 import time
 import pandas as pd
-import sys, os
+import sys, os, csv
 from tweetokenize import *
 from collections import defaultdict
 import re
@@ -29,6 +29,10 @@ stopwords.update(set(custom_stopwords))
 
 #model downloaded from: https://fasttext.cc/docs/en/language-identification.html 
 fasttext_lang_detect_model = fasttext.load_model(os.path.join(curdir, 'models', 'fasttext-lang-detect-model.bin'))
+
+def printf(text):
+    sys.stdout.write(text)
+    sys.stdout.flush()
 
 
 def preprocess_text(document, stem=False):
@@ -216,40 +220,32 @@ def n_word_block(word_list, n=2):
     for i in range(0, len(word_list) - n + 1):
         yield word_list[i:i+n]
 
-def create_preprocessed_tweet_data(data_frame_file, outfile, append=False):
+def create_preprocessed_tweet_data(data_frame_file, outfile):
     '''
     Preprocess tweets and write preprocessed text from a tweet in a line
     '''
     
-    print('Loading dataframe file: {} ...'.format(data_frame_file), end='')
+    print('Loading dataframe file: {} ...'.format(data_frame_file), end='', flush=True)
     tweet_df = pd.read_pickle(data_frame_file)
-    print('done.')
+    print('done.\nCleaning text ...')
     
-    print('Generating clean text ...', end='')
-    clean_text_dict = {}
-    for i in tqdm(range(len(tweet_df))):
+    csv_file = open(outfile,'w')
+    writer = csv.writer(csv_file)
+    writer.writerow(('tweetid', 'clean_text'))
+    
+    total = len(tweet_df)
+    perc = int(total/100)
+
+    for i in range(len(tweet_df)):
         tweet = tweet_df.iloc[i]
-        clean_text_dict[tweet.name] = ' '.join(preprocess_tweet(tweet, pos=False))
-    print('done.')
+        clean_text = ' '.join(preprocess_tweet(tweet, pos=False))
+        writer.writerow((tweet.name, clean_text))
+        if (i+1)%perc==0:
+            printf('{}%->'.format(int(100*(i/total))))
+
+    csv_file.close()
+    print('\n all done.')
     
-    print('Saving clean text dictionary...', end='')
-    pickle.dump(clean_text_dict, open(outfile+'.pkl', 'wb'))
-    print('done.')
-
-    print('Writing clean text to file...', end='')
-    if append:
-        f= open(outfile,'a')
-    else:
-        f= open(outfile,'w')
-    for i in tqdm(range(len(tweet_df))):
-        clean_text = tweet_df.iloc[i].clean_text
-        if len(clean_text)>0:
-            f.write(clean_text+'\n')
-    f.close()
-    print('all done.')
-
-    
-
 
 
 def detect_lang(text, detector='fasttext'):
