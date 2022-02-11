@@ -225,24 +225,25 @@ def create_preprocessed_tweet_data(data_frame_file, outfile):
     Preprocess tweets and write preprocessed text from a tweet in a line
     '''
     
-    printf('Loading dataframe file: {} ...'.format(data_frame_file))
+    print('Loading dataframe file: {} ...'.format(data_frame_file), end='', flush=True)
     tweet_df = pd.read_pickle(data_frame_file)
-    print('done.')
+    print('done.\nCleaning text ...')
     
-    printf('Cleaning text ...')
-    clean_text_df = tweet_df.progress_apply(lambda  tweet: ' '.join(preprocess_tweet(tweet, pos=False)), axis=1)
-    print('done.')
-
-    printf('Saving dataframe...')
-    clean_text_df.to_pickle(outfile+'.pkl')
-    print('done.')
-
-    printf('Writing clean text to file...')
-    clean_text_df=pd.DataFrame({'tweetid':clean_text_df.index, 'clean_text':clean_text_df.values})
-    with open(outfile,'w') as file:
-        for index, clean_text in clean_text_df.items():
-            file.write(clean_text+'\n')
+    csv_file = open(outfile,'w')
+    writer = csv.writer(csv_file)
+    writer.writerow(('tweetid', 'clean_text'))
     
+    total = len(tweet_df)
+    perc = int(total/100)
+
+    for i in range(len(tweet_df)):
+        tweet = tweet_df.iloc[i]
+        clean_text = ' '.join(preprocess_tweet(tweet, pos=False))
+        writer.writerow((tweet.name, clean_text))
+        if (i+1)%perc==0:
+            printf('{}%->'.format(int(100*(i/total))))
+
+    csv_file.close()
     print('\n all done.')
     
 
