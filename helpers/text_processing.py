@@ -58,8 +58,9 @@ def preprocess_text(document, stem=False):
 
         return tokens
 
-def remove_url(text, replacement=''):
-    return re.sub(r'(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))', replacement, text)
+
+# def remove_url(text, replacement=''):
+#     return re.sub(r'(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))', replacement, text)
 
 
 def preprocess_tweet(tweet, pos=False,  stem = False):
@@ -69,24 +70,10 @@ def preprocess_tweet(tweet, pos=False,  stem = False):
                 times='', numbers='', ignorequotes=True, ignorestopwords=False) 
 
 
-    text= remove_url(tweet.text, ' URL ')
-    # if remove_url:
-    #     remove_url(text)
-    # elif 'urls' in tweet and tweet.urls: #replace short urls with expanded version
-    #     for url in tweet.urls:
-    #         text = text.replace(url['url'], urlparse(url['expanded_url']).netloc.replace('.',' url '))
-
-    #remove all special characters
-    # text = re.sub(r'\W+',' ', text)
-
-    # remove all single characters
-    # text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text)
-
-    # # Remove single characters from the start
-    # text = re.sub(r'\^[a-zA-Z]\s+', ' ', text)
-
-    # # Substituting multiple spaces with single space
-    # text = re.sub(r'\s+', ' ', text, flags=re.I)
+    text= tweet.text
+    if 'urls' in tweet and tweet.urls: #replace short urls with expanded version
+        for url in tweet.urls:
+            text = text.replace(url['url'], urlparse(url['expanded_url']).netloc.replace('.',' url '))
 
     # Removing prefixed 'b'
     text = re.sub(r'^b\s+', '', text)
@@ -228,22 +215,13 @@ def create_preprocessed_tweet_data(data_frame_file, outfile):
     print('Loading dataframe file: {} ...'.format(data_frame_file), end='', flush=True)
     tweet_df = pd.read_pickle(data_frame_file)
     print('done.\nCleaning text ...')
+    tweet_df['clean_text'] = tweet_df.progress_apply(lambda tweet: ' '.join(preprocess_tweet(tweet, pos=False)), axis=1)
+    print('done.\nSaving files...')
+    tweet_df.to_pickle(data_frame_file)
     
-    csv_file = open(outfile,'w')
-    writer = csv.writer(csv_file)
-    writer.writerow(('tweetid', 'clean_text'))
+    with open(outfile,'w') as file:
+        tweet_df.progress_apply(lambda tweet: file.write(tweet.clean_text+'\n'), axis=1)
     
-    total = len(tweet_df)
-    perc = int(total/100)
-
-    for i in range(len(tweet_df)):
-        tweet = tweet_df.iloc[i]
-        clean_text = ' '.join(preprocess_tweet(tweet, pos=False))
-        writer.writerow((tweet.name, clean_text))
-        if (i+1)%perc==0:
-            printf('{}%->'.format(int(100*(i/total))))
-
-    csv_file.close()
     print('\n all done.')
     
 
