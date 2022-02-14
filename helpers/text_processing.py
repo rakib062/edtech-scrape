@@ -207,7 +207,7 @@ def n_word_block(word_list, n=2):
     for i in range(0, len(word_list) - n + 1):
         yield word_list[i:i+n]
 
-def create_preprocessed_tweet_data(data_frame_file, outfile):
+def create_preprocessed_tweet_data(data_frame_file, outfile, append=False):
     '''
     Preprocess tweets and write preprocessed text from a tweet in a line
     '''
@@ -219,7 +219,7 @@ def create_preprocessed_tweet_data(data_frame_file, outfile):
     print('done.\nSaving files...')
     tweet_df.to_pickle(data_frame_file)
     
-    with open(outfile,'w') as file:
+    with open(outfile,'a' if append else 'w') as file:
         tweet_df.progress_apply(lambda tweet: file.write(tweet.clean_text+'\n'), axis=1)
     
     print('\n all done.')
