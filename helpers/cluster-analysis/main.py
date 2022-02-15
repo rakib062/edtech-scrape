@@ -16,6 +16,7 @@ import math
 import random
 import fasttext
 import faulthandler 
+import pickle
 
 faulthandler.enable() #for stacktrace
 
@@ -33,17 +34,21 @@ def main():
     args = parse_args()
 
     stopwords = set([line.strip() for line in open('{}/helpers/stopwords-en.txt'.format(repo_root))])
-
     vocab = []#preprocess.create_global_vocab(args.vocab)or line in open(vocab_file):
+    data = []
     for line in open(args.vocab):
+        data.append(line)
         vocab+=line.split()
         
     vocab=set(vocab)
 
-    train_word_to_file, train_w_to_f_mult, files = preprocess.create_vocab_and_files(stopwords, args.dataset, args.preprocess, "train", vocab)
+    # train_word_to_file, train_w_to_f_mult, files = preprocess.create_vocab_and_files(stopwords, args.dataset, args.preprocess, "train", vocab)
+    train_word_to_file, train_w_to_f_mult, files = preprocess.create_vocab_preprocess_(stopwords, data, vocab, args.preprocess)
+    return None
     files_num = len(files)
     print("len vocab size:", len(train_word_to_file.keys()))
 
+    
     intersection = None
     words_index_intersect = None
 
@@ -60,9 +65,9 @@ def main():
     #     elmomix = [float(a) for a in args.elmomix.split(";")] if args.elmomix != "" else None
     #     data, word_index = embedding.read_entity_file(args.entities_file, args.id2name, train_word_to_file, args.entities, elmomix=elmomix)
     #     intersection, words_index_intersect = embedding.find_intersect(word_index, train_w_to_f_mult, data, files_num, args.entities, args.doc_info)
-
-    ft = fasttext.load_model(args.ftmodel)
-    intersection, words_index_intersect = embedding.create_entities_ft(ft, train_w_to_f_mult, args.doc_info)
+    print('ftmodel: ', args.ftmodel)
+    ft_model = fasttext.load_model(args.ftmodel)
+    intersection, words_index_intersect = embedding.create_entities_ft(ft_model, train_w_to_f_mult, args.doc_info)
     print(intersection.shape)
 
     if args.use_dims:
@@ -74,13 +79,13 @@ def main():
 
 
     if args.doc_info == "WGT":
-        weights = clustering.get_weights_tf(words_index_intersect, train_w_to_f_mult)
+        weights = embedding.get_weights_tf(words_index_intersect, train_w_to_f_mult)
 
     if args.doc_info == "robust":
-        weights = clustering.get_rs_weights_tf(words_index_intersect, train_w_to_f_mult)
+        weights = embedding.get_rs_weights_tf(words_index_intersect, train_w_to_f_mult)
 
     if args.doc_info == "tfdf":
-        weights , tfdf = clustering.get_weights_tfdf(words_index_intersect, train_w_to_f_mult, files_num)
+        weights , tfdf = embedding.get_weights_tfdf(words_index_intersect, train_w_to_f_mult, files_num)
 
     if weights is not None and args.scale == "sigmoid":
         print("scaling.. sigmoid")
@@ -115,13 +120,17 @@ def main():
         global NSEEDS
         while rand < NSEEDS:
 
+            model_outfile = None
+            if args.model_outdir:
+                model_outfile = '{}/model-{}-{}-{}.model'.format(args.model_outdir, args.clustering_algo, topics, rand)
+
             try:
-                top_k_words, top_k = cluster(args.clustering_algo, intersection, words_index_intersect, topics, args.rerank, weights, args.topics_file, rand)
+                top_k_words, top_k = cluster(args.clustering_algo, intersection, words_index_intersect, topics, args.rerank, weights, args.topics_file, rand, model_outfile=model_outfile)
             except:
                 print("Warning: failed, try diff random seed.")
                 new_rand = random.randint(5,1000)
                 top_k_words, top_k = cluster(args.clustering_algo, intersection, \
-                        words_index_intersect, topics, args.rerank, weights, args.topics_file, new_rand)
+                        words_index_intersect, topics, args.rerank, weights, args.topics_file, new_rand,  model_outfile=model_outfile)
 
 
 
@@ -143,6 +152,8 @@ def main():
         print("NPMI Mean:" + str(np.around(topics_npmi[-1], 5)))
         print("NPMI Var:" + str(np.around(np.var(npmis), 5)))
 
+        print('\n******************************************\n')
+
     best_topic = args.num_topics[np.argmax(topics_npmi)]
 
 
@@ -151,9 +162,11 @@ def main():
 
 
 
-def cluster(clustering_algo, intersection, words_index_intersect, num_topics, rerank, weights, topics_file, rand):
-    if clustering_algo == "KMeans":
+def cluster(clustering_algo, intersection, words_index_intersect, num_topics, rerank, weights, topics_file, rand, model_outfile):
+    if clustering_algo == "KMeans":        
         labels, top_k, model  = clustering.KMeans_model(intersection, words_index_intersect, num_topics, rerank, rand, weights)
+        if model_outfile:
+            pickle.dump(model, open(model_outfile, 'wb'))
     # elif clustering_algo == "SPKMeans":
     #     labels, top_k  = clustering.SphericalKMeans_model(intersection, words_index_intersect, num_topics, rerank, rand, weights)
     # elif clustering_algo == "GMM":
@@ -248,11 +261,12 @@ def print_top_k(top_k_bins, name, type):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(__doc__)
-    parser.add_argument("--entities", type=str, choices=["word2vec", "fasttext", "glove", "KG"])
-    parser.add_argument("--ftmodel", type=str, help='fasttext model file')
+    parser.add_argument("--entities", type=str, choices=["word2vec", "fasttext", "glove", "KG"], required=True)
+    parser.add_argument("--ftmodel", type=str, help='fasttext model file', required=True)
+    parser.add_argument("--vocab", required=True,  type=str)#, nargs='+', default=[])
     parser.add_argument( "--entities_file", type=str, help="entity file")
-    parser.add_argument( "--elmomix", type=str, default="", help="elmomix coefficients, separated by ';', should sum to 1")
-
+    parser.add_argument("--model-outdir",  type=str)#, nargs='+', default=[])
+    
     parser.add_argument("--clustering_algo", type=str, required=True, choices=["KMeans", "SPKMeans", "GMM", "KMedoids","Agglo","DBSCAN","Spectral","VMFM",
         'from_file', 'LDA'])
 
@@ -268,9 +282,10 @@ def parse_args() -> argparse.Namespace:
 
     parser.add_argument("--dataset", type=str, default ="20NG", choices=["20NG", "children", "reuters"])
 
-    parser.add_argument("--preprocess", type=int, default=5)
-    
-    parser.add_argument("--vocab", required=True,  type=str)#, nargs='+', default=[])
+    parser.add_argument("--preprocess", type=int, default=5, help='cuttoff threshold for words to keep in the vocab based on frequency')
+
+    parser.add_argument( "--elmomix", type=str, default="", help="elmomix coefficients, separated by ';', should sum to 1")
+
     parser.add_argument("--scale", type=str, required=False)
 
 

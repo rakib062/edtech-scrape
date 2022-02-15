@@ -7,7 +7,7 @@ import string
 import numpy as np
 
 import os
-DATADIR="/export/c12/ssia/shared/Cluster-Analysis/data"
+# DATADIR="/export/c12/ssia/shared/Cluster-Analysis/data"
 
 def create_global_vocab(vocab_file):
     vocab_list = []
@@ -81,9 +81,10 @@ def combine_split_children(type):
         return test
 
 def create_files_20news(type):
+    print('inside create_files_20news')
     if type == "valid":
         type = "test"
-    data = fetch_20newsgroups(data_home='./data/', subset=type, remove=('headers', 'footers', 'quotes'))
+    data = fetch_20newsgroups(data_home='/Users/admin/work/edtech-scrape/', subset=type, remove=('headers', 'footers', 'quotes'))
     files = data['data'];
     return files
 
@@ -163,9 +164,63 @@ def create_vocab_preprocess(stopwords, data, vocab, preprocess, process_data=Fal
 
     return word_to_file, word_to_file_mult, data
 
+def create_vocab_preprocess_(stopwords, data, vocab, preprocess, process_data=False):
+    '''
+        parameters
+            @data: list of strings
+    '''
+
+    word_to_file = {}
+    word_to_file_mult = {}
+    strip_punct = str.maketrans("", "", string.punctuation)
+    strip_digit = str.maketrans("", "", string.digits)
+
+    process_files = []
+    for file_num in range(len(data)):
+        words = data[file_num].translate(strip_punct).translate(strip_digit).split()        
+        proc_file = []
+
+        for word in words:
+            if word in stopwords or (word not in vocab and len(vocab)) or word =="dlrs" or word == "revs":
+                continue
+            if word in word_to_file:
+                word_to_file[word].add(file_num)
+                word_to_file_mult[word].append(file_num)
+            else:
+                word_to_file[word]= set()
+                word_to_file_mult[word] = []
+
+                word_to_file[word].add(file_num)
+                word_to_file_mult[word].append(file_num)
+
+        process_files.append(proc_file)
+
+    for word in list(word_to_file):
+        if len(word_to_file[word]) <= preprocess  or len(word) <= 3:
+            word_to_file.pop(word, None)
+            word_to_file_mult.pop(word, None)
+
+    print("Data:" + str(len(data)))
+    print("Vocab: " + str(len(word_to_file)))
+
+    if process_data:
+        vocab = word_to_file.keys()
+        files = []
+        for proc_file in process_files:
+            fil = []
+            for w in proc_file:
+                if w in vocab:
+                    fil.append(w)
+            files.append(" ".join(fil))
+
+        data = files
+
+    return word_to_file, word_to_file_mult, data
+
 
 
 def create_vocab_and_files(stopwords, dataset, preprocess, type, vocab):
+    print('inside create_vocab_and_files, dataset: ',dataset)
     data = None
     if dataset == "20NG":
         data = create_files_20news(type)
