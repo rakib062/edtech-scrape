@@ -84,7 +84,7 @@ def create_files_20news(type):
     print('inside create_files_20news')
     if type == "valid":
         type = "test"
-    data = fetch_20newsgroups(data_home='/Users/admin/work/edtech-scrape/', subset=type, remove=('headers', 'footers', 'quotes'))
+    data = fetch_20newsgroups(data_home='./data/', subset=type, remove=('headers', 'footers', 'quotes'))
     files = data['data'];
     return files
 
