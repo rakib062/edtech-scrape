@@ -20,7 +20,7 @@ import pickle
 
 faulthandler.enable() #for stacktrace
 
-repo_root = '/Users/admin/work/edtech-scrape'
+repo_root = '/data/rakhasan/edtech-scrape'
 
 NSEEDS = 5
 
@@ -44,7 +44,6 @@ def main():
 
     # train_word_to_file, train_w_to_f_mult, files = preprocess.create_vocab_and_files(stopwords, args.dataset, args.preprocess, "train", vocab)
     train_word_to_file, train_w_to_f_mult, files = preprocess.create_vocab_preprocess_(stopwords, data, vocab, args.preprocess)
-    return None
     files_num = len(files)
     print("len vocab size:", len(train_word_to_file.keys()))
 
