@@ -174,6 +174,7 @@ def get_tfidf_score(data, train_vocab):
 
     words = tfidf_vectorizer.get_feature_names_out()
     total_tf_idf = tfidf_vectorizer_vectors.sum(axis=0)
+    total_tf_idf = np.asarray(total_tf_idf).reshape(-1)
 
     vocab = set(words) & set(train_vocab.keys())
     for i, word in enumerate(words):
