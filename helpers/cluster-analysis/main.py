@@ -107,12 +107,12 @@ def main():
 
 
 
-    dev_word_to_file, dev_word_to_file_mult, dev_files = preprocess.create_vocab_and_files(stopwords, args.dataset,args.preprocess, "valid", vocab)
-    dev_files_num = len(dev_files)
+    # dev_word_to_file, dev_word_to_file_mult, dev_files = preprocess.create_vocab_and_files(stopwords, args.dataset,args.preprocess, "valid", vocab)
+    # dev_files_num = len(dev_files)
 
 
-    test_word_to_file, test_word_to_file_mult, test_files = preprocess.create_vocab_and_files(stopwords, args.dataset,args.preprocess, "test", vocab)
-    test_files_num = len(test_files)
+    # test_word_to_file, test_word_to_file_mult, test_files = preprocess.create_vocab_and_files(stopwords, args.dataset,args.preprocess, "test", vocab)
+    # test_files_num = len(test_files)
 
 
 
@@ -142,7 +142,9 @@ def main():
 
 
             top_k_words = rerank(args.rerank, top_k_words, top_k, train_w_to_f_mult, train_word_to_file, tf_idf, tfdf)
-            val = npmi.average_npmi_topics(top_k_words, len(top_k_words), dev_word_to_file, dev_files_num)
+
+            #evaluate through NMPI, currently the train set is used instead of any test/validation set
+            val = npmi.average_npmi_topics(top_k_words, len(top_k_words), train_word_to_file, train_w_to_f_mult) 
 
             if np.isnan(val):
                 NSEEDS +=1
