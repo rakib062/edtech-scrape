@@ -20,8 +20,6 @@ import pickle
 
 faulthandler.enable() #for stacktrace
 
-repo_root = '/Users/admin/work/edtech-scrape'
-
 NSEEDS = 5
 
 def trace(frame, event, arg):
@@ -30,10 +28,19 @@ def trace(frame, event, arg):
 
 # sys.settrace(trace)
 
+def check_paths(paths):
+    for path in paths:
+        if not os.path.exists(path):
+            print('Path not exists: ', path)
+            return False
+    return True
+
 def main():
     args = parse_args()
 
-    stopwords = set([line.strip() for line in open('{}/helpers/stopwords-en.txt'.format(repo_root))])
+    check_paths([args.ftmodel, args.vocab])
+
+    stopwords = set([line.strip() for line in open('../stopwords-en.txt')])
     vocab = []#preprocess.create_global_vocab(args.vocab)or line in open(vocab_file):
     data = []
     for line in open(args.vocab):
