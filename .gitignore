@@ -8,4 +8,7 @@ helpers/__pycache__/**
 /processed-data/**
 helpers/bot_auth.py
 helpers/fastText/**
+helpers/cluster-analysis/__pycache__/**
+helpers/cluster-analysis/bin/**
+helpers/cluster-analysis/code/**
 .DS_Store
