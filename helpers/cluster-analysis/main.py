@@ -144,7 +144,7 @@ def main():
             top_k_words = rerank(args.rerank, top_k_words, top_k, train_w_to_f_mult, train_word_to_file, tf_idf, tfdf)
 
             #evaluate through NMPI, currently the train set is used instead of any test/validation set
-            val = npmi.average_npmi_topics(top_k_words, len(top_k_words), train_word_to_file, train_w_to_f_mult) 
+            val = npmi.average_npmi_topics(top_k_words, len(top_k_words), train_word_to_file, files_num) 
 
             if np.isnan(val):
                 NSEEDS +=1
