@@ -40,7 +40,7 @@ def main():
 
     check_paths([args.ftmodel, args.vocab])
 
-    stopwords = set([line.strip() for line in open('../stopwords-en.txt')])
+    stopwords = set([line.strip() for line in open(args.stopwords_file)])
     vocab = []#preprocess.create_global_vocab(args.vocab)or line in open(vocab_file):
     data = []
     for line in open(args.vocab):
@@ -273,8 +273,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--entities", type=str, choices=["word2vec", "fasttext", "glove", "KG"], required=True)
     parser.add_argument("--ftmodel", type=str, help='fasttext model file', required=True)
     parser.add_argument("--vocab", required=True,  type=str)#, nargs='+', default=[])
+    parser.add_argument( "--stopwords_file", type=str, required=True, help="file containing stopwords")
     parser.add_argument( "--entities_file", type=str, help="entity file")
-    parser.add_argument("--model-outdir",  type=str)#, nargs='+', default=[])
+    parser.add_argument("--model_outdir",  type=str)#, nargs='+', default=[])
     
     parser.add_argument("--clustering_algo", type=str, required=True, choices=["KMeans", "SPKMeans", "GMM", "KMedoids","Agglo","DBSCAN","Spectral","VMFM",
         'from_file', 'LDA'])
