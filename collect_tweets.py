@@ -167,7 +167,8 @@ def search_tweets(query, start_time, since_id, outdir, count):
             print('query: {} ({}), tweets: {}, total: {}'.format(
                 query, count, len(response.data), tweet_count))
 
-            if len(response.data)==0:
+            if response.data==None or len(response.data)==0:
+                print('no response found for: {}\n'.format(query))
                 continue
 
             user_df = users_to_df(response)
