@@ -241,8 +241,7 @@ def collect_tweets(outdir, tagfile, stat_dir):
                 since_id = latest_tweet['tweetid']
 
 
-        success = collect_tweets.search_tweets(tag, 
-                                    start_time, since_id,outdir, i)
+        success = search_tweets(tag, start_time, since_id,outdir, i)
 
         if success:
             donetags.add(tag)
