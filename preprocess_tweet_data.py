@@ -10,9 +10,7 @@ import re
 import glob, sys,os
 from tqdm import tqdm
 
-data_path = './data/'
-if not os.path.exists(data_path):
-    os.makedirs(data_path)
+tqdm.pandas()
 
 def detect_profile_lang(lang1, lang2, lang3):
 	if lang1==lang2:
@@ -63,17 +61,25 @@ def combine_dfs(src_path, dest_path):
 
 
 
-def preprocess_user_df():
-	user_df = pd.read_pickle(data_path+'/ed-users-all.pkl')
+def preprocess_user_df(infile, outfile):
+	user_df = pd.read_pickle(infile)
 
-	user_df['profile_desc_clean']= user_df.apply(lambda row: re.sub(r'\W+', ' ', str(row.profile_desc)).lower().strip(), axis=1)
+	user_df['profile_desc_clean']= user_df.progress_apply(lambda row: ' '.join(text_processing.preprocess_text(row.profile_desc)), axis=1)
+	print('detecting profile language...')
+	user_df['lang1'] = user_df.progress_apply(lambda row: text_processing.detect_lang(row.profile_desc_clean, detector='langid') \
+									if len(row.profile_desc_clean)>3 else 'NA', axis=1)
+	user_df['lang2'] = user_df.progress_apply(lambda row: text_processing.detect_lang(row.profile_desc_clean, detector='fasttext') \
+									if len(row.profile_desc_clean)>3 else 'NA', axis=1)
+	user_df['lang3'] = user_df.progress_apply(lambda row: text_processing.detect_lang(row.profile_desc_clean, detector='cld3') \
+									if len(row.profile_desc_clean)>3 else 'NA', axis=1)
+	user_df['profile_lang'] = user_df.progress_apply(lambda row: detect_profile_lang(row.lang1, row.lang2, row.lang3), axis=1)
+	print('saving dataframe...')
+	user_df.to_pickle(outfile)
+	print('done')
 
-	user_df['lang1'] = user_df.apply(lambda row: text_processing.detect_lang(row.profile_desc_clean, detector='langid') \
-									if len(row.profile_desc_clean)>3 else 'NA', axis=1)
-	user_df['lang2'] = user_df.apply(lambda row: text_processing.detect_lang(row.profile_desc_clean, detector='fasttext') \
-									if len(row.profile_desc_clean)>3 else 'NA', axis=1)
-	user_df['lang3'] = user_df.apply(lambda row: text_processing.detect_lang(row.profile_desc_clean, detector='cld3') \
-									if len(row.profile_desc_clean)>3 else 'NA', axis=1)
-	
-	user_df['profile_lang'] = user_df.apply(lambda row: detect_profile_lang(row.lang1, row.lang2, row.lang3), axis=1)
-	user_df.to_pickle(data_path+'/ed-users-all-preprocessed.pkl')
+def write_user_profile_des(infile, outfile, append=False):
+	user_df = pd.read_pickle(infile)
+	user_df = user_df[(user_df.profile_lang=='en')]
+	mode = 'a' if append else 'w'
+	with open(outfile, mode) as file:
+		user_df.progress_apply(lambda row: file.write(row.profile_desc_clean+'\n'), axis=1)
