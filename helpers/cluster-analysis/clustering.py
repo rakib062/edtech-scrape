@@ -77,19 +77,19 @@ def KMedoids_model(vocab_embeddings, vocab, topics,  rand):
     return m_clusters, indices, kmedoids
 
 def KMeans_model(vocab_embeddings, vocab, topics, rerank, rand, weights):
-    kmeans = KMeans(n_clusters=topics, random_state=rand).fit(vocab_embeddings, sample_weight=weights)
-    m_clusters = kmeans.predict(vocab_embeddings, sample_weight=weights)
-    centers = np.array(kmeans.cluster_centers_)
+    model = KMeans(n_clusters=topics, random_state=rand).fit(vocab_embeddings, sample_weight=weights)
+    predictions = model.predict(vocab_embeddings, sample_weight=weights)
+    centers = np.array(model.cluster_centers_)
 
     indices = []
 
     for i in range(topics):
-        topk_vals = sort_closest_center(centers[i], m_clusters, vocab_embeddings, i)
+        topk_vals = sort_closest_center(centers[i], predictions, vocab_embeddings, i)
         if rerank:
             indices.append(find_top_k_words(100, topk_vals, vocab))
         else:
             indices.append(find_top_k_words(10, topk_vals, vocab))
-    return m_clusters, indices, kmeans
+    return predictions, indices, model
 
 
 def SphericalKMeans_model(vocab_embeddings,vocab,topics, rerank, rand, weights):
