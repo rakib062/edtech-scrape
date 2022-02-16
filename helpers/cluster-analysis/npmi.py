@@ -6,13 +6,36 @@ import numpy as np
 #import pdb
 import math
 import os, sys
-
+from sklearn.metrics.pairwise import cosine_similarity
 # argparser
 import argparse
 #from distutils.util import str2bool
 
 # Custom imports
 
+def topic_similarity_vec(topic_words, ntopics, ft_model):
+    '''
+        Computes mean of the pairwise cosine similarity in top-k words in a topic.
+        Final score is the average across all topics.
+    '''
+    all_topics_score = []
+    for k in range(ntopics):
+        ntopw = len(topic_words[k]) #number of top words in the current topic
+        topic_score = []
+        for i in range(ntopw-1):
+            for j in range(i+1, ntopw):
+                w1 = topic_words[k][i] #first top word
+                w2 = topic_words[k][j] #next top word
+                sim = cosine_similarity([ft_model.get_word_vector(w1)], [ft_model.get_word_vector(w2)])
+                topic_score.append(sim)
+        all_topics_score.append(np.mean(topic_score))
+
+    for k in range(ntopics):
+        print('{:.3f} : {}'.format(all_topics_score[k], ' '.join(topic_words[k])))
+
+    print('Mean: {:.3f}, var:{:.3f}'.format(np.mean(all_topics_score), np.var(all_topics_score)))
+
+    return np.mean(all_topics_score)
 
 
 def average_npmi_topics(topic_words, ntopics, word_doc_counts, nfiles):
