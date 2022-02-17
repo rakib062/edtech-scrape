@@ -74,11 +74,11 @@ def main():
     #     intersection, words_index_intersect = embedding.find_intersect(word_index, train_w_to_f_mult, data, files_num, args.entities, args.weight_type)
     print('ftmodel: ', args.ftmodel)
     ft_model = fasttext.load_model(args.ftmodel)
-    intersection, words_index_intersect = embedding.create_entities_ft(ft_model, train_w_to_f_mult, args.weight_type)
-    print(intersection.shape)
+    word_embaddings, words_index_intersect = embedding.create_entities_ft(ft_model, train_w_to_f_mult, args.weight_type)
+    print(word_embaddings.shape)
 
     if args.use_dims:
-        intersection = clustering.PCA_dim_reduction(intersection, args.use_dims)
+        word_embaddings = clustering.PCA_dim_reduction(word_embaddings, args.use_dims)
 
     weights = None
     tfdf = None
@@ -107,46 +107,31 @@ def main():
         weights = np.log(weights)
 
 
-
-
-
-    # dev_word_to_file, dev_word_to_file_mult, dev_files = preprocess.create_vocab_and_files(stopwords, args.dataset,args.preprocess, "valid", vocab)
-    # dev_files_num = len(dev_files)
-
-
-    # test_word_to_file, test_word_to_file_mult, test_files = preprocess.create_vocab_and_files(stopwords, args.dataset,args.preprocess, "test", vocab)
-    # test_files_num = len(test_files)
-
-
-
-
     topics_npmi = []
-
+    model_outfile = None
     for topics in args.num_topics:
         npmis = []
-
         print("Number of Clusters:" + str(topics))
         rand = 0
         global NSEEDS
         while rand < NSEEDS:
-
-            model_outfile = None
-            if args.model_outdir:
-                model_outfile = '{}/model-{}-{}-{}.model'.format(args.model_outdir, args.clustering_algo, topics, rand)
+            
+            if args.model_path:
+                model_outfile = '{}/model-{}-{}-{}.model'.format(args.model_path, args.clustering_algo, topics, rand)
 
             try:
-                top_k_words, topk_indices = cluster(args.clustering_algo, intersection, words_index_intersect, topics, args.rerank, weights, args.topics_file, rand, model_outfile=model_outfile)
+                top_k_words, topk_indices = cluster(args.clustering_algo, word_embaddings, words_index_intersect, topics, args.rerank, weights, args.topics_file, rand, model_outfile=model_outfile)
             except:
                 print("Warning: failed, try diff random seed.")
                 new_rand = random.randint(5,1000)
-                top_k_words, topk_indices = cluster(args.clustering_algo, intersection, \
+                top_k_words, topk_indices = cluster(args.clustering_algo, word_embaddings, \
                         words_index_intersect, topics, args.rerank, weights, args.topics_file, new_rand,  model_outfile=model_outfile)
 
 
 
             top_k_words = rerank(args.rerank, top_k_words, topk_indices, train_w_to_f_mult, train_word_to_file, tf_idf, tfdf)
 
-            #evaluate through NMPI, currently the train set is used instead of any test/validation set
+            #evaluate the topics, currently the train set is used instead of any test/validation set
             val = npmi.topic_similarity_vec(top_k_words, len(top_k_words), ft_model) 
 
             if np.isnan(val):
@@ -173,29 +158,28 @@ def main():
 
 
 
-
-def cluster(clustering_algo, intersection, words_index_intersect, num_topics, rerank, weights, topics_file, rand, model_outfile=None):
+def cluster(clustering_algo, word_embaddings, words_index_intersect, num_topics, rerank, weights, topics_file, rand, model_outfile=None):
     if clustering_algo == "KMeans":  
-        predicted_labels, topk_indices, model= clustering.KMeans_model(intersection, words_index_intersect, num_topics, rerank, rand, weights)
+        predicted_labels, topk_indices, model= clustering.KMeans_model(word_embaddings, words_index_intersect, num_topics, rerank, rand, weights)
         if model_outfile:
             pickle.dump(model, open(model_outfile, 'wb'))
     # elif clustering_algo == "SPKMeans":
-    #     labels, top_k  = clustering.SphericalKMeans_model(intersection, words_index_intersect, num_topics, rerank, rand, weights)
+    #     labels, top_k  = clustering.SphericalKMeans_model(word_embaddings, words_index_intersect, num_topics, rerank, rand, weights)
     # elif clustering_algo == "GMM":
-    #     labels, top_k = clustering.GMM_model(intersection, words_index_intersect, num_topics, rerank, rand)
+    #     labels, top_k = clustering.GMM_model(word_embaddings, words_index_intersect, num_topics, rerank, rand)
     # elif clustering_algo == "KMedoids":
-    #     labels, top_k  = clustering.KMedoids_model(intersection,  words_index_intersect,  num_topics, rand)
+    #     labels, top_k  = clustering.KMedoids_model(word_embaddings,  words_index_intersect,  num_topics, rand)
     # elif clustering_algo == "VMFM":
-    #     labels, top_k = clustering.VonMisesFisherMixture_Model(intersection, words_index_intersect, num_topics, rerank, rand)
+    #     labels, top_k = clustering.VonMisesFisherMixture_Model(word_embaddings, words_index_intersect, num_topics, rerank, rand)
 
     # #Affinity matrix based
     # elif clustering_algo == "DBSCAN":
     #     k=6
-    #     labels, top_k  = clustering.DBSCAN_model(intersection,k)
+    #     labels, top_k  = clustering.DBSCAN_model(word_embaddings,k)
     # elif clustering_algo == "Agglo":
     #     labels, top_k  = clustering.Agglo_model(intersecticlustering_algoon, num_topics, rand)
     # elif clustering_algo == "Spectral":
-    #     labels, top_k  = clustering.SpectralClustering_Model(intersection,num_topics, rand,  weights)
+    #     labels, top_k  = clustering.SpectralClustering_Model(word_embaddings,num_topics, rand,  weights)
 
     # if clustering_algo == 'from_file':
     #     with open('bert_topics.txt', 'r') as f:
@@ -280,7 +264,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument( "--entities_file", type=str, help="entity file")
     parser.add_argument( "--weight_file", type=str, required=True, help="file to save to/load from vocab weights")
     parser.add_argument( "--tfidf_file", type=str, required=True, help="file to save to/load from vocab tf-idf weights")
-    parser.add_argument("--model_outdir",  type=str)#, nargs='+', default=[])
+    parser.add_argument("--model_path",  type=str, help="directory where trained models will be saved, or a filename to load model from")#, nargs='+', default=[])
     
     parser.add_argument("--clustering_algo", type=str, required=True, choices=["KMeans", "SPKMeans", "GMM", "KMedoids","Agglo","DBSCAN","Spectral","VMFM",
         'from_file', 'LDA'])

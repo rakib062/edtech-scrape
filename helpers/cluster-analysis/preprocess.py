@@ -168,22 +168,26 @@ def create_vocab_preprocess_(stopwords, data, vocab, preprocess, process_data=Fa
     '''
         parameters
             @data: list of strings
+        returns
+         two dictionaries, where the keys are unique works in the corpus and values
+         are set and list of files where that word appeared
+
     '''
 
-    word_to_file = {}
-    word_to_file_mult = {}
+    word_to_file = {} # dict of set
+    word_to_file_mult = {} #dict of list
     strip_punct = str.maketrans("", "", string.punctuation)
     strip_digit = str.maketrans("", "", string.digits)
 
     process_files = []
-    for file_num in range(len(data)):
-        words = data[file_num].translate(strip_punct).translate(strip_digit).split()        
+    for file_num in range(len(data)): #for each doc/line
+        words = data[file_num].translate(strip_punct).translate(strip_digit).split() #split it into words and remove punc/digits        
         proc_file = []
 
-        for word in words:
+        for word in words: # for each word in the line
             if word in stopwords or (word not in vocab and len(vocab)) or word =="dlrs" or word == "revs":
                 continue
-            if word in word_to_file:
+            if word in word_to_file: #save the doc no where this word appeared
                 word_to_file[word].add(file_num)
                 word_to_file_mult[word].append(file_num)
             else:
@@ -195,7 +199,7 @@ def create_vocab_preprocess_(stopwords, data, vocab, preprocess, process_data=Fa
 
         process_files.append(proc_file)
 
-    for word in list(word_to_file):
+    for word in list(word_to_file): #for each unique word, check if it has less than 3 chars or appears fewer time, if so, remove it
         if len(word_to_file[word]) <= preprocess  or len(word) <= 3:
             word_to_file.pop(word, None)
             word_to_file_mult.pop(word, None)
