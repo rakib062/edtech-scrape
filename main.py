@@ -7,11 +7,17 @@ import argparse
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(__doc__)
-    parser.add_argument("--task", type=str, required=True, choices=["collect-tweet", "combine-csv-dfs", "merge-dfs"], help='what do you want to do?')
-    parser.add_argument("--out_dir", required=True, type=str, default='', help='out put directory')
-    parser.add_argument( "--in_dir", type=str, default='', help="input directory")
-    parser.add_argument( "--kw_file", type=str, help="files containig search keywords/hashtags/...")
-    parser.add_argument( "--stat_dir", type=str, default='', help="tweet stat dir")
+    parser.add_argument("--task", type=str, required=True, 
+        choices=["collect-tweet", "combine-csv-dfs", "merge-dfs"], 
+        help='what do you want to do?')
+    parser.add_argument("--out_dir", required=True, type=str, 
+        default='', help='out put directory')
+    parser.add_argument( "--in_dir", type=str, default='', 
+        help="input directory")
+    parser.add_argument( "--kw_file", type=str, 
+        help="files containig search keywords/hashtags/...")
+    parser.add_argument( "--stat_dir", type=str, 
+        default='', help="tweet stat dir")
     
   
     args = parser.parse_args()
