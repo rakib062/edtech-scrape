@@ -167,7 +167,8 @@ def search_tweets(query, start_time, since_id, outdir, count):
             print('query: {} ({}), tweets: {}, total: {}'.format(
                 query, count, len(response.data), tweet_count))
 
-            if len(response.data)==0:
+            if response.data==None or len(response.data)==0:
+                print('no response found for: {}\n'.format(query))
                 continue
 
             user_df = users_to_df(response)
@@ -202,3 +203,49 @@ def search_tweets(query, start_time, since_id, outdir, count):
         with open('exceptions.txt', 'a') as file:
             file.write("query:{}, exception:{}\n".format(query, e))
         return False
+
+
+def collect_tweets(outdir, tagfile, stat_dir):
+    if not os.path.exists(outdir):
+            os.makedirs(outdir)
+            
+    with open(tagfile) as csv_file:
+        reader = csv.reader(csv_file)
+        tags = set(list(reader)[0])
+
+    tags =  set([t.strip().lower() for t in tags])
+    print("tags: ", len(tags))
+        
+    donetags = set([])
+    if os.path.isfile('donetags.csv'): 
+        with open('donetags.csv') as csv_file:
+            reader = csv.reader(csv_file)
+            donetags = set(list(reader)[0])
+
+    donetags =  set([t.strip().lower() for t in donetags])
+    tags = tags.difference(donetags)
+    print("donetags:{}, tags:{} ".format(len(donetags), len(tags)))
+
+    i=1
+    for tag in tags:
+        tag = tag.strip()
+        print("Starting search for tag no:{} of {}, tag:{}".format(i, len(tags),tag))
+        i+=1
+        '''
+        Retrieve the latest tweet collected before
+        '''
+        start_time = '2006-03-21T00:00:00Z'
+        since_id = None
+        if os.path.isfile('{}/tweet-stat-{}.json'.format(stat_dir, tag)):
+            with open('{}/tweet-stat-{}.json'.format(stat_dir, tag), 'r') as fp:
+                latest_tweet = json.loads(json.load( fp))
+                since_id = latest_tweet['tweetid']
+
+
+        success = search_tweets(tag, start_time, since_id,outdir, i)
+
+        if success:
+            donetags.add(tag)
+            with open('donetags.csv', 'w') as csv_file:  
+                writer = csv.writer(csv_file)
+                writer.writerow(donetags)
