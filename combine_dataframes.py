@@ -1,7 +1,7 @@
 import pandas as pd
 import glob, sys, csv, json, os
 
-def combine_dfs(indir, tag, outdir, stat_dir):
+def clean_csv_dfs_(indir, tag, outdir, stat_dir):
 	'''
 	Combine all dataframes for a given hastag to one dataframe.
 	'''
@@ -67,19 +67,34 @@ def combine_dfs(indir, tag, outdir, stat_dir):
 		df[~df.index.duplicated(keep='first')]
 		df.to_pickle('{}/media-search-{}.pkl'.format(outdir, tag))
 
+def clean_csv_dfs(indir, outdir, tag_file, stat_dir):
+	print('cleaning csv dfs')
+	if not os.path.exists(outdir):
+        	os.makedirs(outdir)
 
-indir = sys.argv[1]
-tag_file = sys.argv[2]
-outdir = sys.argv[3]
-stat_dir=sys.argv[4]
+	tags = set([])
+	with open(tag_file) as csv_file:
+		reader = csv.reader(csv_file)
+		tags = set(list(reader)[0])
 
-if not os.path.exists(outdir):
-        os.makedirs(outdir)
+	for tag in tags:
+		clean_csv_dfs(indir, tag.strip().lower(), outdir, stat_dir)
 
-tags = set([])
-with open(tag_file) as csv_file:
-	reader = csv.reader(csv_file)
-	tags = set(list(reader)[0])
 
-for tag in tags:
-	combine_dfs(indir, tag.strip().lower(), outdir, stat_dir)
+def merge_dfs(indir, outdir):
+	print('merging dfs')
+	tweet_files = glob.glob('{}/tweets-search-*.csv'.format(indir))
+	tweet_dfs = []
+	for file in tweet_files:
+		df= pd.read_pickle(file)
+		df['search_term'] = file.split('-')[-1][:-4].strip()
+		tweet_dfs.append(df)
+	pd.concat(tweet_dfs).to_pickle('{}/all-tweets.pkl'.format(outdir))
+
+	users_files = glob.glob('{}/users-search-*.csv'.format(indir))
+	users_dfs = []
+	for file in users_files:
+		df= pd.read_pickle(file)
+		df['search_term'] = file.split('-')[-1][:-4].strip()
+		users_dfs.append(df)
+	pd.concat(users_dfs).to_pickle('{}/all-users.pkl'.format(outdir))
