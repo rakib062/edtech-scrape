@@ -68,7 +68,7 @@ def clean_csv_dfs_(indir, tag, outdir, stat_dir):
 		df.to_pickle('{}/media-search-{}.pkl'.format(outdir, tag))
 
 def clean_csv_dfs(indir, outdir, tag_file, stat_dir):
-	print('cleaning csv dfs')
+	print('cleaning csv dfs. indir:{}, outdir:{}, tag_file:{}, stat_dir:{}'.format(indir, outdir, tag_file, stat_dir))
 	if not os.path.exists(outdir):
         	os.makedirs(outdir)
 
@@ -78,7 +78,7 @@ def clean_csv_dfs(indir, outdir, tag_file, stat_dir):
 		tags = set(list(reader)[0])
 
 	for tag in tags:
-		clean_csv_dfs(indir, tag.strip().lower(), outdir, stat_dir)
+		clean_csv_dfs_(indir, tag.strip().lower(), outdir, stat_dir)
 
 
 def merge_dfs(indir, outdir):
