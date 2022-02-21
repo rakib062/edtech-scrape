@@ -83,7 +83,7 @@ def clean_csv_dfs(indir, outdir, tag_file, stat_dir):
 
 def merge_dfs(indir, outdir):
 	print('merging dfs')
-	tweet_files = glob.glob('{}/tweets-search-*.csv'.format(indir))
+	tweet_files = glob.glob('{}/tweets-search-*.pkl'.format(indir))
 	tweet_dfs = []
 	for file in tweet_files:
 		df= pd.read_pickle(file)
@@ -91,7 +91,7 @@ def merge_dfs(indir, outdir):
 		tweet_dfs.append(df)
 	pd.concat(tweet_dfs).to_pickle('{}/all-tweets.pkl'.format(outdir))
 
-	users_files = glob.glob('{}/users-search-*.csv'.format(indir))
+	users_files = glob.glob('{}/users-search-*.pkl'.format(indir))
 	users_dfs = []
 	for file in users_files:
 		df= pd.read_pickle(file)
