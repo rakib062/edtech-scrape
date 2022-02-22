@@ -3,22 +3,25 @@ from os.path import join
 import pandas as pd
 import fasttext as ft
 from tqdm import tqdm
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 tqdm.pandas()
 from scipy.stats import mode
 
 sys.path.append('helpers/')
+from tweetokenize import *
+import senti_processing
 
 import text_processing, topic_modeling
 import preprocess_tweet_data
 
-data_root ='./data/'
+data_root ='/Users/admin/onedrive/work/edtech-scrape-data/'
 
 NUM_USR_PROF_CLUSTER=50  
 ALGO_USR_PROF_CLUSTER='KMeans'
 
 TWEET_USER_DF = join(data_root, 'ed-users-all.pkl') #containing profile info for all users
 TWEET_USER_DF_EN = join(data_root, 'ed-users-en.pkl') #containing profile info for users with (detected) 'en' description
-TWEET_USER_PROFILE_TEXT = join(data_root, 'tweet-profile-text.txt') #file containing cleaned profile descriptions
+TWEET_USER_PROFILE_TEXT = join(data_root, 'tweet-profile-text-en.txt') #file containing cleaned profile descriptions
 PREPROCESSED_TWEET_TEXT = join(data_root,'tweet-text-en.txt') #file containing cleaned tweet text
 PROFILE_FT_MODEL = join(data_root, 'ft-profile-sg') #fasttext model for profle desc, using skipgram to catch semantic relationships
 #PROFILE_VEC_DF = join(data_root,'profile-vec-df.pkl')
@@ -47,13 +50,14 @@ print('\n\n#################### Handling profile data ####################\n')
 print('\tpreprocessing profile text...')
 preprocess_tweet_data.preprocess_user_df(infile=TWEET_USER_DF, outfile=TWEET_USER_DF)
 
-print('\twriting profile text in file...')
-preprocess_tweet_data.write_user_profile_des(infile=TWEET_USER_DF, outfile=TWEET_USER_PROFILE_TEXT)
-
 print('\tsaving profile dataframe containing en users...')
 user_df = pd.read_pickle(TWEET_USER_DF)
 user_df_en = user_df[user_df.profile_lang=='en']
 user_df_en.to_pickle(TWEET_USER_DF_EN) 
+
+print('\twriting english profile text in file...')
+preprocess_tweet_data.write_user_profile_des(infile=TWEET_USER_DF_EN, outfile=TWEET_USER_PROFILE_TEXT)
+
 
 print('\ttraining fastText skipgram model with profile description...')
 os.system('./helpers/fastText/fasttext skipgram -input {} -output {}'.format(TWEET_USER_PROFILE_TEXT, PROFILE_FT_MODEL))
@@ -110,9 +114,14 @@ sec_priv_df = sec_priv_df[sec_priv_df==True]
 sec_priv_df = tweet_df.loc[sec_priv_df.index]
 sec_priv_df.to_pickle('data/sec_priv_df.pkl')
 
-#################### Preprocessing Tweet Texts ####################
-# print('#################### Preprocessing Tweet Texts ####################\n')
-# text_processing.create_preprocessed_tweet_data(outfile=preprocessed_tweet_file, data_frame_file=tweet_df_file)
+print('#################### Preprocessing Tweet Texts ####################\n')
+text_processing.create_preprocessed_tweet_data(outfile=EN_TWEET_DF_FILE, data_frame_file=EN_TWEET_DF_FILE)
+
+tweet_df_en = pd.read_pickle(EN_TWEET_DF_FILE)
+print('#################### Sentiment of Tweet Texts ####################\n')
+vader = SentimentIntensityAnalyzer()
+tweet_df_en['senti'] = tweet_df_en.progress_apply(lambda tweet: vader.polarity_scores(
+        ' '.join(senti_tokenizer.tokenize(tweet.text))), axis=1)
 
 # print('creating trigrams...')
 # topic_modeling.create_trigrams(textfile=preprocessed_tweet_file, outpath=topic_modeling_dir)

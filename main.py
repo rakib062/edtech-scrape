@@ -2,7 +2,7 @@ import sys, csv,os
 import collect_tweets
 import json
 import argparse
-# import combine_dataframes
+import combine_dataframes
 
 
 def parse_args() -> argparse.Namespace:
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     if  args.task=='merge-dfs':
         combine_dataframes.merge_dfs(indir=args.in_dir, outdir=args.out_dir)
     elif args.task=='clean-csv-dfs':
-        combine_dataframes.clean_csv_dfs(indir=arg.in_dir, 
+        combine_dataframes.clean_csv_dfs(indir=args.in_dir, 
             outdir=args.out_dir, tag_file=args.kw_file, stat_dir=args.stat_dir)
     elif args.task=='collect-tweet':
         collect_tweets.collect_tweets(args.out_dir, args.kw_file, args.stat_dir)
