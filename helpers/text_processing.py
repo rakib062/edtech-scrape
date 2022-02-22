@@ -9,7 +9,7 @@ import re
 import string
 import nltk
 
-import langdetect, langid, fasttext, cld3
+import langdetect, langid, fasttext
 
 from nltk.corpus import stopwords
 from nltk.stem.lancaster import LancasterStemmer
@@ -234,8 +234,6 @@ def detect_lang(text, detector='fasttext'):
             return fasttext_lang_detect_model.predict(text)[0][0][-2:]
         if detector=='langid':
             return langid.classify(text)[0]
-        if detector=='cld3':
-            return  cld3.get_language(text).language
     except Exception as e:
         print('Text: {} \ndetector: {} \nerror:{}'.format(text, detector, e))
         return 'NA'
