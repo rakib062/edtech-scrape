@@ -82,7 +82,7 @@ def preprocess_tweet(tweet, pos=False,  stem = False):
     tokens = tokenizer.tokenize(text)
     
     # remove stop words and words less than 3 characters
-    tokens = [re.sub(r"\W+", '', token.lower()) for token in tokens if token not in stopwords and len(token.strip())>2] 
+    tokens = [token.lower() for token in tokens if token not in stopwords and len(token.strip())>2] 
 
 
     if pos: # calculate POS
