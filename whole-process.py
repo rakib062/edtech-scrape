@@ -64,10 +64,8 @@ preprocess_tweet_data.write_user_profile_des(infile=TWEET_USER_DF_EN, outfile=TW
 print('\ttraining fastText skipgram model with profile description...')
 os.system('./helpers/fastText/fasttext skipgram -input {} -output {}'.format(TWEET_USER_PROFILE_TEXT, PROFILE_FT_MODEL))
 
-os.system('python3 helpers/cluster-analysis/main.py --entities fasttext --clustering_algo KMeans --vocab {} --num_topics 20 30 --doc_info WGT --rerank tf'.format(TWEET_USER_PROFILE_TEXT))
-
 print('\ttraining model to cluster profiles...')
-os.system('python -Xfaulthandler helpers/cluster-analysis/main.py \
+os.system('python3 -Xfaulthandler helpers/cluster-analysis/main.py \
             --entities fasttext \
             --ftmodel data/ft-profile-sg.bin \
             --clustering_algo {} \
@@ -85,10 +83,8 @@ print('\tpredicting profile clusters using trained model')
 prof_ft_model = ft.load_model(PROFILE_FT_MODEL+'.bin')
 prof_cluster_model = pickle.load(open(USR_CLUSTER_MOD, 'rb'))
 
-user_df_en['profile_desc_clean'] = user_df.progress_apply(lambda user: 
-                re.sub(r'\W+', ' ', str(user.profile_desc)) if type(user.profile_desc)==str else '', axis=1)
-
-
+# user_df_en['profile_desc_clean'] = user_df.progress_apply(lambda user: 
+#                 re.sub(r'\W+', ' ', str(user.profile_desc)) if type(user.profile_desc)==str else '', axis=1)
 
 user_df_en['profile_cluster_w'] = user_df_en.progress_apply(lambda user: 
                 get_profile_cluster(user.profile_desc_clean) \
@@ -103,8 +99,8 @@ user_df_en['profile_cluster_s'] = user_df_en.progress_apply(lambda user:
 
 print('\n\n#################### Preprocessing tweets ####################\n')
 tweet_df = pd.read_pickle(EN_TWEET_DF_FILE)
-tweet_df = tweet_df[tweet_df.lang=='en']
-tweet_df.to_pickle(EN_TWEET_DF_FILE)
+tweet_df_en = tweet_df[tweet_df.lang=='en']
+tweet_df_en.to_pickle(EN_TWEET_DF_FILE)
 
 print('\n\n#################### Identifying security/privacy related tweets ####################\n')
 sec_priv_kws = [line.strip() for line in  open('privacy_kws')]
@@ -115,9 +111,9 @@ def contains_any_keyword(text, kws):
             return True
     return False
 
-sec_priv_df = tweet_df.progress_apply(lambda tweet: contains_any_keyword(tweet.text, sec_priv_kws), axis=1)
+sec_priv_df = tweet_df_en.progress_apply(lambda tweet: contains_any_keyword(tweet.text, sec_priv_kws), axis=1)
 sec_priv_df = sec_priv_df[sec_priv_df==True]
-sec_priv_df = tweet_df.loc[sec_priv_df.index]
+sec_priv_df = tweet_df_en.loc[sec_priv_df.index]
 sec_priv_df.to_pickle('data/sec_priv_df.pkl')
 
 print('#################### Preprocessing Tweet Texts ####################\n')
