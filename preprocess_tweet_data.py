@@ -82,3 +82,4 @@ def write_user_profile_des(infile, outfile, append=False):
 	mode = 'a' if append else 'w'
 	with open(outfile, mode) as file:
 		user_df.progress_apply(lambda row: file.write(row.profile_desc_clean+'\n'), axis=1)
+		file.close()
