@@ -1,3 +1,4 @@
+data/**
 helpters/fastText/**
 helpers/tweetokenize/__pycache__/**
 twitter_authentication.py

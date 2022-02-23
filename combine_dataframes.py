@@ -89,7 +89,7 @@ def merge_dfs(indir, outdir):
 		df= pd.read_pickle(file)
 		df['search_term'] = file.split('-')[-1][:-4].strip()
 		tweet_dfs.append(df)
-	pd.concat(tweet_dfs).to_pickle('{}/all-tweets.pkl'.format(outdir))
+	pd.concat(tweet_dfs).to_pickle('{}/tweets-all.pkl'.format(outdir))
 
 	users_files = glob.glob('{}/users-search-*.pkl'.format(indir))
 	users_dfs = []
@@ -97,4 +97,4 @@ def merge_dfs(indir, outdir):
 		df= pd.read_pickle(file)
 		df['search_term'] = file.split('-')[-1][:-4].strip()
 		users_dfs.append(df)
-	pd.concat(users_dfs).to_pickle('{}/all-users.pkl'.format(outdir))
+	pd.concat(users_dfs).to_pickle('{}/users-all.pkl'.format(outdir))

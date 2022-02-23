@@ -79,7 +79,7 @@ def preprocess_user_df(infile, outfile):
 
 def write_user_profile_des(infile, outfile, append=False):
 	user_df = pd.read_pickle(infile)
-	user_df = user_df[(user_df.profile_lang=='en')]
 	mode = 'a' if append else 'w'
 	with open(outfile, mode) as file:
 		user_df.progress_apply(lambda row: file.write(row.profile_desc_clean+'\n'), axis=1)
+		file.close()
