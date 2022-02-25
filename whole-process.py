@@ -16,7 +16,7 @@ import preprocess_tweet_data
 
 data_root ='/Users/admin/onedrive/work/edtech-scrape/data/'
 
-NUM_USR_PROF_CLUSTER=50  
+NUM_USR_PROF_CLUSTER=100  
 ALGO_USR_PROF_CLUSTER='KMeans'
 
 TWEET_USER_DF = join(data_root, 'users-all.pkl') #containing profile info for all users
@@ -26,8 +26,8 @@ PREPROCESSED_TWEET_TEXT = join(data_root,'tweet-text-en.txt') #file containing c
 PROFILE_FT_MODEL = join(data_root, 'ft-profile-sg') #fasttext model for profle desc, using skipgram to catch semantic relationships
 TWEET_DF_FILE = join(data_root, 'tweets-all.pkl')
 EN_TWEET_DF_FILE = join(data_root,'tweets-en.pkl') #dataframe with english tweets 
-USR_CLUSTER_DIR = join(data_root, 'user-cluster') #directory to save profile cluster models and outputs
-USR_CLUSTER_MOD = join(USR_CLUSTER_DIR, 'model-KMeans-10-0.model')
+USR_CLUSTER_DIR = join(data_root, 'profile-cluster-models') #directory to save profile cluster models and outputs
+USR_CLUSTER_MOD = join(USR_CLUSTER_DIR, 'model-KMeans-{}-0.model'.format(NUM_USR_PROF_CLUSTER))
 TWEET_TOPIC_DIR = join(data_root, 'tweet-topic') #directory to contain topic models and outputs for tweets
 
 if not os.path.exists(TWEET_TOPIC_DIR):
