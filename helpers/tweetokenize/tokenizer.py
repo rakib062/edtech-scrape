@@ -97,7 +97,7 @@ class Tokenizer(object):
     quotes_re = re.compile(r"|".join(r'({}.*?{})'.format(f,s) for f,s in doublequotes) + r'|\s(\'.*?\')\s')
     del doublequotes
 
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs, stopwords_file=None):
         """
         Constructs a new Tokenizer. Can specify custom settings for various 
         feature normalizations.
@@ -156,7 +156,7 @@ class Tokenizer(object):
         """
         for keyword in self._default_args:
             setattr(self, keyword, kwargs.get(keyword, self._default_args[keyword]))
-        self.emoticons(filename=self._lexicons.format('emoticons'))
+        self.emoticons(filename=self._lexicons.format('emoticons') if stopwords_file==None else stopwords_file)
         self.stopwords(filename=self._lexicons.format('stopwords'))
 
     def __call__(self, iterable):
