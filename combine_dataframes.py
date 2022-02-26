@@ -6,7 +6,7 @@ def clean_csv_dfs_(indir, tag, outdir, stat_dir):
 	Combine all dataframes for a given hastag to one dataframe.
 	'''
 
-	print("********************Tag: {}***********************".format(tag))
+	print("********************Tag:{}***********************".format(tag))
 	dfs = [pd.read_csv(file, lineterminator='\n') for file in \
 			glob.glob('{}/tweets-search-{}*.csv'.format(indir, tag))]
 	if len(dfs)==0:    
@@ -21,8 +21,6 @@ def clean_csv_dfs_(indir, tag, outdir, stat_dir):
 	df = df[df.tweetid!='nan']
 	df.set_index("tweetid", inplace=True)
 	df[~df.index.duplicated(keep='first')]
-	df.reset_index(inplace=True, drop=False)
-	df['tweetid'] = df.tweetid.astype(int)
 	print("number of unique tweets: {}".format(len(df)))
 	df.to_pickle('{}/tweets-search-{}.pkl'.format(outdir, tag))
 
@@ -42,7 +40,7 @@ def clean_csv_dfs_(indir, tag, outdir, stat_dir):
 		df['userid'] = df.userid.astype(str)
 		df = df[df.userid!='nan']
 		df.set_index('userid', inplace=True)
-		df[~df.index.duplicated(keep='first')]
+		df = df[~df.index.duplicated(keep='first')]
 		print("number of unique users: {}".format(len(df)))
 		df.to_pickle('{}/users-search-{}.pkl'.format(outdir, tag))
 
@@ -89,7 +87,10 @@ def merge_dfs(indir, outdir):
 		df= pd.read_pickle(file)
 		df['search_term'] = file.split('-')[-1][:-4].strip()
 		tweet_dfs.append(df)
-	pd.concat(tweet_dfs).to_pickle('{}/tweets-all.pkl'.format(outdir))
+
+	tweet_df=pd.concat(tweet_dfs)
+	tweet_df = tweet_df[~tweet_df.index.duplicated(keep='first')]
+	tweet_df.to_pickle('{}/tweets-all.pkl'.format(outdir))
 
 	users_files = glob.glob('{}/users-search-*.pkl'.format(indir))
 	users_dfs = []
