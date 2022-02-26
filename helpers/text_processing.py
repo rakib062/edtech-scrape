@@ -30,10 +30,8 @@ stopwords.update(set(custom_stopwords))
 #model downloaded from: https://fasttext.cc/docs/en/language-identification.html 
 fasttext_lang_detect_model = fasttext.load_model(os.path.join(curdir, 'models', 'fasttext-lang-detect-model.bin'))
 
-def printf(text):
-    sys.stdout.write(text)
-    sys.stdout.flush()
-
+tokenizer = Tokenizer(usernames="USERNAME", urls='URL', hashtags=False, phonenumbers='', 
+                times='', numbers='', ignorequotes=True, ignorestopwords=False) 
 
 def preprocess_text(document, stem=False):
         # Remove all the special characters
@@ -64,30 +62,18 @@ def preprocess_text(document, stem=False):
 
 
 def preprocess_tweet(tweet, pos=False,  stem = False):
-
-    #tokenizer will remove the parameters
-    tokenizer = Tokenizer(usernames="USERNAME", urls='URL', hashtags=False, phonenumbers='', 
-                times='', numbers='', ignorequotes=True, ignorestopwords=False) 
-
-
+#
     text= tweet.text
     if 'urls' in tweet and tweet.urls: #replace short urls with expanded version
         for url in tweet.urls:
             text = text.replace(url['url'], urlparse(url['expanded_url']).netloc.replace('.',' url '))
-
-    # Removing prefixed 'b'
-    text = re.sub(r'^b\s+', '', text)
-
     # tokenize the texts
-    tokens = tokenizer.tokenize(text)
-    
+    text = ' '.join(tokenizer.tokenize(text))
+    text = re.sub(r'\W+', ' ', text).lower()
     # remove stop words and words less than 3 characters
-    tokens = [token.lower() for token in tokens if len(token.strip())>2] 
-
-
+    tokens = [token for token in text.split() if len(token.strip())>2 and token not in stopwords] 
     if pos: # calculate POS
         tokens = nltk.pos_tag(tokens)
-
     if stem:
         try:
             tokens =  [(stemmer.stem(t[0]), t[1]) for t in tokens if len(stemmer.stem(t[0]))>1]
