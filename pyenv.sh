@@ -23,3 +23,9 @@ pyenv global 3.9.10
 pyenv prefix
 # Check the current Python version
 python -V
+
+
+#Add virtual environemnt as jupyter kernel
+pip install jupyterlab
+pip install --user ipykernel
+python -m ipykernel install --user --name=[myenv]
