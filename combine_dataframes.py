@@ -21,6 +21,7 @@ def clean_csv_dfs_(indir, tag, outdir, stat_dir):
 	df = df[df.tweetid!='nan']
 	df.set_index("tweetid", inplace=True)
 	df[~df.index.duplicated(keep='first')]
+	df['author_id'] = df.author_id.astype('str')
 	print("number of unique tweets: {}".format(len(df)))
 	df.to_pickle('{}/tweets-search-{}.pkl'.format(outdir, tag))
 
