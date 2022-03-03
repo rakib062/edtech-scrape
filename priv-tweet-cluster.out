@@ -1,0 +1,179 @@
+Number of Clusters:5
+0.581 : teamfollowback cnnbrk aurich jamiastopharassingstudents pogowasright safeharbor gulf suryaray barbour rothfeld
+0.551 : privacybydesign techforgood shakeuplearning studentengagement gamebasedlearning njecc linkedinlearning thecybersecurityplace informationaccess publicsource
+0.526 : username privacy student data protect icymi privacysummit massachusetts privacylaw privac
+0.700 : security byod enterprisesecurity byodsecurity fiercemobileit devicesecurity kaspersky securityrisks byoc siaonline
+0.551 : cpdp asugsv fwiw sovereignty gauge disingenuous misguided bettertogether ummm accompanying
+Mean: 0.582, var:0.004
+NPMI:0.58196
+NPMI Mean:0.58196
+NPMI Var:0.0
+
+******************************************
+
+Number of Clusters:8
+/Users/rhasan3/work/edtech-scrape/helpers/cluster-analysis/main.py:203: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return top_k_words, np.array(topk_indices)
+0.398 : privacy student data students protect laws news post takes americans
+0.542 : cpdp myriad snuff minefield asugsv sovereignty fwiw gauge bettertogether sotn
+0.690 : cybersecurity dfir cybersecurite takethiscourse cybersecuritycanada ingramtechsol cybersécurité lockdownlearning linkedinlearning cyberpunk
+0.596 : edtech edtechftc educationweek edtechbc oetc gaetc studentvoice notatiste leadersedsurge edtpa
+0.415 : username tech week talk talking hear coming conference excited talks
+0.579 : facebook internship austrian court flaw harvard loses flaws messenger exposed
+0.596 : mizzou doxxing msulawday asvab tyranny nebraska misguided dubious disingenuous ummm
+0.715 : security byod mobile mobilesecurity enterprisesecurity byodsecurity fiercemobileit symantec devicesecurity dellsecurity
+Mean: 0.566, var:0.011
+NPMI:0.56646
+NPMI Mean:0.56646
+NPMI Var:0.0
+
+******************************************
+
+Number of Clusters:10
+/Users/rhasan3/work/edtech-scrape/helpers/cluster-analysis/main.py:203: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return top_k_words, np.array(topk_indices)
+0.579 : facebook internship austrian court flaw harvard loses flaws messenger exposed
+0.564 : imho benjaminbherold fixferpa overhaul teeth fitzgerald natashanyt msulawday snopa subpoena
+0.477 : privacy student data students news dataprivacy washington onlineprivacy priva privacylaw
+0.669 : cybersecurity computersecurity dfir cybersecurite infotech imotechtraining cybersecuritycanada takethiscourse cybersecurecanada beyondtrust
+0.608 : draconian mizzou doxxing eavesdropping sketchy sarcasm cikgu tyranny pseudonym ummm
+0.654 : school schools schoolpr schoolprivacyzone schoollaw ferpasherpa schooled schoolers safeschools schoolchildren
+0.673 : security byod mobile devices device mobilesecurity iotsecurity bringyourowndevice enterprisesecurity byodsecurity
+0.532 : cpdp audreywatters njecc asugsv xapi gurus sovereignty fwiw gauge oxymoron
+0.527 : pillars crmsystem myriad ngfw simonlporter sehi bitglass equivalent plethora tigertext
+0.341 : username edtech tech daily watch innovation expert stories icymi startups
+Mean: 0.562, var:0.009
+NPMI:0.56237
+NPMI Mean:0.56237
+NPMI Var:0.0
+
+******************************************
+
+Number of Clusters:15
+/Users/rhasan3/work/edtech-scrape/helpers/cluster-analysis/main.py:203: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return top_k_words, np.array(topk_indices)
+0.446 : beef compensation greenwich ssns galaxy pentagon pawns clearview gchq newcastle
+0.609 : montgomery georgetown alcohol poisoning bizarre dartmouth draconian hypocrisy auburn suburban
+0.498 : school schools parents safety teachers kids district children districts educators
+0.613 : informationtechnology dataanalytics medtech gitex datascientist devsecops softwaredevelopment finserv newyear infotech
+0.335 : username daily watch live expert stories icymi david paul joined
+0.609 : agreeing mizzou doxxing sketchy asugsv tyranny fwiw gauge pseudonym misguided
+0.475 : idgtechtalk paradigm odds informationweek crmsystem obstacles myriad blogpost simonlporter overhaul
+0.486 : oltd simultaneously cpdp ngfw meltdown plethora hecvat xapi alphabet gurus
+0.631 : facebook internship austrian flaw harvard loses flaws messenger highlighted highlighting
+0.536 : privacy student students news priva privac nytimes ameri stud studentrights
+0.521 : data eddata dataprivacy studentprivacy bigdata studentdataprivacy dataprotection studentdata collection sxswedu
+0.743 : security byod mobile mobilesecurity bringyourowndevice enterprisesecurity byodsecurity appsecurity fiercemobileit devicesecurity
+0.621 : massachusetts sotu epicprivacy potus utpol takectrl twill idaho replukemesser fixferpa
+0.540 : edtech education digitalprivacy educationweek edtechbridge studentsuccess edtechsr edtechbc digitaleducation techforgood
+0.738 : cybersecurity cybersecuritytips cybersecurite lifelonglearning mobilelearning cybersecurecanada cybersecuritycanada cybersécurité lockdownlearning securitypolicy
+Mean: 0.560, var:0.011
+NPMI:0.55995
+NPMI Mean:0.55995
+NPMI Var:0.0
+
+******************************************
+
+Number of Clusters:20
+/Users/rhasan3/work/edtech-scrape/helpers/cluster-analysis/main.py:203: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return top_k_words, np.array(topk_indices)
+0.647 : facebook austrian court reuters europe vienna european setback schrems luxembourg
+0.441 : username daily watch stories ibanyan wisdom usernames partena
+0.680 : edchat ukedchat iloveedtech edtools isedchat teachertwitter sschat njed tosachat edtechsr
+0.550 : referring syracuse divulge spokesperson phled fafsa fairfax diagnosis msulawday abcs
+0.622 : gitex agile careerdevelopment softwaredevelopment courseswithcertificate newyear projectmanagement nodejs agdev courseware
+0.393 : policy policies tips practices program resources guide steps practice implement
+0.479 : beef safari mozilla galaxy newsela wikipedia logo gchq canvaslms techcrunch
+0.585 : surveillance surveilling undercover disappearance bicyclist helicopter georgetown montgomery wheelchair poisoning
+0.647 : cybersecurity onlinelearning educationforall cybersecurite techforgood lifelonglearning microlearning shakeuplearning mobilelearning cybersecurecanada
+0.601 : bipartisan massachusetts mnleg sotu hampshire leoniehaimson epicprivacy potus thehill utpol
+0.703 : security byod mobile mobilesecurity bringyourowndevice enterprisesecurity byodsecurity appsecurity fiercemobileit symantec
+0.531 : oltd berkmanspi gaetc cpdp jennifer alaac fitzgerald enthusiastic txcto njecc
+0.585 : privacy student onlineprivacy priva privacylaw privac ameri stud studentrights priv
+0.596 : infosec infosecurity kaspersky emailsecurity classcloud dfir dataloss helpnetsecurity mobilethreatdefense infosecjobs
+0.462 : pillars myriad sehi bitglass meltdown plethora pertinent periscope hecvat minefield
+0.547 : data edtech tech eddata dataprivacy studentprivacy studentdataprivacy dataprivacyday privacymatters futureofprivacy
+0.615 : cnnbrk marriage tolerance freshmen hypocrisy rothfeld whistleblower fraternity tulsa chattanooga
+0.576 : whoa agreeing curiosity doxxing mizzou sketchy sarcasm asugsv fwiw gauge
+0.647 : internship flaw harvard loses flaws massive messenger exposed highlighted highlighting
+0.502 : students school protect schools parents teachers kids nationwide schoolpr schoolprivacyzone
+Mean: 0.570, var:0.006
+NPMI:0.57042
+NPMI Mean:0.57042
+NPMI Var:0.0
+
+******************************************
+
+Number of Clusters:25
+/Users/rhasan3/work/edtech-scrape/helpers/cluster-analysis/main.py:203: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return top_k_words, np.array(topk_indices)
+0.545 : teacher teachers teaching teach classrooms toolkit educator teacherprivacytoolkit tbats bats
+0.597 : syracuse freshman draconian whistleblower desantis msulawday mcgill bogus asvab tyranny
+0.425 : information courtesy oltd peek informationweek mozilla hackathon clicking refresh clearview
+0.360 : google microsoft pledge apple mining firms inbloom complaint chromebooks windows
+0.648 : byod mobile devices device enterprise mobilesecurity mobility enterprises smartphones cyod
+0.597 : agile onlinecertification dfir careerdevelopment accredited cybrary courseswithcertificate edureka edxonline courseware
+0.495 : explosion siaonline beef pillars looming vigilance sehi simonlporter bitglass snuff
+0.384 : username daily stories pearson wisdom recommendation usernames pear partena
+0.730 : cybersecurity learning onlinelearning cybersecurityawarenessmonth cybersecuritytraining cybersecurityawareness computersecurity cybersecuritytips cybersecuritynews cybersecuritymonth
+0.608 : massachusetts mnleg sotu hampshire epicprivacy potus utpol thehill takectrl twill
+0.424 : concerns issues read issue article questions concern concerned related worried
+0.655 : security learn secure datasecurity itsecurity infosecurity iotsecurity byodsecurity websecurity appsecurity
+0.502 : surveillance video chilling shocking againstsurveillance surveilled beating george surveillancecapitalism occasions
+0.660 : machinelearning informationtechnology dataanalytics datastorage latesttechnews medtech gitex datascientist supplychain regtech
+0.598 : privacy student students priva privac ameri stud studentrights priv stude
+0.567 : claiming appeal filming unlawful claimed classmate defamation sexting teamfollowback flatmates
+0.627 : pjnet commoncore threatens intrusive stopcommoncore essa keepyourpromise stopesea earlyed autism
+0.591 : whoa agreeing mizzou doxxing sketchy sarcasm unhappy asugsv fwiw gauge
+0.453 : data protect protecting dataprivacy personal info studentprivacy protection transparent dataprivacyday
+0.631 : facebook internship austrian flaw harvard loses flaws messenger highlighted highlighting
+0.439 : school schools parents news district districts leaders parent child board
+0.549 : edtech education iloveedtech edtechftc personalizedlearning educationweek edtechbridge stemeducation studentsuccess edtechsr
+0.517 : controlling simultaneously crmsystem privacybydesign provisioning myriad ngfw plethora twowayradio avaya
+0.449 : online offline digitalprivacy saferinternetday nowadays pupils dialogue cartoon studentvoice safetyfirst
+0.601 : statsdc oetc gaetc berkmanspi cpdp masscue jennifer alaac thomascmurray talkoutofschool
+Mean: 0.546, var:0.009
+NPMI:0.54606
+NPMI Mean:0.54606
+NPMI Var:0.0
+
+******************************************
+
+Number of Clusters:30
+/Users/rhasan3/work/edtech-scrape/helpers/cluster-analysis/main.py:203: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  return top_k_words, np.array(topk_indices)
+0.491 : obama call consumer president washington seeks calls aims consumers tighten
+0.411 : concerns issues risks issue threats challenges questions bring threat concern
+0.590 : massachusetts mnleg sotu hampshire epicprivacy potus thehill utpol statute setdals
+0.577 : privacy student data privacymatters priva privac nytimes ameri stud priv
+0.607 : hilarious whoa agreeing doxxing mizzou sketchy periods sarcasm cikgu tyranny
+0.685 : security itsecurity ibmsecurity byodsecurity appsecurity itsec dellsecurity securityrisks testsecurity biosecurity
+0.486 : school schools parents teacher teachers kids district classroom children districts
+0.617 : education elearning learning onlinelearning stemeducation educationforall teachereducation studentsuccess learningmanagementsystem digitaleducation
+0.501 : curious fabulous studentvoice uvic bctf fafsa edublogsclub peeps spreadsheet forthcoming
+0.524 : invasion violated violate violates convicted invaded intimidation infringing skirt overreach
+0.590 : reportedly helicopter bicyclist parkrose cafeteria confrontation montgomery georgetown piazza poisoning
+0.495 : breach action loans affected breached canadian involving handling settlement liberals
+0.438 : online anytime offline courtesy saferinternetday pupils beinternetawesome csforall peek brush
+0.548 : malware ransomware hacked socialengineering cybercriminals ddos banking hacks malicious scams
+0.579 : gitex agile juniper dfir finserv newyear infotech projectmanagement nodejs chops
+0.669 : edtech edtechftc edtechmgmt schoolprivacyzone isedchat edtechbridge eduprivacy tosachat edtechsr moedchat
+0.551 : controlling simultaneously crmsystem provisioning syncdog ngfw granular unisys plethora storwarekodo
+0.399 : surveillance tech technology software monitoring technologies fascinating capitalism technological erased
+0.597 : oltd statsdc oetc berkmanspi gaetc cpdp jennifer masscue alaac thomascmurray
+0.660 : internship flaw harvard major loses flaws messenger exposed highlighted highlighting
+0.347 : google sign microsoft pledge update apple mining signed chromebooks updates
+0.550 : utah ucla kentucky decline syracuse buffalo spokesman albany withheld splc
+0.648 : byod mobile devices device enterprise mobilesecurity mobility enterprises smartphones cyod
+0.654 : facebook austrian reuters europe vienna european schrems setback luxembourg lawuit
+0.484 : students rights special body entire feds grant advocates advocate disabilities
+0.497 : username daily stories ibanyan wisdom usernames topstories pearls becool partena
+0.513 : propaganda umbrella refugees brazil overseas enthusiastic uganda mcgill asvab weaponized
+0.491 : paradigm pillars myriad simonlporter sehi overhaul bitglass snuff minefield underscores
+0.485 : protect protecting safe ensure protection protections protected keeping steps strong
+0.684 : cybersecurity infosec cyber datasecurity infosecurity cybersecurityawarenessmonth cybersecuritytraining cybersecurityawareness computersecurity cybersecuritytips
+Mean: 0.546, var:0.007
+NPMI:0.5456
+NPMI Mean:0.5456
+NPMI Var:0.0
+
