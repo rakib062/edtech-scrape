@@ -59,6 +59,8 @@ def get_text_topic(text, topic_words):
         for t in range(len(topic_words)):
             if word in topic_words[t]:
                 idx[t]+=1
+    if np.max(idx) == 0: #if no topic words are found in text
+        return -1
     return np.argmax(idx)
 
 def get_topic_words(file):
