@@ -53,7 +53,7 @@ def media_to_df(response):
     media = []
     if "media" not in response.includes:
         return None
-    for m in response.includes['media']:
+    for m in response:
         media.append(
             { 
               'media_key': m.media_key,
@@ -71,7 +71,7 @@ def users_to_df(response):
     '''
     users = []
     # Take all of the users, and put them into a dictionary of dictionaries with the info we want to keep
-    for user in response.includes['users']:
+    for user in response:
         users.append(
             { 
             'userid': user.id,
@@ -124,7 +124,7 @@ def included_tweets_to_df(response):
     result = []
     if "tweets" not in response.includes:
         return None
-    for tweet in response.includes['tweets']:
+    for tweet in response:
         result.append(tweet_to_row(tweet))
 
     df = pd.DataFrame(result)
@@ -141,6 +141,19 @@ def tweets_to_df(response):
     df = pd.DataFrame(result)
     df.set_index('tweetid', inplace=True)
     return df
+
+def search_users(uids):
+    start = 0
+    results = []
+    while start<len(uids):
+        try:
+            res=client.get_users(ids=uids[start:start+100], user_fields=user_fields)
+            results.append(res)
+            print('batch size: {}, total: {}'.format(len(res.data)))
+        except Exception as e:
+            print('failed to get data')
+        start+=100
+    return results
 
 def search_tweets(query, start_time, since_id, outdir, count):
     if since_id is not None:
@@ -171,10 +184,10 @@ def search_tweets(query, start_time, since_id, outdir, count):
                 print('no response found for: {}\n'.format(query))
                 continue
 
-            user_df = users_to_df(response)
+            user_df = users_to_df(response.includes['users'])
             tweet_df = tweets_to_df(response)
-            media_df = media_to_df(response)
-            included_tweet_df = included_tweets_to_df(response)
+            media_df = media_to_df(response.includes['media'])
+            included_tweet_df = included_tweets_to_df(response.includes['tweets'])
 
 
             if user_df is not None:
