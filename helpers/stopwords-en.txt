@@ -63,7 +63,6 @@ haven't
 quite
 just
 whereupon
-see
 needs
 worked
 nonetheless
@@ -863,3 +862,5 @@ tomorrow
 thnx
 hmmm
 tmrw
+wanna
+wana
