@@ -20,7 +20,7 @@ import pickle
 
 faulthandler.enable() #for stacktrace
 
-NSEEDS = 1
+NSEEDS = 3
 
 def trace(frame, event, arg):
     print("%s, %s:%d" % (event, frame.f_code.co_filename, frame.f_lineno))
@@ -82,7 +82,7 @@ def main():
 
     weights = None
     tfdf = None
-    if os.path.isfile(args.weight_file):
+    if False:#os.path.isfile(args.weight_file):
         weights = pickle.load(open(args.weight_file, 'rb'))
         if os.path.isfile(args.tfidf_file):
             tfdf = pickle.load(open(args.tfidf_file, 'rb'))
