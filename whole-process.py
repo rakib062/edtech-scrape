@@ -16,7 +16,7 @@ import text_processing, preprocess_tweet_data, config
 
 DATA_ROOT = config.DATA_ROOT
 
-NUM_USR_PROF_CLUSTER=100  
+NUM_USR_PROF_CLUSTER= '10 20 30 40 50 80 100'
 ALGO_USR_PROF_CLUSTER='KMeans'
 
 
@@ -47,6 +47,8 @@ if not os.path.exists(PRIV_TWEET_MODEL_PATH):
 
 
 def get_profile_cluster(profile_desc):
+    '''Assigns profile cluster based on the mode of
+    predicted cluster across all words in profile_desc'''
     clusters = []
     for word in profile_desc.split():
         clusters.append(prof_cluster_model.predict(
@@ -54,6 +56,8 @@ def get_profile_cluster(profile_desc):
     return mode(clusters)[0][0]
 
 def get_text_topic(text, topic_words):
+    '''Assigns topic cluster to text based on the number of
+        topic words are present in it'''
     idx= np.zeros(len(topic_words))
     for word in text.split():
         for t in range(len(topic_words)):
@@ -63,13 +67,30 @@ def get_text_topic(text, topic_words):
         return -1
     return np.argmax(idx)
 
+def get_text_topic_cos(text, topic_texts, ft_model):
+    '''Assigns topic cluster to text based on its cosine 
+        distance from all topics'''
+    #
+    text_vec = ft_model.get_sentence_vector(text)
+    cos_sims = []
+#
+    for topic_text in topic_texts:
+        topic_vec = ft_model.get_sentence_vector(topic_text)
+        cos_sim = np.dot(text_vec, topic_vec)/(np.linalg.norm(text_vec)*np.linalg.norm(topic_vec))
+        cos_sims.append(cos_sim)
+#
+    return (np.argmax(cos_sims), np.max(cos_sims))
+
 def get_topic_words(file):
+    '''returns list of list of words and list of sentences for topics'''
     topics = [line.split(':')[1] for line in open(file)]
     topic_words = []
+    topic_texts = []
     for line in topics:
         words = [w.strip() for w in line.split(' ') if len(w.strip())>2]
         topic_words.append(words)
-    return topic_words
+        topic_texts.append(' '.join(words))
+    return topic_words, topic_texts
 
 print('#################### Concatenating all data frames ####################\n')
 os.system('python3 main.py --task clean-csv-dfs --in_dir {} --out_dir {} --kw_file {} --stat_dir {}'.format(
@@ -88,9 +109,16 @@ user_df_en.to_pickle(TWEET_USER_DF_EN)
 user_df_en = user_df_en[~user_df_en.index.duplicated(keep='first')] 
 user_df_en.to_pickle(TWEET_USER_DF_EN_UNIQUE)
 
+user_df_en['profile_desc_clean'] = user_df_en.progress_apply(lambda u: 
+                preprocess_tweet_data.preprocess_profile_desc(
+                    profile= u.profile_desc, lemmatize=True) \
+                if isinstance(u.profile_desc, str) else '', axis=1)
+
 
 print('\twriting english profile text in file...')
-preprocess_tweet_data.write_user_profile_des(infile=TWEET_USER_DF_EN_UNIQUE, outfile=TWEET_USER_PROFILE_TEXT)
+with open(TWEET_USER_PROFILE_TEXT, 'w') as file:
+    user_df_en.progress_apply(lambda row: file.write(row.profile_desc_clean+'\n'), axis=1)
+    file.close()
 
 
 print('\ttraining fastText skipgram model with profile description...')
@@ -102,14 +130,15 @@ os.system('python3 -Xfaulthandler helpers/cluster-analysis/main.py \
             --ftmodel {} \
             --clustering_algo {} \
             --vocab {} \
-            --num_topics 10 20 30 40 50 80 100 130 150  \
+            --num_topics {}  \
             --rerank tf  \
             --stopwords_file helpers/stopwords-en.txt \
             --weight_file {} --weight_type WGT \
             --tfidf_file {} \
             --model_path {} > profile-cluster'.format(
                 PROFILE_FT_MODEL+'.bin', ALGO_USR_PROF_CLUSTER, 
-                TWEET_USER_PROFILE_TEXT, PROFILE_WORD_WEIGHTS, 
+                TWEET_USER_PROFILE_TEXT, NUM_USR_PROF_CLUSTER, 
+                PROFILE_WORD_WEIGHTS, 
                 PROFILE_WORD_TFIDF, USR_CLUSTER_DIR))
 
 print('\tpredicting profile clusters using trained model')
@@ -117,8 +146,6 @@ print('\tpredicting profile clusters using trained model')
 prof_ft_model = ft.load_model(PROFILE_FT_MODEL+'.bin')
 prof_cluster_model = pickle.load(open(USR_CLUSTER_MOD, 'rb'))
 
-user_df_en['profile_desc_clean'] = user_df.progress_apply(lambda user: 
-                re.sub(r'\W+', ' ', str(user.profile_desc)) if type(user.profile_desc)==str else '', axis=1)
 
 # user_df_en['profile_cluster_w'] = user_df_en.progress_apply(lambda user: 
 #                 get_profile_cluster(user.profile_desc_clean) \
@@ -130,12 +157,18 @@ user_df_en['profile_desc_clean'] = user_df.progress_apply(lambda user:
 #                 user.profile_desc_clean).reshape(1,-1))[0] \
 #                 if len(user.profile_desc_clean.strip())>3 else -1, axis=1)
 
-profile_words = get_topic_words('user-profile-words.txt')
-    user_df_en['topic'] = user_df_en.progress_apply(lambda u: 
-                    get_text_topic(u.profile_desc_clean, profile_words) \
+profile_words, profile_sentences = get_topic_words('user-profile-words.txt')
+# user_df_en['profile_cluster'] = user_df_en.progress_apply(lambda u: 
+#                     get_text_topic(u.profile_desc_clean, profile_words) \
+#                     if len(u.profile_desc_clean.strip())>=3 else -1, axis=1)
+
+user_df_en['profile_cluster_cos'] = user_df_en.progress_apply(lambda u: 
+                    get_text_topic_cos(u.profile_desc_clean, profile_sentences, prof_ft_model) \
                     if len(u.profile_desc_clean.strip())>=3 else -1, axis=1)
+user_df_en['profile_cluster'] = user_df_en.apply(lambda row: row.profile_cluster_cos[0], axis=1)
+user_df_en['profile_cluster_con'] = user_df_en.apply(lambda row: row.profile_cluster_cos[1], axis=1) 
 
-
+user_df_en.to_pickle(TWEET_USER_DF_EN_UNIQUE)
 
 print('\n\n#################### Preprocessing tweets ####################\n')
 tweet_df = pd.read_pickle(TWEET_DF_FILE)
@@ -144,7 +177,7 @@ tweet_df_en['author_id'] = tweet_df_en.author_id.astype('str')
 
 print('cleaning tweet text...')
 tweet_df_en['clean_text'] = tweet_df_en.progress_apply(lambda tweet:
-                            ' '.join(text_processing.preprocess_tweet(tweet)), axis=1)
+                            text_processing.preprocess_text(tweet.text, lemmatize=True), axis=1)
 print('writing clean tweet text in file...')
 with open(CLEAN_TWEET_TEXT_EN, 'w') as file:
     tweet_df_en.progress_apply(lambda tweet:
@@ -152,12 +185,9 @@ with open(CLEAN_TWEET_TEXT_EN, 'w') as file:
     file.close()
 
 print('#################### Sentiment of Tweet Texts ####################\n')
-senti_tokenizer = Tokenizer(usernames="", urls='', hashtags=False, phonenumbers='', 
-                times='', numbers='', ignorequotes=True, ignorestopwords=True) 
 vader = SentimentIntensityAnalyzer()
-
 tweet_df_en['senti'] = tweet_df_en.progress_apply(lambda tweet: vader.polarity_scores(
-        ' '.join(senti_tokenizer.tokenize(tweet.text))), axis=1)
+        ' '.join(process_tweet_data.senti_tokenizer.tokenize(tweet.text))), axis=1)
 tweet_df_en.to_pickle(EN_TWEET_DF_FILE)
 
 print('\n\n#################### Identifying security/privacy related tweets ####################\n')
@@ -180,7 +210,7 @@ with open(PRIV_TWEET_TEXT, 'w') as file:
 
 
 print('\ttraining fastText skipgram model with priv-sec tweets...')
-os.system('./helpers/fastText/fasttext skipgram -input {} -output {}'.format(PRIV_TWEET_TEXT, PRIV_FT_MODEL))
+os.system('./helpers/fastText/fasttext skipgram -input {} -output {} -dim 300'.format(PRIV_TWEET_TEXT, PRIV_FT_MODEL))
 os.system('python3 -Xfaulthandler helpers/cluster-analysis/main.py \
             --entities fasttext \
             --ftmodel {}.bin\

@@ -1,14 +1,21 @@
 '''
 code to prepare datasets
 '''
-
-import pandas as pd
-import sys
-sys.path.append('helpers/')
-import text_processing
-import re
-import glob, sys,os
+import glob, sys,os, re, itertools
 from tqdm import tqdm
+sys.path.append('helpers/')
+from tweetokenize import *
+import text_processing
+from constants import *
+import spacy
+lemmatizer = spacy.load('en_core_web_sm')
+curdir = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+from nltk.corpus import stopwords
+nltk_stopwords = set(stopwords.words('english'))
+profile_stopwords = set([line.strip() for line in open(os.path.join(curdir, 'stopwords-twitter-profile.txt'))])
+senti_stopwords = set([line.strip() for line in open(os.path.join(curdir, 'stopwords-en-senti.txt'))])
+senti_stopwords.update(set(nltk_stopwords))
+profile_stopwords.update(set(nltk_stopwords))
 
 tqdm.pandas()
 
@@ -58,13 +65,50 @@ def combine_dfs(src_path, dest_path):
 	all_df = pd.concat(all_df)
 	all_df.to_pickle(dest_path+'/ed-tweets-all.pkl')
 
+def preprocess_profile_desc(profile, lemmatize=False):
+	# Remove all the special characters
+    profile = re.sub(r'\W', ' ', str(profile))
+    # Remove all numbers
+    profile = re.sub(r"^\d+\s|\s\d+\s|\s\d+$", " ", profile)
 
 
+    if lemmatize:
+    	profile = ' '.join([w.lemma_.strip() for w in lemmatizer(profile)])
+
+    tokens = [word.strip() for word in profile.lower().split() \
+    				 if word not in profile_stopwords and len(word)>2]
+
+    return ' '.join(tokens)
+
+'''custom tokenizer for sentiment analysis that removes @mentions and urls'''
+senti_tokenizer = Tokenizer(usernames="", urls='', hashtags=False, phonenumbers='', 
+                times='', numbers='', ignorequotes=False, ignorestopwords=False, lowercase=True) 
+
+def preprocess_tweet_senti(tweet, lemmatize=False, tokenizer = senti_tokenizer):
+	# tokenize using tweetokenizer 
+	tokens = tokenizer.tokenize(tweet)
+	# replace emoticons, source: https://en.wikipedia.org/wiki/List_of_emoticons
+	tokens = [smileys_dict[word] if word in smileys_dict else word for word in tokens] 
+	#replace contractions: https://en.wikipedia.org/wiki/Contraction_%28grammar%29
+	tokens = [contractions_dict[word] if word in contractions_dict else word for word in tokens] 
+	#contractions replacement can create multiple word
+	tokens = list(itertools.chain(*[token.strip().split(' ') for token in tokens])) 
+
+	# remove stopwords
+	tokens = [word.lower() for word in tokens if word not in senti_stopwords and len(word)>2]
+	# Remove remaining special characters
+	tweet = re.sub(r'\W', ' ', ' '.join(tokens))
+
+	if lemmatize:
+		tweet = ' '.join([w.lemma_.strip() for w in lemmatizer(tweet)])
+	return tweet
 
 def preprocess_user_df(infile, outfile):
 	user_df = pd.read_pickle(infile)
 
-	user_df['profile_desc_clean']= user_df.progress_apply(lambda row: ' '.join(text_processing.preprocess_text(row.profile_desc)), axis=1)
+	user_df['profile_desc_clean']= user_df.progress_apply(lambda row: 
+		' '.join(text_processing.preprocess_text(row.profile_desc, lemmatize=True))\
+		 if isinstance(row.profile_desc, str) else '', axis=1)
 	print('detecting profile language...')
 	user_df['lang1'] = user_df.progress_apply(lambda row: text_processing.detect_lang(row.profile_desc_clean, detector='langid') \
 									if len(row.profile_desc_clean)>3 else 'NA', axis=1)

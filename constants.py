@@ -187,5 +187,6 @@ contractions_dict= \
         "you've":"you have",
         "Whatcha":"What are you",
         "luv":"love",
-        "sux":"sucks"
+        "sux":"sucks",
+        "youve":"you have"
     }
