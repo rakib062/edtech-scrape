@@ -97,7 +97,7 @@ class Tokenizer(object):
     quotes_re = re.compile(r"|".join(r'({}.*?{})'.format(f,s) for f,s in doublequotes) + r'|\s(\'.*?\')\s')
     del doublequotes
 
-    def __init__(self, **kwargs, stopwords_file=None):
+    def __init__(self, stopwords_file=None, **kwargs):
         """
         Constructs a new Tokenizer. Can specify custom settings for various 
         feature normalizations.

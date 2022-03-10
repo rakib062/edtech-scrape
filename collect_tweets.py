@@ -32,13 +32,16 @@ client = tweepy.Client(bearer_token, wait_on_rate_limit=True)
 user_fields = ['username', 'public_metrics', 'description', 'location', 
                 'protected', 'verified', 'entities', 'url']
 tweet_fields = ['id', 'text', 'author_id', 'created_at', 'geo', 
-                'public_metrics', 'lang', 'conversation_id', 'entities',
+                'public_metrics', 'lang', 
+                'conversation_id', # id of the first tweet in a thread, if different then id, then id refers to a reply tweet
+                'entities', #includes tags, mentions, urls
                 'referenced_tweets', 'context_annotations', 
                 'attachments', 'possibly_sensitive',
                 'withheld', 'reply_settings', 'source'
                 #'organic_metrics', #'promoted_metrics', #'non_public_metrics',
                 ]
-expansions = ['author_id', 'referenced_tweets.id', 
+expansions = ['author_id', 
+                'referenced_tweets.id', # refers to the tweet id in reply to which the current tweet was posted
                 'referenced_tweets.id.author_id',
                 'in_reply_to_user_id', 'attachments.media_keys',
                 'entities.mentions.username']

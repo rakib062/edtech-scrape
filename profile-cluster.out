@@ -1,699 +1,686 @@
-Data:13616637
-Vocab: 210174
-len vocab size: 210174
-ftmodel:  data/ft-profile-sg.bin
-(210174, 100)
+Data:1698096
+Vocab: 68776
+len vocab size: 68776
+ftmodel:  /Users/rhasan3/onedrive/work/edtech-scrape/ft-profile-sg.bin
+(68776, 100)
 Number of Clusters:10
-0.615 : lmspulse hecknowledge mylittlepoppies thomassonmorris amazecardrives digitalsportsmanship kissyourteacher edcamphappyvalley useronboarding cfpschool
-0.503 : school elementary williamsville assocation maercker harrisonburg chilliwack elyria sewanhaka chocowinity
-0.390 : students world people educations educationalists paving prioritise propelling endeavoring discoverable
-0.374 : learning education edtech technology tech digital teaching tweets science director
-0.476 : teacher educator author coach certified google wife learner consultant leader
-0.540 : parodyaccount wspblqkhvn memphisbornmemphisbredandwhenidieillbememphisdead michaelhaedu painisonlytemporarybutvictoryisforever amherstislandfm premieritltd mpsazedtech yenimahallecampuscollegeprojectcoordinator hldafjtowd
-0.525 : planformation exelearning nspcclearning jamiebillingham corporateelearning rapidlearning pspihyldai developercommunity zfzbcmqhlm dafidnbgkj
-0.524 : popqfzmuvv educationiskeytounderstandingtheworld gwnwfzqvsc sinéad bvorvcugkt ndyjhkkhmt 𝓯𝓪𝓫𝓾𝓵𝓸𝓾𝓼 hcyyhvmjka khjwfqybae monozygotic
-0.428 : cquniversity linköping drewuniversity stocspirit communigators technification pressxtoscience lhzlpwcssx uffhzgisqn publicness
-0.442 : organisaitons stimulearning experion ehmbrqrvwo xcqurlknnw funcation nioxus 在线课程设计与开发 tacshqctqn eqbkbwmxah
-Mean: 0.482, var:0.005
-NPMI:0.48175
-NPMI Mean:0.48175
+0.552 : twitter news follow account information tweet page website info blog
+0.491 : antipodean americanheart suomi pashtun liasion personhood publicknowledge commonplace glbtq politcs
+0.555 : focused focus aiding benefiting caliber managerial directories bcorporation chrysalis prioritise
+0.626 : tech dxctechnology techsmith enterprisearchitecture trivago bmcsoftware vjnydtnyow sofware keysight worx
+0.643 : teacher school education educator teaching lifelong multiage sdpbc bettendorf coteaching
+0.534 : writer creator creater wysiwyg minutiae webzine spfbo madcap teatime downunder
+0.619 : wife lover mother enthusiast avid dogfather pawrent busybody outdoorswoman multipassionate
+0.686 : stfxuniversity codirector universitysa msuepet qmuniversity clarkuniversity studyucem conjoint usjct assisstant
+0.507 : love life time forgetting smorgasbord coolness happenstance discombobulated lamborghini christlike
+0.649 : poughkeepsie snoqualmie ledyard parsippany atchison flvs holmdel sylacauga multnomah seekonk
+Mean: 0.586, var:0.004
+NPMI:0.58621
+NPMI Mean:0.58621
 NPMI Var:0.0
 
 ******************************************
 
 Number of Clusters:20
-0.644 : lmspulse plannersquad hecknowledge hecparismasters hecparisent njealearns thomassonmorris weconnect amazefooddrink amazecardrives
-0.369 : students world love life people hoping inspirations motivations thanking zealanders
-0.557 : cihsraiders maercker harrisonburg elyria sewanhaka chocowinity vacaville carlowuniversity barkalow watervliet
-0.578 : fetcpresenter riderraiders certifiedgoogletrainer curriculumleader epicambassador ambassabor esklamqpmh certifiedbrainpopeducator joskossolutions demoteacher
-0.395 : tweets community support views opinions personal endorsement expressed likes rmeducation
-0.502 : teacher educator tech coach certified google learner consultant leader trainer
-0.434 : online training management quality services providing provide offer wide selection
-0.433 : school schools teachers public grade classroom elementary middle primary secondary
-0.444 : edtech elearning learningtechnologist adulteducation educationaltechnology instructionaldesigner teachingandlearning instructionaltechnology callimedia blendelearning
-0.375 : business development professional directional advisement educationists edassist professsional educationalcommunications cooperations
-0.407 : educationalists prioritise integrass propelling discoverable prioritising academixdirect truition knowledgeengagement invdfvozor
-0.500 : linköping knovation quantumtechnology wzinlffikv compvision connectxglobal folddtqf weukxnxppl 我會説中文 pÿurbusiness
-0.516 : news follow official account twitter updates events page department feed
-0.463 : storefront multifunction caliqity bkwwpuntsa sharestream stormboard clickmeeting writtenassignments vvffdjfhly immersifydental
-0.555 : wspblqkhvn memphisbornmemphisbredandwhenidieillbememphisdead angelamericidp hostbodiesriseupcrushgop painisonlytemporarybutvictoryisforever nbfhqepcay premieritltd hldafjtowd alayajanainguyen hlcbwfxkvc
-0.341 : learning author teaching science director student passionate principal math professor
-0.354 : education technology digital global innovation social research media design leadership
-0.479 : sophiewashington channelling goxuijxdwt dsnwugpztm rarimrbmze eqbkbwmxah aprilgolightly yhqktkpxry blxvyfwoby kbmtwyrklj
-0.474 : wife lover volleyballer crossfitting multipassionate enthusiaist vacinated connoiseur greenkeeper importanter
-0.449 : combatting popqfzmuvv ultracrepidarian educationiskeytounderstandingtheworld removethetorygovernment sinéad քօɛt ndyjhkkhmt professionalismmatters hcyyhvmjka
-Mean: 0.464, var:0.006
-NPMI:0.46352
-NPMI Mean:0.46352
+0.543 : follow tweet website info blog check visit brag informations advisories
+0.676 : londonderry bracknell trowbridge carluke ballyclare tonyrefail greatermanchester maltby kidderminster birkenhead
+0.574 : annoyance outright oblivion suess vomit misleading leftisbest overzealous discombobulated bonhoeffer
+0.628 : health care inpatient medications brainhealth delirium phlebotomist multimorbidity osteoporosis tracheostomy
+0.661 : school twitter davenport grayslake sunnyside albemarle parochial woodridge northgate dupage
+0.582 : love life music family time travel kids loves passion loving
+0.668 : wife husband father mother proud friend christian married daughter boys
+0.576 : development support training project dedicated supporting focused focus initiatives facilitating
+0.636 : technology tech dxctechnology technovation techsmith trivago enterprisearchitecture bmcsoftware sofware keysight
+0.606 : business services solutions service leading company experience offerings multinational unrivalled
+0.658 : susquehanna frazier sheboygan mcfarland sandusky owatonna corvallis cartwright poughkeepsie atchison
+0.647 : sports football dodgeball fantasyfootball racquetball basketballer lpga footballing raysbaseball nhljets
+0.576 : writer author docuseries minutiae authoress spfbo webzine teatime breadwinner authorsguild
+0.726 : lover enthusiast nerd geek avid traveler foodie wannabe adventurer techie
+0.510 : pasifika internacional malawian danube americanheart commonplace suomi ufifas environnement malagasy
+0.710 : reseacher keeleuniversity cmuniversity professorial stfxuniversity trentuniversity reseach universitysa predoctoral msuepet
+0.545 : education views tweets director opinions passionate codirector classlink viewsrmine personnal
+0.687 : teacher educator learner lifelong multiage sdpbc teacherlibrarian nnps paraeducator classkick
+0.556 : mayonnaise smorgasbord woohoo lamborghini marzipan risotto huzzah hunnid hijinks tadpoles
+0.540 : learning world community people create mission difference striving passionately collectively
+Mean: 0.615, var:0.004
+NPMI:0.61534
+NPMI Mean:0.61534
 NPMI Var:0.0
 
 ******************************************
 
 Number of Clusters:30
-0.615 : accrington lossiemouth sittingbourne cramlington kidderminster childrenarecentral maesycwmmer avonbourne coopacademies boothferry
-0.507 : depending highvibrations endearing tearing popqfzmuvv educationiskeytounderstandingtheworld overeating bvorvcugkt sinéad ndyjhkkhmt
-0.554 : knovation alayajanainguyen quantumtechnology wzinlffikv productinnovation mayoviofficial startusinsights weukxnxppl pxpajokfsg euukwhonasajaxaw
-0.629 : behavioralscience ngaged slidesmaniac absorbstatus learninglocker sellcourses hecknowledge hecparisphd hecparismasters hecparisent
-0.336 : world people paving disconnected interchange prioritising multiplmovement collegues awarness resourcenexus
-0.525 : university research assocation cquniversity duquesneuniversity umeauniversity uofjeddah purdueuniversity linköping יהודיה
-0.473 : lover enthusiast volleyballer ryszhhffnu crossfitting multipassionate relapsed enthusiasms enthusiaist clinomaniac
-0.478 : teacher coach certified google wife learner husband trainer father specialist
-0.437 : quality providing selection educations educationalists effecting educationinisolation discoverable marketable virtiledge
-0.468 : storefront experimac multifunction classimmerse stormboard vvffdjfhly immersifydental invdfvozor videoscribeapp mdsqocoeaw
-0.374 : students helping based mission dedicated strive facilitate aiming professionally stewards
-0.557 : plannersquad partialcredited thomassonmorris readingwritingels wanderlustedu illuminateed createbook trendthepositive learnometer prodworship
-0.581 : wakeletevangelist fetcpresenter denambassador pendidikdigital whiteoakvikings flipgrideducator dnhqluwpmu themischnickmindset steamtant makewhatsnext
-0.360 : free follow learn resources sharing website gather learnings freeresources twinklresources
-0.401 : educator edtech author founder speaker consultant leader writer advocate stem
-0.511 : official account twitter page department feed managed handle monitored moved
-0.481 : news information events coverage refrkbaaie reportage watchdogarena dzluifzdsn mrlaiuwusa dtcxgpwcic
-0.429 : training business development services consultancies edassist productengineering organisaitons moqdigital personas
-0.563 : memphisbornmemphisbredandwhenidieillbememphisdead williamsville cihsraiders maercker harrisonburg elyria sewanhaka duanesburg chocowinity vacaville
-0.367 : children books motivations empathizing unattended extraordinaires sophiewashington toiling meritavians pbusxxqjxp
-0.530 : tweets views opinions personal endorsement endorsements retweets expressed likes employer
-0.580 : health mental treatment medication preventive survivorship medications environmentalhealth maltreatment multiprofessional
-0.537 : wspblqkhvn simischools michaelhaedu vhcschools folwellfalcons wearejacksonky amherstislandfm cvcxzwicmg missbrightbluehue mpsazedtech
-0.416 : school schools public principal middle admin districts charter libraries principals
-0.464 : elearning ecologies learningtechnology learningtechnologist adulteducation instructionaldesigner distanceeducation transformlearning adaptlearning callimedia
-0.584 : educationthroughpersonalexperience thespagmonster jennygrabiec brokenpharma realzaragozahastamorir uyukdmrwtm vfmqgfrphq phreasoifig aqvjsidljn dcnmfsglce
-0.402 : directional independentie cooperations presidentially infonomics swaziland weareoxfordinternational colajazzscene wrskfjttkn trilateral
-0.466 : love life family loves food grandbabies lifeasmrscooks sweethearts maneuvering raisingupgiants
-0.387 : learning education technology tech online digital teaching teachers science student
-0.439 : director manager senior executive partnershipla expresident whofoundation prospektiker directorship chicagocouncil
-Mean: 0.482, var:0.006
-NPMI:0.48167
-NPMI Mean:0.48167
+0.519 : children child mental families addictions siblings developmentally kinship miscarriage premature
+0.670 : science research reseacher lmumuenchen reseach unigoettingen uniinnsbruck fraunhofer uqam uniwarszawski
+0.579 : mayonnaise discombobulated guillotine huzzah risotto vowels goosebumps xotwod plunder vendetta
+0.583 : director senior president executive chair exec randcorporation codirector prgm chairing
+0.681 : londonderry skipton bracknell trowbridge carluke ballyclare maltby birkenhead greatermanchester kidderminster
+0.592 : technology tech social digital marketing media design creative strategy technolgy
+0.642 : susquehanna chilliwack sunnyvale kokomo flagstaff comox escondido bismarck vermilion corvallis
+0.608 : community dedicated mission supporting focused committed empowering collaborations collaboratively collectively
+0.718 : school elementary principal middle lakeview hopewell westlake hillcrest sumner grandview
+0.635 : tetris tokusatsu warframe nintendoswitch noobs octane bungie kfbf mmos backgammon
+0.669 : wife husband father mother proud friend christian loving married daughter
+0.548 : bussiness entreprise internacional vizag jugaad cibc fhnw godrej suomi investissement
+0.586 : love family food books travel loves coffee photography passion friends
+0.667 : janice rodney maynard bernadette frazier michaela marjorie marlowe cuthbert sykes
+0.681 : university student graduate univeristy universityofky brockuniversity drakeuniversity keeleuniversity universityofri professorial
+0.733 : lover enthusiast reader nerd geek avid traveler fanatic foodie wannabe
+0.617 : progressivism gerrymandering outright milkteaalliance leftisbest twill freeleonardpeltier ourrevolution moreincommon wokeaf
+0.628 : sports football racquetball fantasyfootball lpga footballing effzeh raysbaseball nhljets redblacks
+0.707 : views tweets opinions personal tweet endorsements endorsement retweets expressed likes
+0.675 : coach basketball soccer athlete volleyball softball cheer cheerleader lacrosse cheerleading
+0.633 : nature environment sustainability environmental environmentalism earthlings pollination environs natures environ
+0.571 : writer author blogspot publisherswkly authoress postopinions spfbo teatime webzine nzstuff
+0.552 : life world people time unending tagline happyness funloving humanly endeavoring
+0.556 : music artist musician productions rocknroll virtuoso beatboxer jingle stagehand technicolor
+0.582 : founder passionate advocate leader consultant specialist expert creator strategist passionated
+0.583 : business professional services training service leading experience providing focus offerings
+0.607 : twitter news follow account official information instagram page website updates
+0.615 : health care medical interprofessional inpatient medications brainhealth pharmacovigilance delirium phlebotomist
+0.674 : software sassoftware outsystems liferay microfocus ovhcloud qkrmcnlmcu enterprisearchitecture trivago snyksec
+0.664 : teacher education learning educator learner teaching lifelong multiage sdpbc lbpsb
+Mean: 0.626, var:0.003
+NPMI:0.6258
+NPMI Mean:0.6258
 NPMI Var:0.0
 
 ******************************************
 
 Number of Clusters:40
-0.576 : health care mental treatment pharmacist medication preventive survivorship medications environmentalhealth
-0.468 : love kids family books music travel loves food nature travelling
-0.391 : innovation growth thinking strategy entrepreneurship sparks reinvention adaptability disrupts innovates
-0.419 : author coach speaker podcast host expert keynote facilitator presenter podcaster
-0.399 : teacher students teaching schools teachers science student math english language
-0.376 : resources ideas tools sharing tips stories created strategies insights trends
-0.572 : developer programmer frontend pspihyldai grafana dynamiatools dynamiait ocadotechnology commercelayer mobilewebspecialist
-0.338 : social media content create based creative experiences creating impact production
-0.582 : india government govt commerce kerala governmental panchayati railminindia gujaratuniversity moitofficial
-0.441 : share video instructions understandable coachers boclips videoanalysis createnotesyourway collaaj lessonresources
-0.567 : edtechempowerembrace teachersonfire certifiedbrainpopeducator millburnschools wearebeverlyschools riseupsuns rlschools simischools greattobeaviking nhhpgbpvby
-0.566 : wspblqkhvn memphisbornmemphisbredandwhenidieillbememphisdead committeeperson angelamericidp hostbodiesriseupcrushgop coryrawsonlocal painisonlytemporarybutvictoryisforever nbfhqepcay amherstislandfm trumpsourpresident
-0.520 : tpzccpxeft pmntdkwqke rarimrbmze ndyjhkkhmt eqbkbwmxah tacshqctqn qhqzdlxpdu blxvyfwoby lhzlpwcssx guiqsldnkk
-0.428 : children minorities minnesotans prioritise prioritising advocation combatting tsichildren bridgerichmond multiplmovement
-0.520 : sysmulch harrystyles amtwwfkzup sierragreenecreations definenormalcomic enukpfdlbm hldafjtowd gdzztdgqno pxwxlpkrom wumudixmdy
-0.377 : education world global international change multilingual globallearning teachabroad geospecial
-0.596 : ambassador flipgrid wakelet seesaw certifiednatgeoeducator nearpodnce teacheragency wakeletevangelist fetcpresenter mosassociate
-0.539 : instagram monicaredondoarias qpgdfvnljv chrisandrico qqzcprprhp gabrielalvarezp iivhukexyz amznhzn dmdkmptqsp benbutina
-0.453 : wife learner life passionate father lover advocate mother proud enthusiast
-0.446 : solutions targetsolutions installing consultancies integrass experimac edassist developping productengineering composable
-0.419 : edtech technology tech digital certified google educational consultant leader trainer
-0.434 : school educator public principal grade elementary district assistant middle librarian
-0.594 : williamsville cihsraiders maercker harrisonburg elyria duanesburg chocowinity vacaville corvallis smithville
-0.418 : director senior executive passionateservice womanfromrichmond googlization committeewoman expresident whofoundation prospektiker
-0.390 : elearning business management manager marketing advertising accounting blearning alternance fgslearning
-0.561 : lmspulse transitionassociates digitalllearning ciaccelerate thecornerlondon directorofstudentservices forestbathing naturalmindfulness handlinginformation buildsustainablenow
-0.312 : community founder team microsoft building product resource progress paperlearning franklincovey
-0.473 : microsoftedu onenote microsoftteams tcea onenoteedu notebooks flipgridforall wakeletwave fetc microsofthelps
-0.391 : learning online free platform experience blended personalized extended leadinglearning jyyukiprty
-0.431 : support training development professional quality services providing focusing progression resourcing
-0.586 : research cquniversity duquesneuniversity alainuniversity drewuniversity ununiversity njcuniversity wrocław uofupoliscience kfuniversity
-0.400 : transporting linköping infonomics knovation ישראל removethetorygovernment underconstruction unenvironment penzance hcyyhvmjka
-0.441 : assocation ipoeducation carlowuniversity aroxoefeiv weareoxfordinternational marburnacademy mottingham marinesecondary crossfields mossside
-0.510 : highvibrations endearing tearing popqfzmuvv frying overeating sinéad bvorvcugkt offficial 𝓯𝓪𝓫𝓾𝓵𝓸𝓾𝓼
-0.543 : craftinginnovation technikzukunft quantumtechnology wzinlffikv intesasanpaolo vmbusiness productinnovation mayoviofficial qlchqihckm mobilebusiness
-0.529 : dallozformation brightonbschool wvjvbtmcmd responsibleuniversity alayajanainguyen developmentuea auswaertigesamt hlcbwfxkvc angazainstitute habibuniversity
-0.630 : behavioralscience ngaged slidesmaniac aztecsforlife isteambassador absorbstatus hecparismba hecknowledge hecparisphd hecparisent
-0.407 : people paving propelling endeavoring smoother propeltheworld zramhmpxza collegues potentialities swampfrogfirst
-0.459 : tweets views opinions personal endorsement endorsements tweet retweets stuff expressed
-0.491 : news follow official account twitter information updates page department office
-Mean: 0.475, var:0.006
-NPMI:0.47487
-NPMI Mean:0.47487
+0.566 : follow information events share tweet sharing updates info tweeting related
+0.680 : school principal schools middle westlake hillcrest sumner grayslake brevard sunnyside
+0.603 : twitter account official page office department feed handle monitored accounts
+0.717 : medical rheumatologist inpatient transfusion prehospital nufeinbergmed osuwexmed ilooklikeasurgeon pituitary nyphospital
+0.689 : feminist allblacklivesmatter cisgender sexnotgender antifacist radfem milkteaalliance democraticsocialist protecttranskids lgtbq
+0.548 : human justice rights democratising unmigration accesstojustice whistleblowing endviolence anitaborg rapporteur
+0.523 : website blog check visit click blogspot rsvp gimmicks clickbait megaphone
+0.579 : food coffees guacamole handful coffe denim avocados celery fudge chardonnay
+0.726 : lover enthusiast nerd geek avid traveler foodie wannabe adventurer techie
+0.631 : science research lmumuenchen compchem reseach hhmi sfiscience proscience tudarmstadt fraunhofer
+0.634 : illegitimate flyover gerrymandering outright freedomfighter covfefe leadright patriotparty magaveteran wakeupamerica
+0.633 : education university student teaching graduate professorial cmuniversity rowanuniversity stfxuniversity keanuniversity
+0.611 : investor investments bussiness financier angelinvestor entreprise invester wealthfront angellist wantrepreneur
+0.687 : teacher educator learner lifelong multiage sdpbc teacherlibrarian nnps paraeducator classkick
+0.630 : spongebob weirdos goober mayonnaise boyband dickhead kfbf vomit lolz smorgasbord
+0.535 : life time living live happy everyday happen wishing minding worthwhile
+0.678 : sports football soccer dodgeball racquetball fantasyfootball basketballer lpga sportsball footballing
+0.609 : learning technology tech digital passionate development innovation innovations blending passionated
+0.685 : frankfort brandywine chavez frazier davison mcclure sheboygan marlowe cuthbert mcfarland
+0.547 : children kids home special child families parent adults ages teens
+0.578 : director founder consultant manager executive codirector pagerduty whitebdadvisor educationconsultant cheif
+0.516 : social media history politics culture studies political literatures foucault occidental
+0.726 : views tweets opinions personal endorsements endorsement retweets expressed likes opinion
+0.546 : sawdust cauldron lamborghini huzzah risotto prelude shimmering goosebumps wrld treble
+0.693 : software outsystems jetbrains liferay coldfusion epam ovhcloud qkrmcnlmcu trivago synopsys
+0.622 : augustana missourian dubuque kokomo uvmvermont missoula plattsburgh valparaiso northcarolina otterbein
+0.610 : professional online services support training service leading quality providing provide
+0.697 : londonderry skipton bracknell trowbridge carluke maltby kidderminster tonyrefail birkenhead greatermanchester
+0.551 : music artist film rocknroll virtuoso beatboxer wysiwyg jingle stagehand technicolor
+0.659 : news journalistic newsquest journaliste dailyorange gulfnews informationweek newslaundry postopinions journalistin
+0.606 : business marketing management solutions company strategy multinational consultancies blackbaud bcorporation
+0.548 : tagline enthralled annoyance humanly inimitable doubting suess coolness frivolous overzealous
+0.556 : passion difference goal striving believes motto passionately progression believers tenacity
+0.651 : writer author books book novelist bookouture novellas hqstories publisherswkly lynnettenovak
+0.578 : health care mental wellness addictions lifespan sedentary hlth healthful transpersonal
+0.574 : bermuda bsnetherlands guadalajara vilnius kyrgyzstan malaga internacional whoeurope tashkent flvs
+0.545 : world community people helping create dedicated mission supporting creating collaborations
+0.668 : wife husband father mother proud friend christian married daughter boys
+0.656 : nature environment environmental environmentalism seaweed environs pollination natures environ enviroment
+0.626 : love family travel loves photography loving friends enjoy running dogs
+Mean: 0.618, var:0.004
+NPMI:0.61788
+NPMI Mean:0.61788
 NPMI Var:0.0
 
 ******************************************
 
 Number of Clusters:50
-0.545 : thenextgenlibrarian edtechempowerembrace teachersonfire riderraiders cvtechconnect neslidrmsgl edtechgcs certifiedbrainpopeducator wearebeverlyschools demoteacher
-0.573 : williamsville cihsraiders maercker harrisonburg churchville elyria sewanhaka duanesburg chocowinity vacaville
-0.607 : accrington lossiemouth sittingbourne cramlington childrenarecentral maesycwmmer avonbourne coopacademies boothferry mottingham
-0.475 : edupassionate curriculumleader assistlearning reynschools digitalinstruction piraeusuniversity greattobeaviking connectedclassroom nhhpgbpvby authenticlearning
-0.485 : school schools public district middle districts charter climb compass charters
-0.473 : husband father principal proud superintendent follower christ servant brother daughters
-0.495 : teacher educator coach wife learner passionate advocate grade mother lifelong
-0.492 : environmental constructions diversification transporting acidification linköping yorkenvironment infonomics phdbalance intertidal
-0.425 : author speaker consultant writer blogger podcast host creator expert keynote
-0.459 : science math stem computer engineering mathematics physics chemistry printing astronomy
-0.431 : english reading language literacy writing arts studies spanish french anchorlearning
-0.430 : training development professional services providing focusing personalisation consultancies effecting integrass
-0.427 : national directional educationalcommunications thisismembership wvjvbtmcmd mojsdowrrdgr dwlwlxwdxg directorship rbygdkzwbe hbsxfcwuwm
-0.575 : partialcredited thomassonmorris teachersdgsambassador readingwritingels kindrockets wanderlustedu ciroks illuminateed createbook todayisketchnoted
-0.614 : networksecurity computersecurity productengineering applicationsecurity zfzbcmqhlm technikzukunft homeautomation octotechnology analyticsengineering cybersecurityevolved
-0.511 : international indonesian internationalist internationalism cooperations ulkoministerio abudhabiuniversity internationalcooperation luxembourgers côte
-0.498 : goxuijxdwt ndyjhkkhmt eqbkbwmxah xxovfrjekq yhqktkpxry wpgtgznwqw adddrums hmkofyyyvy lhzlpwcssx oavzszrafz
-0.574 : educationthroughpersonalexperience midigiworld mhrjssrysg buildbusiness liquidsmarts thespagmonster personalizedhandstampedmetal transitionénergétique programmmanagerin mutinerieschool
-0.360 : free learn resources helping create share classroom home ideas teach
-0.572 : slidesmaniac snackable rockyourhomeschool mhecareers absorbstatus learninglocker everycentcounts hecparismba hecknowledge hecparisphd
-0.509 : enthusiast volleyballer ryszhhffnu pastafarian hodophile studier multipassionate craftsperson aesthetician burgertarian
-0.378 : education students world teaching teachers community educators student educational support
-0.541 : effects behavioralscience polarizing devolve lucas mindshift chronicling gizmos reflex mhairicalveyact
-0.589 : journalist columbiabiz newsobserver gulfnews seniorjournalist badgerherald nnaazrcsws matthewferner virginianpilot toibusiness
-0.492 : award winning winner multi awards recipient emmy prize nominated winners
-0.534 : microsoftedu onenote microsoftteams immersive onenoteedu notebooks fetc microsofthelps jenallee microsofteams
-0.369 : elearning moodle moocs mooc gamification blendedlearning notch instructionaldesign digitallearning onlineeducation
-0.428 : love life family passion laugh hoping ordinary inspirations motivations reminding
-0.469 : follow official account twitter updates page contact facebook feed instagram
-0.491 : sdgs globalgoals byod minimalist pacifist varkey crazypln itcnews qualityeducation tradeimpactforgood
-0.516 : director university professor assocation cquniversity mlmpguutor duquesneuniversity vawesleyan taifuniversity purdueuniversity
-0.364 : founder innovation leader leadership strategy transformationalist womanfromrichmond futurescape intelligentinspiration entreprepreneurship
-0.456 : business marketing edassist accountmanager moqdigital ncrcorporation microbusiness tectitude transpbusiness natixis
-0.447 : join network selfquarantine alternating gmjnjxpbfd obtzyhsfqc thirstythursday icxeqqlnea dtcxgpwcic checkology
-0.492 : craftinginnovation projectdestined entrepreneural entrepreneursip engulfed natalienezhati oswaldcompanies investable knovation entrepreneuring
-0.599 : health care mental clinical treatment pharmacist medication preventive psychosocial survivorship
-0.528 : oisecpl wyckoffschools excellencewithequity propelamerica wingraschool ignitenation maeducation broadresidency btsbmore kosovoban
-0.470 : lover books music sports loves food nature football wine movies
-0.414 : people stewards paving disconnected prioritise engagetoenhance endeavoring discoverable maturing improvers
-0.442 : committing combatting edification seekjustice multiplmovement perpetuity foward disenfranchisement combatant unaccompanied
-0.420 : microsoft adobe infused powerpoint ncce chromebook surface microsofteducation msft sway
-0.591 : wspblqkhvn memphisbornmemphisbredandwhenidieillbememphisdead brodehffvy painisonlytemporarybutvictoryisforever popqfzmuvv alayajanainguyen itstheendoftheworldasweknowitandifeelfine wzinlffikv badcompanycorruptsgoodcharacter artisthubbynonnaslasagnbowiefunnystemsingingdaughterpama
-0.464 : platform calimatic synctrics kapwing composable rapidlearning realtimecommunications multifunction bkwwpuntsa vistaprint
-0.553 : certified google trainer ambassador innovator apple flipgrid level seesaw cert
-0.588 : mieexpert certifiednatgeoeducator nearpodnce skypeclassroom wakeletevangelist fetcpresenter denambassador pendidikdigital mieefellow whiteoakvikings
-0.438 : news information events informations aggregating refrkbaaie reportage watchdogarena dzluifzdsn undercurrents
-0.526 : miserable highvibrations tearing goddesses ypvphkwpqe squatting frying bvorvcugkt offficial sinéad
-0.369 : learning edtech technology tech online digital tweets social views instructional
-0.442 : kids children families parents child parent autism adults raising teens
-0.450 : college programs career placement gateway granting advisement residentially apptitude salaried
-Mean: 0.488, var:0.005
-NPMI:0.48782
-NPMI Mean:0.48782
+0.672 : environment climate sustainability sustainable environmental environmentalism groundwater environs pollination environ
+0.681 : teacher school principal middle westlake multiage prekindergarten middierising ycsd lpselma
+0.718 : lover enthusiast nerd geek avid traveler wannabe adventurer techie afficianado
+0.595 : artist design creative designer graphic visual painter photographic artistry photographe
+0.697 : software sassoftware outsystems liferay microfocus synopsys ovhcloud qkrmcnlmcu snyksec enterprisearchitecture
+0.664 : english spanish german italian portuguese trilingual englishman croatian argentinian spaniard
+0.739 : research researcher ercresearch reseach sangerinstitute universitysa uniinnsbruck unigoettingen universitelaval mindresearch
+0.664 : muskegon pawtucket dubuque susquehanna missoula chattahoochee kokomo plattsburgh northcarolina southland
+0.561 : students college academic program career programs opportunities academics vocational graduates
+0.676 : christian jesus christ follower faith disciple preacher romans missionary christians
+0.676 : care medical outpatient rheumatologist inpatient transfusion prehospital osuwexmed pharmacovigilance phlebotomist
+0.567 : love life family living food live travel loves nature passion
+0.556 : world people learn future share create creating everyday changing difference
+0.677 : janice rodney maynard bernadette frazier davison michaela marjorie marlowe cuthbert
+0.564 : community chilliwack flagstaff pershing fdlrs escondido stateside flvs snoqualmie yellowknife
+0.590 : global international newzealand seychelles uzbekistan bsnetherlands worldclass guadalajara vilnius kyrgyzstan
+0.531 : politics policy political reforms disarmament lawyering polio democratising unmigration appropriations
+0.615 : development services training management solutions service leading company experience providing
+0.565 : music sounding songstress singersongwriter rocknroll beatboxer classicalmusic jingle rockmusic musicianship
+0.664 : wife mother proud kids friend married daughter boys amazing mama
+0.566 : online free website info blog check visit fingertips blogspot directories
+0.616 : educator passionate professional learner advocate leader consultant specialist trainer lifelong
+0.551 : tremendous instincts willingness consideration introspective tagline happyness introspection humanly plentiful
+0.700 : technology tech digital innovation technologies innovations informationtechnology technolgy technologie techology
+0.601 : creations gifting garments upscale lingerie fashions collectables preloved souvenirs shredding
+0.635 : education learning teaching educational continuation educationaltechnology educative educations explorelearning curriculumassoc
+0.717 : feminist allblacklivesmatter warrendemocrat lgbtqs milkteaalliance peoplesparty prouddemocrat democraticsocialist lgtbq protecttranskids
+0.661 : sports football dodgeball racquetball fantasyfootball basketballer lpga sportsball footballing nhljets
+0.604 : writer author blogger host storyteller podcaster novelist mastermind memoirist juggernaut
+0.643 : whining brainwashed pissing disgusting lunacy undecided triggering annoyance downfall disbelief
+0.832 : alum riceuniversity universityofga miamiuniversity elonuniversity drakeuniversity rowanuniversity cmuniversity universityofri colgateuniv
+0.707 : patriot conservatarian godblessamerica proudamerican cavalry makeamericagreatagain infidel lnyhbt supportourtroops flotus
+0.659 : twitter follow account official instagram page updates feed facebook handle
+0.614 : support helping dedicated mission supporting focused committed focus empowering facilitating
+0.573 : health mental fitness wellness addiction addictions lifespan complementary sedentary hlth
+0.648 : news daily headlines reporters homepage journalistic headline newsfeed infotainment newsworthy
+0.589 : director founder manager head senior executive exec founding activision codirector
+0.539 : forgetting vengeance heartbreak brightness tommorow lamborghini cauldron rilke risotto huzzah
+0.584 : content creator video games game gaming multiplayer webseries callofduty warframe
+0.610 : books book writing shortstories unwritten bookouture authorship scwbi novellas hardcover
+0.564 : time running enjoys soaking partying levelling slimming squeezing whistling fading
+0.611 : business marketing media communications strategy strategist bussiness rebranding mediarelations blackbaud
+0.592 : science university student professor studies graduate univeristy brockuniversity reseacher studier
+0.644 : guacamole goldfish avocados fudge dumplings skittles mezcal peppermint licorice croissants
+0.690 : tameside londonderry skipton bracknell trowbridge carluke maltby birkenhead greatermanchester tonyrefail
+0.762 : india allahabad chhattisgarh gurugram tamilnadu guwahati himachal varanasi hyderabadi gandhinagar
+0.707 : views tweets opinions personal tweet endorsements endorsement retweets expressed likes
+0.606 : investment investments bullish compounding dividend financier broking brokering undervalued financialplanning
+0.494 : social human justice intergenerational socialization mothership multigenerational deliberation rapporteur anitaborg
+0.621 : goober boyband soulless dickhead kfbf woohoo vomit makowwka unlucky ohhh
+Mean: 0.632, var:0.004
+NPMI:0.63223
+NPMI Mean:0.63223
 NPMI Var:0.0
 
 ******************************************
 
 Number of Clusters:80
-0.583 : memphisbornmemphisbredandwhenidieillbememphisdead williamsville blanton maercker harrisonburg elyria duanesburg columbusproud chocowinity vacaville
-0.323 : director community social media activision connectionsacad jocoxfoundation moqdigital prospektiker directorship
-0.552 : award winning winner recipient prize winners winnings
-0.383 : business university research informations professsional educationalcommunications rjgwkrsqpv marketisation infonomics tourismresearch
-0.500 : lover enthusiast foodie professed ryszhhffnu flexitarian hodophile studier gadgeteer multipassionate
-0.576 : globaledtech digitalcontentcreator plannersquad hecknowledge partialcredited pocketshare thomassonmorris weconnect digitalsportsmanship kissyourteacher
-0.406 : gamification lifelonglearning digitaleducation learningtechnology learningtechnologist adulteducation remoteteaching globaleducation googleclassroom higheredtech
-0.520 : news official account twitter updates page department feed managed announcements
-0.473 : understandable risevision storefront calimatic microburst collaaj hirecaliber videoassessment kapwing ykbfwjslmu
-0.437 : advocate acceptancenottolerance advocation combatting seekjustice multiplmovement foward disenfranchisement decolonizeeducation unaccompanied
-0.476 : podcast host week weekly hosted talks tuesday wednesdays podcasters tuesdays
-0.370 : teachers educators classroom innovative ideas teach classrooms actively integrate weteachers
-0.525 : founder cofounder gofounder founderuni cfounder
-0.537 : wspblqkhvn certifiedbrainpopeducator riseupsuns michaelhaedu rejmvkdbyv elementaryexplorer ecsdallltogether lanceelementary folwellfalcons missbrightbluehue
-0.592 : sports football basketball basketballer volleyballer nbhsbruins racquetball cihsraiders trashketball crossfitting
-0.573 : columbiabiz lenxpxqmnc hostbodiesriseupcrushgop coryrawsonlocal qpyfdxfmnh wapolicycenter elgordoylaflaca uncmjschool harvardjlpp zccpwqqwha
-0.458 : commercialization consultancies edassist craftinginnovation 𝗙𝗼𝗹𝗹ow feasibility jnrdzignfactory natalienezhati oswaldcompanies contingency
-0.468 : lucas reflex optimise beep interactiveclass augusto googleexpeditions visitingmedia balveersinghyt adamspiceonline
-0.593 : health care mental clinical treatment pharmacist medication preventive psychosocial neonatologist
-0.492 : level parodyaccount jefcoed luxford barreschools topscorewriting arrowwoodeagles avenelmiddle goshenvision bexceptional
-0.502 : nearpod wakelet pionear formative screencastify gonoodle istecommunityleader teachersloveedu feconnect goformative
-0.604 : continue effects behavioralscience polarizing devolve mindshift chronicling mhairicalveyact wnerkjwyth futureedgu
-0.455 : inspire empower engage educate challenge innovate inform encourage equip aspire
-0.431 : support follow todotogether eresources dzluifzdsn iivhukexyz mqyekvtrvz dmdkmptqsp exceedyourvision startling
-0.530 : tweets views opinions personal endorsement endorsements retweets expressed likes employer
-0.585 : microsoftedu onenote microsoftteams onenoteedu notebooks microsofthelps onedrive microsoftedge msftenable microsofteduk
-0.388 : leadership leaders equity committed inclusiveness disciplined practiced relationshipbuilding nsweducation consciouspractitioner
-0.400 : students learn people helping create future mission dedicated build improve
-0.433 : husband father proud living retired happy follower christ loving veteran
-0.507 : environmental environmentally environmentalism extremes constructions conservationists diversification environmentyale environmentalhealth transporting
-0.416 : kids children family home parents child adults childhood raising teens
-0.444 : elearning moodle mlearning instructionaldesign articulate storyline instructionaldesigner mlearn elearner instructionaldesigners
-0.506 : issues insiders mjzgpvevyk devdiscourse iyxoislsap refrkbaaie currentissues reportage kuoibsyymt dailydashboard
-0.606 : thespagmonster quartezkidd jennygrabiec brokenpharma caesarswindsor pissedoffoldhippie desireeuhell realzaragozahastamorir iamkoolysosa painisonlytemporarybutvictoryisforever
-0.529 : thriveinedu learnwithoutlimits restlesslearners trainingmagnetwork thisisfuturelearning anthologyinc udacitysupport interactyx keepgrowing psst
-0.481 : history studies culture politics religion anthropology anthropological victorianist interprets historiography
-0.456 : school principal grade elementary district middle grades junior principals pdsb
-0.489 : educator coach certified google trainer ambassador microsoft lead innovator apple
-0.407 : educationalists integrass propelling delving technologistcpt transfomative prioritising innovision edification engulfed
-0.528 : love music loves food nature photography cooking wine movies traveling
-0.548 : transitionassociates digitalllearning takethiscourse latitudelearning indegultd studyonline personalperformance ciphrhrsoftware trainingsoftware workplacecourses
-0.420 : training development professional solutions leading based services providing company provide
-0.632 : author bestselling
-0.526 : homeschool homeschooling christian faith moms homeschooler bible biblical marriage passing
-0.430 : teacher learner life leader passionate instructional specialist lifelong designer facilitator
-0.535 : lossiemouth sittingbourne ssercofficial rosshallacademy iluhnxuerd boothferry spnsdooradoyle ijhmfhvisy cardiffian shefdentistry
-0.401 : content creator creation creators genius brilliant simply curation econtent seater
-0.566 : miserable dumping highvibrations tearing popqfzmuvv circuses goddesses ypvphkwpqe squatting scumbags
-0.456 : stem integration steam robotics coding printing futurebuilders tinkeringstudio steamazing codesters
-0.546 : english language arts spanish french languages italian chinese linguistics linguistic
-0.422 : world class universities coursera degrees cent worldclass youthwithoutlimits apworld worldwithoutlimits
-0.379 : speaker consultant advisor evangelist tedx successfully keynoter steammaker spkr edconsultant
-0.461 : owner owned planner boyd squad rourke dole blooming vohnny bepresentimages
-0.536 : startupmission forumventures entrepreneural entrepreneursip toibusiness investable platformeconomy entrepreuner invester entrepreneuring
-0.453 : researcher analytics mindresearch anuresearcher cybersecurityexpert digeetalization computersecurity networkanalysis researchrecognized nonprofitmanagement
-0.584 : books book fiction authoress hozbooks publishedauthor spellbound graphixbooks cozymystery bookouture
-0.562 : paulinarubio fujifilmbusinessinnovation reversementoring responsiblebusiness smartinfologiks responsiblemanagement alayajanainguyen wzinlffikv intesasanpaolo productinnovation
-0.431 : data quality access opportunities opportunity delivering districts improving nationwide ensure
-0.579 : literacy library librarian libraries libraryish librariesrock readonline subjectlibrarian libraryatchs iamalibrarian
-0.519 : egmsproducer watchdogarena postproduction paramounthdp steeldrumartist demoscene colajazzscene tpzccpxeft ygnrtedkex tohodvuiks
-0.576 : professor shawuniversity assocation cquniversity mlmpguutor duquesneuniversity taifuniversity uofjeddah umeauniversity purdueuniversity
-0.642 : mieexpert certifiednatgeoeducator smartambassador freckleambassador cleverbooksambassador skypeclassroom wearefhs jambassador mosassociate denambassador
-0.543 : wife mother amazing boys friend daughter beautiful mama blessed wonderful
-0.457 : directions unattended personas portraying vvffdjfhly fruition felling guesses friendliness smoothest
-0.448 : schools public system private charter colleges atlanta wasc charters charting
-0.522 : sustainableteaching leaderoflearning hillbrookschool thoughtfullyabrasive delancodragons thedaringlibrarian scoebadgeproject scarolinageg skilltivity ispuplands
-0.500 : ulkoministerio luxembourgers linköping côte educationinemergencies swaziland ישראל 日本の考古学 forfaiting tajikistan
-0.473 : googleet googleei googleedu istecert ovacademy googleec globaledsschat lakeshorecsd alisalstrong dftba
-0.452 : national governmental directional gujaratuniversity districtadministration thisismembership presidentkovind presidentially sdnzaiecew afflilate
-0.378 : student success voice engagement growth achievement outcomes giving participate moments
-0.562 : software middleware firmware productengineering dynamiait softwaremill infoq octotechnology commercelayer ocadotechnology
-0.394 : conscious endeavoring empathizing discoverable intelligentinspiration chilliwack collegues potentialities reconnectionrevolution balletnotbarriers
-0.365 : online free platform share courses tools video engaging experiences virtual
-0.589 : dorchester newbridge cramlington kidderminster wellingborough clunykilliney tuxford bridgford paignton portlaoise
-0.464 : science math computer engineering mathematics physics biology chemistry astronomy stats
-0.446 : fellow keynote myositis
-0.416 : learning education edtech technology tech digital teaching educational global innovation
-0.439 : blogger podcaster influencer lifestyle attorney workshop vlogger momblogger prfriendly homesteader
-0.319 : writer college coordinator academic independent special freelance commissioning studnts journlearning
-0.556 : assortment gdzztdgqno promocodes wumudixmdy zpqecfsxyd rxcscqunsq cjpvoszvst kbmwugijsx hmkofyyyvy xxovfrjekq
-Mean: 0.488, var:0.005
-NPMI:0.48822
-NPMI Mean:0.48822
+0.660 : canada canadian australian ontario victoria vancouver calgary saskatchewan newfoundland mississauga
+0.474 : operation protective responding collision detention responds risky protections trident intrusion
+0.624 : bermuda uzbekistan bsnetherlands latvian guadalajara vilnius kyrgyzstan malaga wallonia internacional
+0.661 : wife mother proud kids friend loving married daughter boys amazing
+0.682 : sdpbc teacherlibrarian educatorfirst instructionaltechnology edtechie curriculumassoc coteaching fultoncoschools mlls alsde
+0.678 : university student professor graduate grad univeristy universityofky brockuniversity elonuniversity drakeuniversity
+0.707 : views tweets opinions personal tweet endorsements endorsement retweets expressed likes
+0.695 : football basketball baseball soccer hockey golf tennis referee handball pickleball
+0.682 : marketing communications strategy strategist sassoftware semrush publicisgroupe publicissapient attbusiness deloittedigital
+0.526 : creations projection plethora backdrop duration collectables projections definitions compendium shredding
+0.664 : learning edtech classroom blended experiential learnings relearning outdoorlearning learnin deeperlearning
+0.738 : chichester northants basingstoke hartlepool tameside macclesfield morecambe cirencester tonbridge northwich
+0.582 : owner runner skipper skiier jazzercise ringmaster scoutmaster cyclocross ridgeback enthusiest
+0.631 : school schools middle academy middletown greenwood randolph carmel parkway lakeview
+0.653 : certified google trainer level apple innovator promethean edmodo googlecertified quizlet
+0.540 : women lives black woman lgbtq trans intersectional unapologetically liberation intersectionality
+0.547 : humanity believes constellation willingness chooses plight knowledgeispower birthright truest equanimity
+0.765 : handmarkedpaperballots warrendemocrat countryoverparty presidentbiden exgop drcole supportourtroops trumprussia trumplican holdtheline
+0.516 : online free website courses levels thousands anytime sessions offline required
+0.564 : time forgetting brag deciding arriving relying exiting overdrive doubting traversing
+0.609 : twitterverse clueless gigantic supposedly goober annoyance soulless nutcase dickhead oblivion
+0.602 : community network dedicated supporting communities organization committed profit promoting supports
+0.590 : fashionable accessory foodies gifting sunglasses outfits fragrances upscale supermarket bedding
+0.595 : love family food travel loves coffee photography nature passion friends
+0.700 : editor journalist journalistic tbtimes fivethirtyeight bopinion journaliste politicoeurope dailyorange courierjournal
+0.557 : education students children educational teachers professions paraprofessional educationally schoolhouse compulsory
+0.670 : environment climate sustainability sustainable environmental environmentally environmentalism groundwater naturebasedsolutions environs
+0.637 : care healthcare clinical nurse patient nursing hospitalist prescribing medication outpatient
+0.581 : teaching english arts language teach french spanish languages multilingual mandarin
+0.552 : science sciences maths biology physics mathematics chemistry astronomy mathematician nasa
+0.665 : technology tech innovation technologies technologist innovations disruptive technological convergence informationtechnology
+0.650 : library librarian libraries commons librarians mlis librarianship aasl cilip mslis
+0.566 : life people living live happy everyday difference striving happen simply
+0.708 : lover writer enthusiast reader nerd geek avid traveler fanatic foodie
+0.674 : grade elementary principal kindergarten prek intermediate elem grader eighth sycamore
+0.680 : uninorthants bristolian uniwestscotland londonderry edinburghnapier uninewcastle angliaruskin londonmetuni dmuleicester canterburyccuni
+0.643 : history culture studies literature historian humanities anthropology histories literatures archeology
+0.584 : innovative focused creating inspiring driven dynamic passionately sustaining resourceful daring
+0.600 : business management company industry businesses consulting companies corporations multinational bussiness
+0.622 : charlottesville augustana platteville utdallas muskegon missourian dubuque uvmvermont missoula northcarolina
+0.673 : shoreline bozeman susquehanna sunnyvale southland flagstaff westmoreland comox centreville southgate
+0.667 : host podcast talk podcaster podcasts podcasting podcasters applepodcasts talksport biweekly
+0.551 : research project focus aspects researched experimentation advancements outputs reseach foci
+0.648 : development leadership growth transformation organizational transformational effectiveness facilitation transformations leadershipdevelopment
+0.658 : legal lawyer attorney litigation paralegal antitrust appellate arbitration barristers jurisprudence
+0.642 : author fiction published novels novelist authored coauthor unpublished penguinrandom novella
+0.608 : teacher educator coach learner math lifelong substitute inspirer supportateacher choosekind
+0.544 : artist content designer creator producer freelance storyteller productions photographe videomaker
+0.768 : security cloud informationsecurity cloudnative enterprisemobility hybridcloud networksecurity multicloud sddc ibmsecurity
+0.528 : health assistant program conestoga deans jhpiego spps departmental gwsmhs werklund
+0.544 : mental psychology wellness psychologist mindfulness holistic addictions interpersonal lactation psychoanalytic
+0.574 : instagram gmail email contact facebook link insta click inquiries message
+0.763 : india allahabad chhattisgarh gurugram tamilnadu himachal guwahati gorakhpur varanasi hyderabadi
+0.661 : indifference hateful gaslighting brainwashed denying pissing rampant disgusting mocking lunacy
+0.595 : learn helping create build mission leaders grow improve connect inspire
+0.558 : politics policy justice political reforms randcorporation disarmament democracies polio democratising
+0.505 : world global international american america africa citizen worldwide african asia
+0.653 : music musician singer jazz musical drummer percussionist songwriting clarinetist musics
+0.637 : entrepreneur investor angelinvestor startupper entreprise cryptoenthusiast invester angellist wantrepreneur cryptoassets
+0.653 : games gamer roleplaying tetris tokusatsu callofduty warframe gunpla nintendoswitch noobs
+0.650 : husband father christian jesus christ follower brother servant pastor daddy
+0.592 : based services support training solutions service leading experience quality providing
+0.680 : janice rodney maynard bernadette frazier davison nicholson michaela marjorie cuthbert
+0.582 : mayonnaise smorgasbord chopsticks sawdust chernobyl lamborghini cauldron huzzah risotto hunnid
+0.639 : twitter news follow account official page updates office feed handle
+0.682 : sports parrothead cyclonenation redsoxnation redwings kingjames nhljets raysbaseball ndfootball redblacks
+0.679 : data analytics intelligence machine artificial visualization algorithms predictive datascientist analytic
+0.665 : activist feminist humanist egalitarian winger pescatarian southpaw ecosocialist flexitarian librocubicularist
+0.728 : medical medicine physician internist rheumatologist transfusion nufeinbergmed osuwexmed otolaryngology endovascular
+0.680 : epileptic tourette tinnitus scoliosis multiplesclerosis cervical hereditary scleroderma narcolepsy leukaemia
+0.664 : researcher scientist lmumuenchen superstarsofstem compchem microfluidics sangerinstitute unigoettingen uniinnsbruck hhmi
+0.593 : passionate professional advocate leader consultant specialist speaker expert passionated entrepeneur
+0.574 : books book writing write writings shortstories bookshelf kidslisten unwritten bookworms
+0.621 : primary secondary headmistress dosbarth lourdes ceiag scoil vhprimary primaryrocks holyrood
+0.529 : team information share resources sharing info blog check related visit
+0.523 : social digital media design creative communication internet creativity storytelling identity
+0.598 : director founder senior executive exec founding codirector wellsfargo commitee whitebdadvisor
+0.545 : award winning winner multi gold awards finalist emmy silver prize
+0.603 : platform tools application effortless friction contactless programmable specifications bandwidth multiplatform
+0.677 : software engineer developer programmer stack programing enginner outsystems programer jetbrains
+Mean: 0.625, var:0.004
+NPMI:0.62506
+NPMI Mean:0.62506
 NPMI Var:0.0
 
 ******************************************
 
 Number of Clusters:100
-0.528 : microsoftedu onenote microsoftteams onenoteedu notebooks fetc microsofthelps jenallee hoekstra msftenable
-0.461 : project multistakeholder cooperating cooperations interchange prioritising rjgwkrsqpv internationalwaters developmentuea rteinitiative
-0.566 : enovation growthengineer latitudelearning studyonline sabasoftware managingelearning ciphrhrsoftware trainingsoftware videotraining safetycourses
-0.401 : real practice strategies guide practical inform peer paced grid implications
-0.527 : home homeschool homeschooling busy recipe homeschooled homeschools homeschoolfollowback encouragment worldschooling
-0.498 : award winning winner multi awards recipient prize winners winnings
-0.668 : crypto bitcoin trader trading cryptocurrency cryptocurrencies currencies jfromblockchain swarmmarkets litecoin
-0.528 : official account twitter page feed managed handle monitored inactive offical
-0.417 : author speaker consultant podcast host creator keynote presenter selling tedx
-0.546 : customer samsung studytube lenovosupport verizonsupport tiktoksupport puttingpassengersfirst railwayupgradeplan taplytics ropeubzwoo
-0.362 : founder social media studies moderator ncea habitué slowchat mediaed noddlepod
-0.471 : reminding admiration endeavoring manifestations empathizing purposely potentialities fruition educationiskeytounderstandingtheworld greeness
-0.546 : edsurge edutopia corwinpress elmagazine edsurgejobs medutopia edsurgetlc
-0.575 : christian follower christ jesus church faithful glory gospel savior missionary
-0.503 : husband father proud brother daddy uncle grandfather grandpa girldad granddad
-0.367 : education world global research international independent schooling ncceducation educationworld geospecial
-0.356 : learn people kids helping time create children share ideas mission
-0.589 : wspblqkhvn arrowwoodeagles greggelementary surrycoschools lanceelementary folwellfalcons sachemschools wildermiddle mpsazedtech pelhamoakspe
-0.548 : memphisbornmemphisbredandwhenidieillbememphisdead brodehffvy hostbodiesriseupcrushgop wvjvbtmcmd elgordoylaflaca alayajanainguyen wzinlffikv hlcbwfxkvc angazainstitute mayoviofficial
-0.457 : advertisements feasibility conveyancing transporting experion minibuses funcation zhypility speight consolations
-0.539 : lossiemouth kidderminster portlaoise boothferry castlenewnham mottingham britishcycling towcester mossside baldoyle
-0.384 : moodle moocs onlinelearning mooc gamification mlearning blendedlearning instructionaldesign digitallearning remotelearning
-0.388 : community stewards educationalists engagetoenhance academixdirect inspiretaiwan bridgerichmond successthroughfocus masterfulfacilitation banyule
-0.490 : ambassador flipgrid wakelet seesaw cert teachsdgs schoology kahoot brainpop edpuzzle
-0.485 : teacher certified science google trainer grade innovator apple computer level
-0.449 : virtual conference event coming july exhibition attending returning promoters exhibitors
-0.391 : intersections progressing anthropological steeluniversity enamored constructions hydropolitics technologistcpt deconstruction classimmerse
-0.451 : association largest staff serving serve serves proudly representing nationally represents
-0.536 : pathfinders leaderoflearning worktwitter hillbrookschool fetcpresenter indianacto scoebadgeproject googleeducation hydeparkschools kamiconnect
-0.756 : continue effects behavioralscience polarizing devolve devolved behavioralscientist polarized popularizing
-0.463 : love books music reading travel loves food nature photography enjoy
-0.508 : schools public districts charter compass wasc charters eschool charterschools publicschoolsprovide
-0.523 : lover enthusiast reader avid foodie drinker professed ryszhhffnu flexitarian hodophile
-0.618 : extremist insurrection republicanism protester retaliation disenfranchisement lincolnvoter veteransforimpeachment socialismkills namelyliberty
-0.433 : training development professional services providing consulting delivery focusing professionalism progression
-0.383 : edtech technology students teachers educators student stem innovative integrate technologyeduc
-0.357 : tech coach innovation leadership integration integrationist gallup sourcewell edtechsa inovation
-0.385 : platform based skills build provide offer wide facilitate valuable learnings
-0.383 : educator leader passionate advocate mentor distinguished connector distinguish digitalwellness efellow
-0.394 : microsoft expert product tips adobe evangelist minecraft azure microsofteducation msft
-0.533 : primary secondary aspirational gemswso alcester sittingbourne whitefield primarywaterloo malmesbury pillgwenlly
-0.482 : indonesian internationalist luxembourgers swaziland ישראל caribeña eightexpat israeliculture fukuoka huguenot
-0.365 : university professor management manager marketing senior montpellier universitat conestoga buquestrom
-0.524 : wife mother amazing boys friend girls daughter beautiful mama sister
-0.409 : learner instructional specialist curriculum lifelong literacy coordinator librarian special administrator
-0.567 : gulfnews reportage watchdogarena nnaazrcsws badgerherald lazarusheist mirrorpolitics toibusiness telegraphandargus personalopinion
-0.617 : programmer frontend rails frontendmasters pspihyldai reversepython ionicframework dynamiait javascripter mobilewebspecialist
-0.482 : america reform nation dropout edreform crisis chronicling futureedgu premise schoolhouse
-0.520 : harrystyles definenormalcomic sierragreenecreations peanutbutterandwhine uxcvktxgic 𝓦𝓸𝓻𝓵𝓭𝓼 dcnmfsglce babydaddy billzvuitton hldafjtowd
-0.592 : xmalearning ciroks highgatehuskies teachingaudaciously wesdtech dcsdvirtual sportcaster toddytd speechatemerson sketchnoterscafe
-0.454 : specially storefront assortment experimac vvffdjfhly storefronts papercraft mdsqocoeaw oabcorxesb kduzkarpkglb
-0.489 : producer actor comedy sounding showrunner egmsproducer postproduction prewga audiodescription radiotelevision
-0.384 : hashtag distancelearning timeline auto deepen robot fits tags virtualreality optimise
-0.470 : school principal elementary middle boarding lcps gecdsb hillcrest gadoe principalship
-0.538 : tweets views opinions personal expressed employer represent reflect view comments
-0.436 : policy policies governance tank edpolicy nonpartisan policymakers partisan schoolchoice eddata
-0.453 : video interactive creation images document documents instructions simpleshow synchronized draftquest
-0.578 : sports football basketball basketballer volleyballer cihsraiders racquetball trashketball crossfitting stanlycc
-0.419 : life family live living passion happy loving dream hard everyday
-0.462 : edchat flipclass shakeuplearning gsuiteedu edspeakersco eduducttape edugifs icle eduporium ipaded
-0.554 : cameron chantilly lovelestweforgotrememberancemounth bullard fincheagles barkalow angeloakes jermaine farlington buckhannon
-0.560 : goscience microbiological thermodynamics diversification thermodynamic kuizical metallurgical acidification hydroresearcher stavscience
-0.744 : security cybersecurity infosec cloudsecurity networksecurity informationsecurity cybersecurite infosecurity cybersecurityexpert iotsecurity
-0.433 : highered engagement globaled intled avtweeps studyabroad emchat schoolculture intlstudents megglobaled
-0.474 : writer designer artist photographer freelance freelancer painter adventurist revolutionist progressionist
-0.617 : book fiction hozbooks graphixbooks scwbi bookouture quercusbooks sergeantfrankhardymysteries yzqybjsxcd creativenonfiction
-0.555 : shortform mrsjenncarr restlesslearners wsdqosuaqo trainingmagnetwork videolesson rfhmploztc techlearn chirps padlet
-0.600 : researcher cquniversity duquesneuniversity taifuniversity umeauniversity uofjeddah יהודיה alainuniversity ununiversity shefdentistry
-0.535 : blogger blog parenting lifestyle bloggers vlogger momblogger homesteader travelblogger lifestyleblogger
-0.573 : depending miserable dumping highvibrations gripping bottomless endearing tearing popqfzmuvv circuses
-0.389 : teaching math classroom creative creativity steam thinking mathematics inquiry integrating
-0.428 : director board president chair executive vice exec advisory committee trustee
-0.530 : startupmission craftinginnovation forumventures entrepreneural entrepreneursip natalienezhati investera investable twozeroventures uehlfjqkfo
-0.607 : virtualbizdevelopment experienceclient revenueoperations multichannelengagement responsiblebusiness responsiblemanagement ecommercebusinessconsultant businessvideo productinnovation channelmarketing
-0.479 : data analytics applications aggregating calimatic scraping typingbiometrics synctrics visualisations composable
-0.645 : mieexpert microsoftinnovativeeducator smartambassador freckleambassador cleverbooksambassador wearefhs jambassador denambassador mieefellow whiteoakvikings
-0.599 : health care mental clinical treatment pharmacist medication preventive psychosocial survivorship
-0.418 : notch onlinecourses onlinecourse females keywords criteria onlineeducation ranks cnrs onlinetraining
-0.424 : dedicated organization focused committed profit promoting individuals individual bridge aiming
-0.518 : endorsement endorsements retweet retweets related likes links necessarily posts imply
-0.349 : learning digital elearning design content experience blended distance canvas extended
-0.522 : equity justice inclusion diversity equality gender representation inclusiveness advancer vstqeztfgc
-0.359 : team class building academic universities progress core teams immersive built
-0.442 : national governmental directional divisional gujaratuniversity districtadministration coveragecounts shombisharp sdnzaiecew mmaslamiqbal
-0.493 : indegultd criticalchismestudies oisecpl institutionnelle mltg universitycooperation sciencescognitives ardenuniversity edusofinnovation openpublications
-0.593 : buncee pionear pres isteten thriveinedu ddinc osgsttttye getakahoot
-0.359 : online news free support follow information join updates events tweet
-0.534 : supports strengthens cultivates lengthens
-0.536 : partialcredited weconnect everyteacher readingwritingels changethenarrative illuminateed createbook trendthepositive classdesign makelearningpersonal
-0.458 : accessing michaeltaster risevision wordsworthlearning assessed teacherevaluation nferclassroom intelligian beyondtracking evaluative
-0.551 : english language arts spanish french languages chinese linguistics linguistic linguistically
-0.443 : college program programs career graduate placement gateway preparations careerkarma granting
-0.606 : lmspulse educationstate hecknowledge thomassonmorris amazecardrives digitalsportsmanship kissyourteacher kidshelpingkids edcamphappyvalley useronboarding
-0.518 : globaledtech pacifist techintegration hackingschoollibraries teachertrainer digitalcontentcreator plannersquad rockyourhomeschool ambassadorteacher iftechtraining
-0.577 : dorchester williamsville multnomah harrisonburg churchville ranchdale elyria streetsville duanesburg sewanhaka
-0.692 : bigdata datascience machinelearning datascientist neuralnetworks dataquality tdatascience datazifu machineleaning riffanalytics
-0.416 : educational business quality assistant connecting opportunities sales safest corners onpassive
-0.511 : remikalir pmntdkwqke cjpvoszvst eqbkbwmxah rarimrbmze tacshqctqn xxovfrjekq gwuqffvkld lbuxohhwip opkqrvqpnp
-0.455 : solutions leading software company provider cloud infrastructure installer hitachi targetsolutions
-0.542 : alum williamscollege alueducation gratzcollege vawesleyan scrippsjschool carnegieendow heinzcollege purdueuniversity japanesebangladeshi
-Mean: 0.496, var:0.008
-NPMI:0.49642
-NPMI Mean:0.49642
+0.616 : tweet stuff tweeting related random retweet posts lots occasionally memes
+0.532 : news events updates daily source entertainment insights trends articles weekly
+0.577 : professional leader consultant manager specialist expert strategist manger profesional consultor
+0.551 : artist designer creator producer graphic productions artistry colorist showrunner beatmaker
+0.623 : music musician jazz musical drummer percussionist flamenco clarinetist crossover musics
+0.821 : alum brownuniversity riceuniversity miamiuniversity smithcollege elonuniversity drakeuniversity rowanuniversity universityofri cmuniversity
+0.745 : brookside frankfort brandywine canandaigua susquehanna chattahoochee oakridge hauppauge millville westmoreland
+0.726 : views tweets opinions personal endorsements endorsement retweets expressed likes opinion
+0.493 : based information leading network forefront informational larger definitive preeminent consisting
+0.625 : thinker optimist enthusiastic optimistic generalist multipotentialite enthusiastically nonconformist consummate incorrigible
+0.611 : twitter account official page feed handle monitored maintained unofficial temporarily
+0.676 : students grade elementary principal middle prek lakeview bethpage scsd wsfcs
+0.601 : science scientist computer sciences physics mathematics computational astronomy physicist mathematician
+0.723 : medical clinical physician internist outpatient rheumatologist inpatient paramedicine prehospital nufeinbergmed
+0.655 : history studies literature historian humanities anthropology histories literatures archeology twitterstorian
+0.587 : husband father proud retired christian believer follower brother grateful devoted
+0.551 : social digital media content communications communication internet relations comms storytelling
+0.668 : yeah lowkey bruh motherfucker shawty trynna dreadhead goober shyt nickiminaj
+0.582 : policy reforms policymaking intergovernmental randcorporation worldresources goverment polio anitaborg welshgovernment
+0.614 : businesses companies tools organizations helps individuals effective deliver manage scale
+0.619 : serving riverside pasadena ventura norwalk antioch medina saratoga alameda alamo
+0.454 : department physical counselor dept athletic counseling phys departments kinesiology sophomore
+0.690 : bristol chichester tameside morecambe londonderry dmuleicester skipton liverpoolhopeuk trowbridge westmidlands
+0.482 : living girl born native raised resident moved birth lived educated
+0.723 : proteomics neurobiologist tuberculosis metagenomics drosophila zebrafish microfluidics homeostasis antibodies mechanobiology
+0.670 : services training solutions service company providing provide consulting provider offers
+0.512 : public schools county union charter title grant districts loudoun dade
+0.536 : creative passion creativity inspired striving believes thrives brilliance daring enlightening
+0.653 : university research researcher univeristy ercresearch lunduniversity keeleuniversity professorial reseach prattinstitute
+0.425 : college library catholic campus church libraries prep colleges mary saint
+0.627 : international congolese seychelles harare uzbekistan eswatini kyrgyzstan vilnius mogadishu malaga
+0.629 : industry construction industrial industries manufacturing utilities trucking cement refining coatings
+0.585 : free website blog check visit link click checkout sending clicks
+0.628 : teacher educator coach learner math lifelong instructional coordinator integrationist montessorian
+0.593 : books book writing unpublished shortstories unwritten bookouture authorship storied scwbi
+0.599 : love loves reading loving friends enjoy dogs cats movies laugh
+0.577 : society association organization professionals profit promoting nonprofit initiative organisation advance
+0.654 : michigan tennessee missouri arkansas mississippi connecticut montana jacksonville greenville chattanooga
+0.643 : south north east west central regional southern region northern rural
+0.666 : pasta sandwiches chocolates cheesecake waffles pancakes watermelon avocado guacamole roasting
+0.508 : community communities staff engagement volunteer partnership collaborative partnerships outreach civic
+0.597 : advocate justice activist feminist equality advocator lgbtiq allyship feminista equalizer
+0.536 : lamborghini groundskeeper cauldron huzzah risotto shimmering goosebumps plunder symplytacha albatross
+0.587 : business founder bussiness entreprise attbusiness leapfrog bussines vjnydtnyow worx wealthsimple
+0.557 : life world time live happy everyday difference happen simply hoping
+0.591 : student program graduate grad alumni current studying masters doctoral undergrad
+0.600 : psychology philosophy psychologist applied sociology neuroscience cognitive developmental metacognition sociological
+0.506 : school english primary academy class secondary junior headteacher subject pupils
+0.590 : gigantic supposedly annoyance plodding endearing nutcase dickhead oblivion suess vomit
+0.770 : crypto investor bitcoin cryptocurrency currency cryptocurrencies currencies bullish cryptos blockchains
+0.561 : american canadian danish quebec hungarian motherland croatian bulgarian bermuda damascus
+0.568 : nature animal animals wild creatures caretaker otters wildflower birdwatching herbivore
+0.713 : footballer everton spursofficial saracens bwfc footballers afcb pnefc wawaw scfc
+0.587 : products shop branded retailer retailers inventory purchasing item appliances discounted
+0.560 : author speaker award winning winner selling awards bestselling motivational tedx
+0.635 : yoga spiritual mindfulness holistic healing meditation healer mindful practioner relaxation
+0.445 : support partner voice talent collaboration partners supports foster voices supported
+0.672 : legal lawyer attorney lawyers litigation paralegal antitrust appeals appellate arbitration
+0.655 : conservative veteran military patriot troops tgdn conservatarian proudamerican paratrooper godblessamerica
+0.625 : writer blogger freelance poet storyteller podcaster freelancer novelist wordsmith publicist
+0.616 : people passionate helping building dedicated supporting focused creating committed empowering
+0.699 : wife mother friend married daughter boys amazing sister mama mommy
+0.681 : software data cloud databricks sassoftware hybridcloud outsystems liferay actualization dataops
+0.705 : editor journalist journalistic tbtimes newsreader fivethirtyeight journaliste thenewsminute dailyorange gulfnews
+0.733 : edtech stemeducation csufedtech educationaltechnology studentcentered servicelearning teacherlibrarian explorelearning edtechie thinkingclassroom
+0.591 : creations gifting sunglasses lace garments lingerie fashions tupperware mosaics leggings
+0.431 : city green urban town road street cities neighborhood councillor mayor
+0.470 : follow rsvp comingsoon folow dhfm kudos abegapp officialcoredjs watchlist timezone
+0.604 : engineer engineering electrical electronics mechanical chemical engineers embedded mechanic ieee
+0.528 : development leadership experience quality innovative opportunities exceptional enhancement prospective professionalism
+0.729 : developer stack backend rubyonrails developper jetbrains vercel coldfusion codeigniter swiftui
+0.523 : technology tech design product technologies technologist integration emerging gadgets computers
+0.535 : missing exploitation stalking protective responding threatening detention restrictions abuses responds
+0.549 : children kids special child girls families parent parents adults ages
+0.600 : photographer photography photo photos documentary portrait camera videographer photographers photog
+0.776 : security cybersecurity cyber infosec cybersec cyberspace datasecurity phishing informationsecurity cloudsecurity
+0.677 : marketing brand marketer branding advertising inbound marketeer programmatic marketingtwitter influencermarketing
+0.653 : certified google ambassador level apple innovator nearpod newsela classdojo pionear
+0.576 : health care mental healthcare wellness lifespan hlth lifesaving adherence healthful
+0.709 : professor assistant associate prof adjunct dean asst assoc univ emeritus
+0.652 : progressives authoritarian militant winger lefties dictatorship brainwashed meritocracy gerrymandering progressivism
+0.702 : sports football basketball baseball soccer dodgeball racquetball fantasyfootball basketballer lpga
+0.523 : human politics culture political perspective movements intersections intersectionality politic philosophies
+0.543 : learn share create ideas teach build mission leaders impact connect
+0.530 : online platform video courses easy videos interactive lessons anytime sessions
+0.582 : director head senior board president executive chief officer advisor chair
+0.601 : food coffee wine beer craft drink drinking whiskey fueled whisky
+0.668 : gamer rwby eldritch tetris deadpool tokusatsu warframe kaiju nintendoswitch octane
+0.669 : depression bipolar epileptic tourette mentalillness adhder tinnitus scoliosis multiplesclerosis stillness
+0.745 : innovation innovations openinnovation socialinnovation informationtechnology sharingeconomy cocreation businesstransformation dxctechnology technovation
+0.560 : instincts willingness indifference chooses truest willpower strife reverence amazement heartbreak
+0.724 : lover enthusiast reader nerd geek runner avid traveler addict junkie
+0.661 : education learning teaching educational teachers literacy curriculum classroom instruction integrating
+0.649 : environment climate sustainability sustainable environmental environmentally environmentalism groundwater seaweed airquality
+0.528 : bmore nuyorican chinatown chickasaw nashvillian beltway neworleans trinidadian phoenician hmong
+0.492 : home gmail info call email contact questions touch hours direct
+0.805 : resist handmarkedpaperballots warrendemocrat allblacklivesmatter fullyvaccinated postcardstovoters wearadamnmask presidentbiden eattherich geeksresist
+0.654 : family travel running outdoors cooking traveling cycling adventures travelling hiking
+0.526 : focus projection constellation specifications managerial piloting baseline multiplication studing modifications
+0.665 : noel janice jameson rodney sheppard frazier nicholson michaela marjorie sykes
+Mean: 0.613, var:0.007
+NPMI:0.6127
+NPMI Mean:0.6127
+NPMI Var:0.0
+
+******************************************
+
+Number of Clusters:130
+0.594 : yellowstone overlooking shoreline chinatown woodside gladstone stevenage primrose courtyard sandusky
+0.499 : lives communities matter voices peoples disadvantaged populations poorest savinglives
+0.626 : lead primary secondment pixl focustrust ceiag athrawes primaryrocks ddsl nqts
+0.675 : janice jameson rodney maynard bernadette frazier nicholson davison michaela marjorie
+0.626 : producer film production films documentary productions documentaries directing sundance showrunner
+0.574 : national president association council committee alliance federation directors associations treasurer
+0.635 : photographer travel photography nature travels photog photographs photographic photograph photographing
+0.453 : blue white gold color silver belt purple pink grey yellow
+0.626 : indifference dictatorship prevails meritocracy birthright lunacy downfall outright freedomfighter wokeness
+0.582 : dogsbody pawrent mayonnaise nutcase grasshopper woohoo glassblower shopkeeper lamborghini eeyore
+0.599 : researcher scientist reseacher lmumuenchen informaticist superstarsofstem stochastic complexsystems cognitivescience infated
+0.720 : wolverines parrothead goirish nyrangers lakings broncoscountry goavsgo cyclonenation redsoxnation flapanthers
+0.690 : software engineer developer stack outsystems elasticsearch liferay jetbrains netlify vercel
+0.524 : living live loving person happy hard crazy everyday rest simply
+0.680 : founder cofounder proctergamble wellsfargo pagerduty angellist vmlyr adroll foundersfactory bcgdv
+0.790 : alum grad brownuniversity riceuniversity gwtweets universityofga universityofky miamiuniversity smithcollege elonuniversity
+0.620 : award winning winner multi awards finalist emmy prize recipient nominated
+0.614 : helping create build mission leaders grow connect inspire empowering achieve
+0.491 : popularity constellation combinations synonymous overdrive definitions compendium constellations supercharged masterminds
+0.503 : program center programs instructor camp centers enrichment readiness enrollment prepares
+0.692 : crypto investor bitcoin investment trading investments currency cryptocurrencies equities currencies
+0.656 : jesus christ follower grace lord saved thankful disciple faithful beloved
+0.657 : environment climate sustainability sustainable environmental environmentally environmentalism groundwater environs worldresources
+0.534 : children kids home special child families parents adult adults ages
+0.692 : africa african kenya uganda cameroon zambia botswana southafrica rwandan ethiopian
+0.505 : people learn share ideas teach stories read write story words
+0.697 : editor journalist journalistic tbtimes fivethirtyeight bopinion thenewsminute journaliste popmech politicoeurope
+0.615 : quality innovative improve tools individuals effective deliver enhance enabling enable
+0.567 : public schools charter publicly hcps kipp schoolsafety charterschools charterschool publicschools
+0.581 : teacher educator coordinator librarian nbct supervisor sped interventionist tchr maed
+0.590 : technology tech innovation technologies computing technologist integration emerging edge innovations
+0.583 : motorcycle motorcycles scooter skipper motorcycling collision wheeled carp motorhome paragliding
+0.584 : director head senior board executive chief officer advisor chair deputy
+0.602 : health care mental healthcare lifespan healthliteracy hlth lifesaving healthsystems medications
+0.679 : certified google trainer level apple promethean edmodo googlecertified quizlet nearpodcertified
+0.497 : unique original creations tapestry projection capsule masterpieces displaying lineage plethora
+0.494 : school college middle academy library secondary campus junior prep admissions
+0.688 : arsenal everton liverpoolfc spursofficial manchesterunited saracens bwfc footballers afcb springboks
+0.597 : boys girls aged boarding ladies flexi stswithunsgirls rmsforgirls
+0.614 : science math computer maths physics mathematics chemistry chem algebra mathematical
+0.490 : free clicks legitimate guarantees checklist autopilot upfront necessities citations bonuses
+0.779 : india allahabad chhattisgarh gurugram tamilnadu ghaziabad himachal guwahati bjpindia gorakhpur
+0.568 : driven inspired dynamic engaged compassionate passionately grounded rounded integral resourceful
+0.583 : research approaches developments institutional researches researched implications interprofessional laboratories ercresearch
+0.770 : lunduniversity hkuniversity keeleuniversity astonuniversity assocprof uptuks universitysa unicomplutense simaduniversity predoctoral
+0.596 : blogger blog lifestyle parenting influencer blogging blogs motherhood vlogger momblogger
+0.542 : business businesses finance startups startup market enterprise corporate start entrepreneurship
+0.745 : conservative trump maga patriot constitutionalist conservatives pureblood trumptrain trumper tgdn
+0.588 : politics policy political issues economics economy policies socioeconomic reforms politic
+0.605 : twitterverse clueless gigantic supposedly undecided annoyance plodding soulless oblivious unwilling
+0.646 : valparaiso chaparral bemidji otterbein tallmadge claflin spartanswill owatonna flvs truemu
+0.599 : husband father proud leader retired brother servant golfer daddy grandfather
+0.529 : space universe galaxy realm stardust twilight transformers multiverse celestial intergalactic
+0.708 : artist musician singer songwriter composer guitarist song drummer performer pianist
+0.582 : social soci socia asocial
+0.578 : rights defending whistleblower protective defenders detention restrictions restricted disarmament sanctions
+0.753 : wife mother friend daughter sister mama mommy grandmother momma grandma
+0.509 : coach sports football sport coaching physical basketball field teams soccer
+0.566 : forgetting bending vengeance throttle heartbreak heartache brightness wrenching tommorow staircase
+0.743 : bristol colchester chichester tameside macclesfield morecambe cirencester deptford tonbridge uxbridge
+0.599 : tweet stuff tweeting related posts lots posting retweeting sorts suggestions
+0.672 : teachers instructional edtech curriculum classroom instruction instructions curriculums flippedclassroom teacherlibrarian
+0.665 : humanist pragmatist egalitarian iconoclast militant nonconformist winger southpaw pescatarian pastafarian
+0.528 : society organization trust profit founded foundation charity nonprofit initiative organisation
+0.545 : european europe socialist labour brexit fbpe tory nordic tories johnsonout
+0.619 : writer author creator freelance poet storyteller podcaster novelist wordsmith publicist
+0.599 : industry products construction industries manufacturing inventory engineered appliances compact cement
+0.622 : building dedicated sharing supporting focused creating committed promoting bringing connecting
+0.723 : biologist mycology proteomics metagenomics ecotoxicology drosophila zebrafish phenology compchem microfluidics
+0.605 : animal dogs cats animals humans pets horses rescuer creatures companion
+0.790 : blacklivesmatter allblacklivesmatter fullyvaccinated warrendemocrat postcardstovoters wearadamnmask eattherich lgbtqs fullyvaxxed familiesbelongtogether
+0.627 : connecticut montana charleston jacksonville chattanooga chicagoland tacoma asheville fayetteville charlottesville
+0.657 : food coffee wine chocolate pizza drinks sushi cocktails pasta tequila
+0.529 : advocate aspiring parent doer cheerleader helper crusader advocator schooler creater
+0.572 : instagram gmail info check youtube email contact visit facebook link
+0.513 : news daily tips source entertainment covering breaking trends weather features
+0.488 : love music family friends play movies rock dance disney favorite
+0.723 : principal superintendent principals supt superintendents nassp naesp momsasprincipals massp principalsinaction
+0.601 : fitness healthy yoga wellness nutrition mindfulness holistic balance mindful nutritional
+0.688 : texas houston austin texan dallas aggie antonio baylor tamu utaustin
+0.591 : london england scotland irish wales scottish glaswegian dubliner bristolian caledonian
+0.549 : american country america veteran military navy navajo iraqi choctaw paratrooper
+0.596 : christian catholic faith lutheran missionary missions christianity methodist anglican christians
+0.516 : leadership passion striving connection progression succession cultivation tenacity elevation persevering
+0.606 : history arts culture studies literature historian humanities cultures anthropology histories
+0.726 : medical clinical physician internist resuscitation rheumatologist inpatient paramedicine prehospital nufeinbergmed
+0.628 : psychology psychologist therapist emotional psych behavioral occupational developmental psychotherapist psychological
+0.660 : games game gamer videogame speedrunner roleplaying tetris tokusatsu callofduty warframe
+0.605 : player baseball hockey golf tennis squash competing handball powerlifting pickleball
+0.667 : fiction series horror novels thriller thrillers fictional chronicles shorts indieauthor
+0.628 : city south north east west central regional southern region northern
+0.566 : professional consultant specialist speaker expert analyst experienced evangelist guru seasoned
+0.622 : university professor assistant associate department institute faculty sciences dean dept
+0.726 : views tweets opinions personal endorsements endorsement retweets expressed likes opinion
+0.525 : development support team service experience project focus developement continuation baseline
+0.581 : shop items sells merchandise item merchandising accessory handpicked sunglasses gifting
+0.597 : digital design creative designer graphic visual storytelling creation graphics multimedia
+0.543 : stem code programming coding steam robotics lego robots robot makerspace
+0.654 : twitter follow account official page updates feed handle date monitored
+0.531 : life world time change future difference progress believes move happen
+0.576 : education learning students passionate teaching educational educationally compulsory educare educause
+0.679 : loves reading enjoy running outdoors cooking traveling cycling enjoys travelling
+0.585 : secretary democratic congressional representatives appointed councilor delegation precinct chairwoman assemblymember
+0.564 : student study studying doctoral doctorate uvic athabasca brocku unbc athabascau
+0.664 : host podcast talk podcasting podcasters podcasthost talkshow kidslisten applepodcasts radiohost
+0.645 : addictions melanoma epileptic tinnitus scoliosis cervical hereditary scleroderma leukaemia ankylosing
+0.612 : mobile website apps applications websites application platforms smartphone setup fingertips
+0.584 : international belgrade bermuda damascus mallorca montréal bsnetherlands guadalajara vilnius grenada
+0.745 : grandview grayslake albemarle roseville goochland frankfort moreland brandywine canandaigua granville
+0.676 : grade elementary kindergarten grades prek intermediate fourth elem graders kinder
+0.768 : security cybersecurity cyber infosec cybersec itsecurity cyberspace pentesting datasecurity phishing
+0.724 : lover enthusiast reader nerd geek runner avid traveler addict junkie
+0.682 : yeah lowkey bruh motherfucker shawty trynna shyt dickhead nickiminaj makowwka
+0.621 : learner lifelong believer innovator administrator collaborator motivator encourager lifelonglearner achiever
+0.586 : data management operations operational confluence managment managerial kpis microfocus allocation
+0.782 : productmanagement informationtechnology sharingeconomy productdevelopment businessmodel businesstransformation businessmodels rrhh communitymanagement digitalbusiness
+0.701 : services training leading providing provide provider courses offers offering offer
+0.619 : solutions company consulting agency companies talent firm clients specializing consultancy
+0.513 : engineering graduate major degree masters taught electrical mechanical pursuing bachelor
+0.632 : books book writing bookshelf bookworms scwbi authorship writerly selfpublishing penguinukbooks
+0.598 : women justice inclusion equality empowerment inclusivity belonging equalities intergenerational inclusiveness
+0.410 : master king queen hunter jack trades prince technician princess captain
+0.470 : heart born native raised resident birth lived educated grown roots
+0.669 : english language french spanish languages german translator italian chinese linguistics
+0.519 : community online global information network local platform resources professionals resource
+0.710 : married beautiful amazing awesome blessed wonderful happily daughters lucky sons
+0.503 : events join event conference coming brought featuring conferences sessions gathering
+0.644 : feminist woman queer multiracial intersex nuyorican feminista latine cisgender heterosexual
+0.678 : legal lawyer attorney lawyers litigation barrister paralegal litigator antitrust appeals
+0.638 : marketing media content communications strategy brand communication strategist marketer branding
+Mean: 0.615, var:0.006
+NPMI:0.61542
+NPMI Mean:0.61542
 NPMI Var:0.0
 
 ******************************************
 
 Number of Clusters:150
-0.475 : captivate articulate storyline allen partridge devlearn slade camtasia linkedinlearning iphoneographer
-0.479 : artist film theatre costumer cinematography impressionist technicolor postproduction illustrious audiodescription
-0.471 : owner owned rourke kwweshixdn coowner downer
-0.366 : digital development professional leading manager services service strategy communications consulting
-0.579 : wyckoffschools neslidrmsgl wearebeverlyschools watervillepanthers simischools traskmiddle michaelhaedu cigarroahslisd arrowwoodeagles loboproud
-0.560 : clothes merchandise advertisement sportswear assortment stocking garments wholesalers advertisements carpets
-0.602 : georgia williamsville walkersville blanton multnomah harrisonburg duanesburg columbusproud cvhsgrizzlies vacaville
-0.394 : director center executive managing exec founding prog cypher exectutive
-0.523 : globaled distancelearning intled cmrubinworld virtualexchange megglobaled gobaled pennglobaled dukeglobaled vifglobaled
-0.405 : quickest unattended 𝗙𝗼𝗹𝗹ow obtzyhsfqc zramhmpxza swampfrogfirst immersifydental pathwright chunknchew challengemrh
-0.546 : finance financial investment currencies compounding transactional stocktrader broking latoken dominance
-0.514 : software engineer engineering technical applications telecommunications telecommunication middleware reverseengineering firmware
-0.563 : chief officer engravalle datamoney
-0.527 : health care mental wellbeing wellness holistic addiction alcohol suicide substance
-0.723 : dropout chronicling futureedgu
-0.670 : medical clinical physician pharmacist oncology interventional pediatrics preventive perioperative neonatologist
-0.555 : globaledtech ditcher classtechtips learningintheloo googleslides consultlandmark unleighshed slidesmaniac scrape lincpd
-0.421 : independent selective accelerated aspirational matches educationalists gemswso boasting studnts independentie
-0.501 : individual respect principles expression independence appreciation honesty professionalism responsibilities individuality
-0.582 : miserable dumping gripping highvibrations bottomless endearing tearing circuses goddesses ypvphkwpqe
-0.544 : primary secondary computing headteacher headteachers getintoteaching aetacademies wracademies gnnazcgwyk richmondparkcps
-0.460 : stay keeping started date updated pandemic tuned hungry staying update
-0.566 : wife mother boys daughter mama sister mommy momma grandmother nana
-0.525 : alum williamscollege gratzcollege scrippsjschool carnegieendow heinzcollege purdueuniversity japanesebangladeshi cornellalumni φφκα
-0.472 : science math mathematics physics biology chemistry simulations chem astronomy stats
-0.413 : professor assistant coordinator researcher senior prof associate lecturer adjunct scholar
-0.559 : nicholas cameron chantilly lovelestweforgotrememberancemounth barkalow angeloakes jermaine drumquin buckhannon kelderman
-0.368 : voice association organizations largest serving worldwide serves alliance proudly collective
-0.524 : excellencewithequity ktafwpczvl amacommunity policylearning everettmaschools mayortommenino lenfestinstitute kosovoban deniseordway naseemmiller
-0.589 : wnerkjwyth inittogether udacitysupport linkedinhelp adobespark webpages jwntbmipfm discoveryvip amazonhelp amazonnews
-0.530 : formations transitionassociates growthengineer managementdevelopment latitudelearning indegultd personalperformance managingelearning ciphrhrsoftware trainingsoftware
-0.403 : students teachers educators learn helping create share classroom teach learners
-nan : education
-0.394 : advocate justice activist champion volunteer citizen campaign warrior worker fighter
-0.546 : global globals
-0.551 : follower christ jesus grace church worship faithful heaven glory proverbs
-0.369 : kids children books creator creative play awesome picture imagination toddler
-0.319 : edtech community free support highered unlimitedlearning opensourcelearning edshare eduking
-0.355 : book contact happy series authors promotion curate multicultural kindle bookstores
-0.462 : quality information providing opportunities programs career provide offering offer range
-0.417 : innovator blended miee genius chromebook coord jacobs flgi feblc adkhq
-0.501 : thankyouseymourpapert harrystyles quartezkidd ljvwslgigs thzfiqwfoi mariavicencio selmekki sxkxrxndjj vlnfjdawae cudczqyyir
-0.562 : watchdogarena nuvihvjyfv ocwlzjwojv mqoxefjiah cjpvoszvst ndyjhkkhmt eqbkbwmxah kbmwugijsx zvivxaogxp ysnmrlsbsu
-0.423 : simple connects discussion deepen accelerates fits infuse unleashes breezy geekness
-0.355 : expert creativity presenter adobe podcaster evangelist workshop infused surface sketchnoter
-0.383 : family history sharing culture stories friends historian documenting joys fatherhood
-0.385 : join network events bringing networking celebration attending promoters interns exhibitors
-0.407 : based focusing personalisation effecting prioritise integrass propelling compiling edassist developping
-0.481 : geek nerd runner gamer junkie techie guru movie aficionado buff
-0.388 : google design team microsoft lead apple product atcs cubittict intructional
-0.479 : stem steam robotics coding makerspace robots ngss makerspaces stemeducation kidsarethefuture
-0.410 : sign daily subscribe newsletter opinion trial sponsored newsletters timely refreshingly
-0.516 : north south central west regional east africa region asia valley
-0.441 : reform choice edreform edpolicy studentsfirst schoolchoice premise schoolhouse profiteers edchoice
-0.486 : maths mastery gcse revision ncetm mangahigh mathshare meimaths brooksbank interleaving
-0.527 : games game gaming playing videogames tabletop nintendo multiplayer warcraft overwatch
-0.647 : library librarian libraries libraryish subjectlibrarian liaisonlibrarian ucclibrary libraryatchs iamalibrarian bvwlibrary
-0.439 : nyscate supt cosn icle cetl nais nsba nassp mover shaker
-0.501 : ipaded greenscreen evals doink interactiveclass wonderworkshop augusto igniteedtech googleexpeditions visitingmedia
-0.514 : conservative military retiree reservist oklahoman chickasaw stepfather committeeman committeewoman semiretired
-0.568 : welshman accrington crowborough ssercofficial cramlington kidderminster childrenarecentral thamesmead tuxford portlaoise
-0.505 : news updates announcements happening alerts happenings advisories newsfeed announcement collated
-0.380 : change leaders difference positive makers drive agent relationships catalyst transformational
-0.495 : tosa isteambassador nerdfighter makingithappen friedtechnology kindrockets createbook paedchat highgatehuskies kittchat
-0.348 : national fellow institute society america nation finalist affiliated geographic elect
-0.552 : nearpod buncee pionear pres isteten thriveinedu flocabulary codebreaker istecommunityleader edtechbites
-0.596 : digitalsportsmanship headteachershandbook educatorexplorer parlaycertified pinkshirtthursday wakeletaward globaleinnovationaward educateur certifiednatgeoeducator ibmypexaminer
-0.408 : dedicated literacy supporting improve access organization focused committed profit promoting
-0.508 : homeschool homeschooling parenting reviews moms crafts recipes homeschooler encouragement unschooling
-0.618 : husband father brother girldad husbandman husban husbando
-0.343 : content head president chair council vice advisory deputy curator committee
-0.576 : andynashradio ocymqakgnd thirstythursday mttalk hkdxmtdmyw vweducationroundtable tytlive thelizwheelershow modsjnkleo arahyead
-0.518 : curriculumleader studentempowerment maeducation authenticlearning educationisaverb passionatelycuriouseducators buildingtechcoordinator rejmvkdbyv elementaryexplorer techenabledlearning
-0.373 : technology tech innovation specialist leadership future integration integrate ipads assistivetechnology
-0.599 : startupmission gurujiworld twozeroventures wzinlffikv productinnovation indexventures mayoviofficial hordgycwjw connectxglobal startusinsights
-0.460 : lover music arts loves coffee nature photography fitness animal outdoors
-0.551 : microsoftteams onenoteedu flipgridforall wakeletwave chalkupedu edgeedu msauedu msftenable micsosoftteams softtek
-0.606 : onlinelearning onlinecourses onlinecourse edxonline bonlinelearning onlinecollege freeonlinecourses onlinecoursecreator sellonlinecourses linkonlinelearners
-0.536 : india government pakistan governmental philippine directional gujaratuniversity pakistanis moitofficial incindia
-0.429 : source trusted including premier millions secure hundreds infographics customised credible
-0.564 : shakeuplearning gsuiteedu edspeakersco eduducttape edugifs eduporium qthcuatykg sbexpert dailystem ifahs
-0.622 : journalist reporter columbiabiz newsobserver gulfnews washingtonexaminer theobserver nbcnightlynews wisconsinwatch nnaazrcsws
-0.495 : vancouver waterloo vancouverite enosburgh courtland chilliwack elyria ranchdale streetsville sewanhaka
-0.432 : research policy practice governance theory evaluation measurement contexts conducts systematic
-0.628 : googleet googleei ovacademy
-0.417 : politics issues interviews coverage informative journalistic motoring insiders coveragerinc collating
-0.432 : ascd edutopia livin adobeeducreative macul pblworks uscrossier twitterer samericanschool corwinpress
-0.438 : learning teaching experience enhanced extended leadinglearning amazinglearning learningend growinglearning learningrx
-0.590 : sports football soccer basketball golf basketballer volleyballer nbhsbruins racquetball cihsraiders
-0.481 : harvard edsurge prez medialab christenseninst brookingsinst teachlab thisisuic gpharvard mitmedialab
-0.514 : sketchnoterscafe licens plickers collabclassroom edtechconfess edcamphouston keystones worktwitter densi fetcpresenter
-0.518 : official account twitter page department feed managed handle monitored maintained
-0.544 : founder cofounder cfounder
-0.613 : programmer frontend rails grails elixirlang reversepython ionicframework dynamiait wpkube commercelayer
-0.720 : continue effects behavioralscience polarizing devolve robotlab devolved behavioralscientist polarized popularizing
-0.432 : entrepreneurs investors bcorporation fundraisers technologistcpt instincthub projectdestined impactimperative entreprenuership capenterprise
-0.417 : creating appreciative constructionist collaboratory collaboratives maclearning discoverable innovatrix learnia transfomative
-0.424 : learner leader principal lifelong pypc sert cdsbeo lifewide unlearner impactinglearners
-0.375 : superintendent prepare googleedu appleedu scores lausd acsa pvusd googleworkspace aldineforward
-0.445 : love life blogger living travel passion food loving enjoy lifestyle
-0.487 : school schools public district districts charter climb compass charters dearborn
-0.612 : moocs mooc emoocs lmoocs
-0.593 : wspblqkhvn memphisbornmemphisbredandwhenidieillbememphisdead popqfzmuvv trulyrichandblessed sunshineandsippycups artisthubbynonnaslasagnbowiefunnystemsingingdaughterpama dsnwugpztm dillonfierce nationalfinesseleague ikxatptbhf
-0.586 : award winning winner recipient winnings
-0.502 : canvas instructure canvaslms blackboard canvascasters canvascon edpd edcanvas vcscanvas canvastips
-0.520 : environmental environmentally environmentalism extremes constructions conservationists diversification environmentyale transporting environmentalists
-0.632 : mieexpert appleteacher nearpodnce smartambassador freckleambassador cleverbooksambassador skypeclassroom makingthinkingvisible wearefhs jambassador
-0.444 : business data marketing seasoned commercialization technologyselectionmanagement marketmotive businessmen marketable keysight
-0.458 : writtenassignments redzfreelance mangopublishing recordkeeping ubkvobwgll myriadeditions opmbgjfias eumkfovwel ymopzqlxnb µpress
-0.423 : video videos channel creation audio record graphics images streaming broadcast
-0.560 : english language spanish french languages bilingual italian chinese linguistics linguistic
-0.465 : consultancies cooperating professsional cooperations managements organisaitons modernisation linköping rjgwkrsqpv stimulearning
-0.390 : notebooks textbook agitator castle generator admins microsofteducation notebook powerpoints swarm
-0.485 : ambassador flipgrid wakelet seesaw deck googleforedu kahoot brainpop edpuzzle newsela
-0.574 : grade elementary middle floresville bulldognation smithleopards arrowhead maercker greggelementary churchville
-0.440 : training provider experts consultancy compliance delivery certification specialists standard trainings
-0.546 : productivity govt oriented sectors commerce dpiit autonomous apex engg gandhinagar
-0.466 : social media studies mediaed medial smedia media³
-0.350 : keynote entrepreneur advisor strategist influencer edutech tedx singapore successfully futurist
-0.373 : elearning educational solutions innovative company technologies moodle mlearning instructionaldesign digitallearning
-0.307 : time reading writing real tweet tweeting internet post globe raising
-0.507 : child special autism childhood disability disabilities therapist developmental pathologist transitional
-0.330 : world online follow courses home ideas tools class guide activities
-0.494 : platform mobile secured calimatic collaaj synegen hirecaliber tovuti kapwing indusgeeks
-0.572 : responsibleuniversity umeauniversity hydroresearcher developmentuea alayajanainguyen alainuniversity gedoefactor intesasanpaolo habibuniversity ljiresearch
-0.423 : people mission generations potentially empowerthefuture advantaged investfamilies engagetoenhance leuzinger jbtlxaetwq
-0.390 : board equity inclusion diversity accessibility trustee directors trustees navigators hassell
-0.405 : interactive engaging experiences easy deliver engage tool powerful taught accessible
-0.537 : customisable thisisfuturelearning teachwithkhan getrisedotcom zfanzfgshc teachthought neolms matrixlms indielms satchel
-0.476 : tweets views opinions personal endorsement endorsements retweets related stuff expressed
-0.541 : podcast host linked cohost thecnpodcast psychpodcast educrushpod tkppodcast epod wtbpodcast
-0.493 : depending reminding revelations committing manifestations ruminations purposely combatant affections fruition
-0.489 : retweet hashtag retweeting automatically behalf nsfw retweeted fussballinguist contacting repeats
-0.569 : mrsjenncarr learnwithoutlimits wsdqosuaqo restlesslearners trainingmagnetwork videolesson rfhmploztc istelive isteccl topyx
-0.383 : resources blog tips resource inspiration advice articles practical blogs easier
-0.482 : writer enthusiast revolutionist ryszhhffnu pastafarian hodophile studier multipassionate craftsperson relapsed
-0.672 : microsoftedu onenote microsofthelps microsofteduk microsoftedupr msonenote microsofthelpt microsoftes onenoterpi
-0.531 : sdgs globalgoals byod minimalist pacifist varkey itcnews qualityeducation tradeimpactforgood tradeacademy
-0.539 : shortform fkkumlnuzr gizmos reflex frax bclynchschool boyd edubot makelearningagame povertyawareteaching
-0.608 : digitalmstream digitalanalytics enterprisearchitecture blockchaintechnology smartanalytics fujifilmbusinessinnovation nrshsvhmbw cloudmanagement technikzukunft marketoservices
-0.495 : proud amazing friend girls beautiful woman blessed wonderful daughters lucky
-0.468 : teacher educator coach certified passionate trainer level master mentor facilitator
-0.589 : security cybersecurity infosec networksecurity ediscovery targetsolutions cyberprevention infosecurity virtualisation cybersecurityexpert
-0.521 : author speaker consultant bestselling bestsellingauthor sígueme
-0.396 : student university college academic program graduate sciences campus masters degree
-0.406 : instruction lessons personalized assessments easily rich adaptive exams homework tasks
-0.609 : eden playposit eadtu europa ucbl icde partn epprobate sverd boldic
-0.442 : instructional schoology instr siop instruct emints curr hamfam instuctional instructing
-0.568 : extremist disenfranchised republicanism acceptancenottolerance protester combatting seekjustice retaliation perpetuity disenfranchisement
-0.644 : educationthroughpersonalexperience hivaidsawareness customerbasedcorporatevaluation boosieofficial trappthageneral officialwebbie osobdkduke susansvrluga sohollywooddice buildbusiness
-Mean: nan, var:nan
-0.463 : ecosystem funding accelerates fits workforcedev kornukopia edprime xedu ecosystemic iterates
-0.423 : business team manager marketing strategy recruiter brightonseo swbconnections gbcollege wahoolearning
-0.558 : prodworship edtechrations edcamphappyvalley boostingachievement cyclesoflearning ukedustories newbiegardener headteachershandbook stumpteacher shapingafairerworld
-0.511 : website discoverable mqyekvtrvz wyjpmcnbmu nuvihvjyfv qezmuihuea lmpfmpvptx wtlqazlcbv lbdhxxlaeo ocwlzjwojv
-0.637 : programmer frontend backend rails frontendmasters grails elixirlang chromedevtools reversepython ionicframework
-0.425 : training development professional solutions leading based quality services providing company
-0.323 : academy owner married multi owned happily talented delta cooperative khan
-0.557 : fashion clothes goodies assortment crocheted carpets handcrafting nadgfccbfr headbands sweetlooks
-0.535 : games game comics comic anime videogames tabletop nintendo preview patrioticfashionista
-0.418 : fellow finalist recipient natgeo fulbright awardee honorary fellowship grosvenor europa
-0.427 : district board union advisory unified climb elected trustees roxbury supervisory
-0.573 : teacherwife trsphrpfkr magentamagic elementaryexplorer trenddteacher sunsetlaneshines coffeeislife autismrocks sportsenthusiast eldteacher
-0.440 : georgia shoreline vermilion assocation multnomah chilliwack sacramentoproud castateparkscentral flagstaff assgkoyigi
-0.512 : certified google trainer innovator apple level iste distinguished cert integrationist
-0.650 : library librarian libraries libraryish subjectlibrarian liaisonlibrarian ucclibrary bpmslibrary libraryatchs iamalibrarian
-0.399 : gamification mlearning instructionaldesign digitallearning xapi sociallearning seriousgames personalizedlearning mobilelearning spoc
-0.508 : netsupportgroup purchases qualifying icle nais ihsnet delight techwithheart innovateedunyc shapegrams
-0.422 : focusing aspects educationalists personalisation practicalities effecting aggregating integrass cooperating technologistcpt
-0.464 : steam makerspace makered raspberry makerspaces stemeducation flexiblelearning democratising stemillions letstalkscience
-0.507 : football basketballer volleyballer racquetball cihsraiders mazda crossfitting stanlycc aerosmith foofighters
-0.541 : conservative glory preacher teachings praising desiring constitutionally amtwwfkzup yahweh repentance
-0.438 : data connecting analytics intelligence machine accurate artificial discussions actionable visualization
-0.357 : excellence facebook instagram private levels excellent boards renowned soar salle
-0.414 : media culture communication communications relations affairs comms branding civic advertising
-0.562 : miserable dumping bottomless tearing circuses goddesses ypvphkwpqe squatting frying sinéad
-0.776 : moocs emoocs lmoocs
-0.453 : improve improving achievement outcomes increase proven increasing effectiveness maximize reduce
-0.532 : democraticeducation insideschools dukesanford futureofcatholicschools afloridapromise fundourschools georgiacan istandonfreedomhill schoolsfollowschools butteschoolsstrong
-0.400 : educators curriculum learners families inspire empowering empower discussion motivating heroes
-0.536 : producer actor comedy television documentaries songwriters showrunner egmsproducer radioimaging soundsington
-0.402 : service provider source solution resource delivering trusted institutions premier secure
-0.522 : lover enthusiast reader nerd avid junkie addict foodie wine amateur
-0.562 : alum williamscollege lenxpxqmnc scrippsjschool purdueuniversity japanesebangladeshi cornellalumni φφκα uncmjschool druryuniversity
-0.536 : therapist psychological psychosocial psychosis psychologically psychodynamic advocation laughologist interoception microexpressions
-0.507 : nearshore alightsolutions cloudsolutions fsvrlvtqjz vispoint veenaproerpsolutions haveibeenpwned sappartners ncrcorporation motosolutions
-0.590 : shortform gizmos reflex frax wearecue boyd engagucate makelearningagame povertyawareteaching cuebold
-0.380 : students teachers support learn resources helping create ideas mission teach
-0.571 : technologist riddle embry aeronautical edtechnologist technologyeduc echnologist edutechnologist ltechnologist
-0.478 : writer artist runner photographer musician freelance poet occasional gardener singer
-0.465 : videos record images interactions quickly documents assignments upload instructions simpleshow
-0.403 : future trends prepare emerging innovations shaping shape intersection futures explores
-0.673 : george produced lucas oscar manik digimedoo cendekia edukezy baliedukasi sldvr
-0.590 : government ministry govt commerce governmental panchayati railminindia gujaratuniversity moitofficial incindia
-0.507 : fkkumlnuzr learnwithoutlimits restlesslearners wsdqosuaqo mindshift chronicling mhairicalveyact wnerkjwyth futureedgu khanacademykids
-0.516 : wife mother proud amazing boys friend girls daughter beautiful mama
-0.497 : edtech elearning blendedlearning edtechforall edtechforum extendedlearning amelearning ctelearning
-0.498 : customer telling steps guidelines inittogether linkedinhelp showme unrivaled emarketing scholastichelp
-0.355 : time real tweet tweeting internet save post money times changed
-0.570 : extremist disenfranchised acceptancenottolerance protester democraticsocialist seekjustice retaliation perpetuity disenfranchisement lincolnvoter
-0.345 : university management experience designer project senior analyst specialization univeristy egyptologist
-0.395 : people conscious paving disconnected succesful inspiringsland strategizing prioritising academixdirect removebackground
-0.433 : college academic programs career placement gateway progression transitional careerkarma granting
-0.429 : president chair council vice committee dept secretary chairman representative chancellor
-0.573 : english language spanish french languages german italian chinese linguistics linguistic
-0.582 : lossiemouth sittingbourne ssercofficial decpofficial maesycwmmer rosshallacademy iluhnxuerd changeschpart ygtcs londonlate
-0.426 : teacher school educator coach learner student husband leader passionate father
-0.473 : nearpod brainpop edpuzzle screencastify screencaster getkahoot inspearational listenwise duolingo maggies
-0.551 : highered emchat higheredu
-0.741 : including includ
-0.423 : software developer mobile engineer apps technical architect applications multimedia front
-0.473 : follow updates announcements moved updated inactive roadmap announcement oakedu updater
-0.528 : wspblqkhvn memphisbornmemphisbredandwhenidieillbememphisdead wvjvbtmcmd smartinfologiks alayajanainguyen wzinlffikv productinnovation stocspirit mayoviofficial connectxglobal
-0.491 : happy follower christ jesus workshop textbook livin disciple overcomer christfollower
-0.558 : homeschool homeschooling moms homeschooler homeschoolers encouragement homeeducator homeschoolmom homeeducation weirdunsocializedhomeschoolers
-0.505 : india studyapt ndia newage edutechindia
-0.522 : official account twitter page department feed managed handle offical huion
-0.655 : medical clinical physician pharmacist interventional pediatrics medication preventive perioperative neonatologist
-0.410 : join largest conference event membership conversation conferences summit annual register
-0.467 : carriers installing advertisement experimac advertisements vending constructions delving labelling feasibility
-0.412 : love kids blogger family home reading travel writing loves food
-0.710 : globaled gobaled vifglobaled goglobaled
-0.606 : security cybersecurity cyber infosec regulations insecurity networksecurity protections cyberprevention infosecurity
-0.404 : edchat ascd hashtag distancelearning educolor twitterer edchatnz distancelearningeducators meslc teachfromhome
-0.714 : microsoftteams onenoteedu notebooks micsosoftteams softtek softtech microsoftteamsroom
-0.473 : builder idea earn catalyst happen agitator castle generator merchant remover
-0.397 : content share classroom video engaging experiences creation visual audiences visually
-0.640 : reporter columbiabiz newsobserver newrepublic gulfnews nbcnightlynews wisconsinwatch nnaazrcsws virginianpilot matthewferner
-0.563 : mindresearch oisecpl camhresearch dontstudycollaborativesciencealone kthuniversity yfdchzpgas zebrapartnrship arulinguistics opencience uoaofficial
-0.519 : international internationalisation indonesian ethiopia internationalist internationalism subcontinent diplomats internationals cooperations
-0.585 : istepresenter thenextgenlibrarian wfwolvestvdsb mindsetovermatteredu scoebadgeproject hydeparkschools edtechempowerembrace isdiedu academydgn ispuplands
-0.494 : sdgs teachsdgs globalgoals byod minimalist pacifist varkey natgeocertified qualityeducation theglobalgoals
-0.554 : microsoft microsoftedu onenote microsofthelps surface microsofteducation sway onedrive microsoftstream microsoftedge
-0.373 : vancouver constructionist immersing passionateservice middleyears constructld kindy innovatrix vancouversd laurentian
-0.477 : schools public districts charter nationwide wasc charters eschool batavia publicschoolsprovide
-0.387 : lesson prek explore collaborate taught assessments subjects webinars plans subject
-0.362 : community network communities supports connects strong volunteer exchange expand peer
-0.555 : environmental conservation environmentally forester environmentalism extremes conservationists arboriculture diversification environmentyale
-0.818 : edsurge edsurgejobs
-0.452 : science math computer master mathematics physics biology chemistry astronomy stats
-0.427 : adobe evangelist flipped captivate mastery prime maintained infused allen partridge
-0.493 : falling directions depending reminding revelations committing manifestations ruminations unattended highvibrations
-0.443 : research policy practice evaluation implications eval policymaking decisionmaking empirical reseach
-0.417 : news events stories daily insights analysis issues articles opinion breaking
-0.592 : naturalbeachliving micheeaton educationthroughpersonalexperience osobdkduke thespagmonster nonlethalmistakesrwelcomed quartezkidd kiddterry goddammit mattbgomez
-0.474 : editor journalist journal newspaper newspapers telegraph journalistic editorials motoring journalistin
-0.593 : elementary middle dorchester williamsville walkersville bulldognation maercker harrisonburg churchville teachingriffin
-0.567 : press craignewmark
-0.546 : latitudelearning indegultd fulcrumforge ciphrhrsoftware trainingsoftware workplacecourses digitalearning handlinginformation adaptlearning callimedia
-0.448 : world global citizen apworld worldcc networld
-0.536 : wischat ridgemonths leaderoflearning worktwitter wearesalyards wspaphoenix advancechat edcampnky altedchat janefdghoa
-0.613 : award winning winner prize winnings
-0.407 : googleet googleei googleedu tcea tosa googleforedu adobeeducreative nyscate cosn istecert
-0.565 : isteten thriveinedu mrsjenncarr trainingmagnetwork videolesson rfhmploztc istelive isteccl kvgfibmqxp techlearn
-0.410 : leaders skills society youth generation tomorrow challenges successful responsible generations
-0.542 : cameron chantilly lovelestweforgotrememberancemounth barkalow jermaine angeloakes buckhannon kelderman willimantic offficial
-0.381 : online free courses class virtual guide classes trial tutors anytime
-0.407 : life live living passion heart girl loving dream hard born
-0.438 : retweet stuff cool occasionally algorithms automatically nsfw mention bots followfollow
-0.501 : history studies humanities historian religion archaeology anthropology sociological anthropological preservationist
-0.756 : continue effects behavioralscience polarizing devolve devolved behavioralscientist polarized popularizing
-0.504 : thinker dreamer observer budding searcher experiencer conversationalist adventurist revolutionist solutionist
-0.572 : popqfzmuvv ajswpuvvgb channelnomics tpzccpxeft fgfkvphqgg tohodvuiks manicpixieweirdo mixtapemadness ndyjhkkhmt dvnhmmwmhx
-0.383 : innovative blended effective classrooms personalized delivers flexible perfectly ongoing verizon
-0.367 : accessibility auto remotelearning hashtags keywords videoconferencing screentime eassessment graded assistivetech
-0.462 : ambassador flipgrid wakelet seesaw skype squad ambassadors vipkid ambass rbbisbia
-0.416 : instructional specialist literacy coordinator integration facilitator instruction gifted supervisor iteacher
-0.434 : dedicated access organization opportunities nonprofit committed profit advocacy advocating addressing
-0.558 : director executive exec exectutive
-0.395 : podcast host chat talk week weekly talks linked guest episodes
-0.502 : tweets views opinions personal endorsement endorsements retweets related expressed likes
-0.623 : slidesmaniac modularity googleexpeditions hecknowledge hecparisphd hecparisent boldic thomassonmorris thomasplevy amazecardrives
-0.624 : busseynation greggelementary surrycoschools hugheshuskies columbusproud bulldogstrong lanceelementary howsweetitisatbes hovatter capounified
-0.588 : mieexpert appleteacher mietrainer microsoftcertifiededucator microsoftcertified minecraftglobalmentor iborganization certifiednatgeoeducator nearpodnce newselatt
-0.492 : gsuiteedu edspeakersco iloveedtech imfutureready shrimp eduprotocol coffeeedu elevatebooksedu interactiveclass globaledsschat
-0.563 : chief officer engravalle datamoney
-0.548 : stem ngss scienceed stemforall estem stems iowastem wastem nasastem stemi
-0.357 : email edutech send feedback receive timely instant requests queries securely
-0.751 : microlearning scenarios workflowlearning microlearn microlearner icrolearning agilesmicrolearning
-0.538 : investor investment startupmission entrepreneural entrepreneursip toibusiness investable investera entrepreuner invester
-0.560 : attorney lawyer legal court lawyers counsel courts atty prosecutor dispute
-0.432 : social advocate equity justice inclusion diversity racial ells kidtech sjustice
-0.448 : professor researcher prof associate lecturer adjunct scholar studying researching applied
-0.458 : serving serve located campus serves proudly representing campuses represents branch
-0.589 : books book fiction memoirs hozbooks publishedauthor spellbound graphixbooks cozymystery scwbi
-0.480 : music sports arts politics photography film movies entertainment theatre dance
-0.450 : author speaker consultant expert keynote selling tedx bestselling cascades sigo
-0.504 : moodle onlinelearning onlinecourses onlinecourse totara edxonline mahara totaraperform totaraengage totaralearn
-0.544 : founder cofounder cfounder
-0.492 : nbct shapeamerica thoughtfullyabrasive principalinbalance dreamwaker educateandelevate goulagautiersd aaednetworks leaderhoyer cquisition
-0.585 : berkshire accrington crowborough shawlands kidderminster cramlington childrenarecentral thamesmead tuxford portlaoise
-0.609 : digitalmstream digitalanalytics socialmediatrends webbusiness blockchaintechnology smartanalytics nrshsvhmbw cloudmanagement technikzukunft businessobjects
-0.438 : build businesses individuals executing behaviourally prioritise propelling developyst accompanies edassist
-0.419 : learning education technology tech digital teaching educational innovation design technologies
-0.424 : blog parenting reviews lifestyle blogs easier table bloggers familytravel mothers
-0.520 : health mental healthy fitness physical sport wellbeing wellness nutrition holistic
-0.564 : engineering mechatronics roboticist dartmouthengineering imagineering productengineering ucdavisengineering programm computerengineering engeneering
-0.426 : futureofwork criticalthinking excelined leadupchat virtuallearning suptchat cpchat cmrubinworld rubinworldedu globaledchat
-0.391 : children primary child special parent secondary adults childhood fantastic toddler
-0.544 : extends females brainchild interactyx hecparisexeced absorbstatus learninglocker streamlxp propose northpass
-0.395 : information office call direct contacts corrections mrccsolutions informations administering renewals
-Mean: 0.502, var:0.009
-NPMI:0.50247
-NPMI Mean:0.50247
+0.604 : land indigenous settler territory peoples treaty lands stolen unceded ancestors
+0.453 : families parents active choice giving connected informed caring engaged involved
+0.533 : national program center society institute organization profit foundation initiative alliance
+0.602 : economics gender sociology sociologist anthropologist activism intersectionality sociological phenomenology sociocultural
+0.651 : kids married beautiful happy boys amazing awesome crazy wonderful happily
+0.526 : twitch affiliate streamer affiliated discord streams apex partnered subs affiliates
+0.545 : life world people time live everyday finding move happen rest
+0.617 : council committee secretary treasurer congressional representatives councils committees councilor presidents
+0.614 : california socal riverside chico ventura oceanside malibu joaquin pinellas adirondack
+0.683 : educator certified google innovator integrationist googlecertified speducator nearpodcertified discoveryed natgeocertified
+0.638 : care nurse nursing hospitals maternity paramedic midwife nurses palliative midwifery
+0.612 : teacher math nbct sped interventionist supportateacher middleschool homeroom choosekind englishteacher
+0.563 : professional development consultant manager specialist training management experience expert focus
+0.643 : south north east west central regional southern region northern rural
+0.504 : city york park town village richmond corner suburban westchester landmark
+0.654 : software engineer developer engineering programmer softwares programing softwareengineering platzi developper
+0.586 : food travel coffee fitness wine beer chocolate craft drink whiskey
+0.631 : based services service company quality providing provide consulting provider offers
+0.533 : star wars stars moon rising trek starwars galaxy lone
+0.648 : activist feminist progressive socialist humanist environmentalist centrist egalitarian progressives militant
+0.720 : wolverines parrothead goirish nyrangers lakings broncoscountry goavsgo redsoxnation cyclonenation flapanthers
+0.682 : thinker dreamer optimist explorer adventurer wanderer doer technophile overthinker wonderer
+0.564 : director head senior board president coordinator executive chief officer advisor
+0.482 : black matter white color brown male belt grey yellow blacks
+0.460 : baseline wysiwyg compendium constellations binational worx flvs prowise synonym checkmate
+0.579 : innovative thinking transformative combining rethinking collaboratively integral blending collectively approaching
+0.584 : twilight nerdfighter starlight melancholy macgyver deadpool lighthearted kermit lovecraft ghostbusters
+0.743 : bristol colchester chichester tameside macclesfield morecambe cirencester tonbridge deptford uxbridge
+0.703 : worldresources globalyacademy globalgiving goodthingsfdn omidyarnetwork sdsnyouth daiglobal empathytoimpact letstalkscience bupardeeschool
+0.599 : fellow recipient fellowship fulbright awardee fellows fellowships washfellowship tedfellow ncss
+0.525 : education passionate children educational special child parent adult childhood additional
+0.763 : india indian odisha bengaluru haryana allahabad chhattisgarh tamilnadu gujarati gurugram
+0.622 : video games play game gaming playing videogames videogame gameplay pinball
+0.671 : yeah lowkey bruh boobs motherfucker goddamn shawty trynna goober dickhead
+0.611 : twitter account official page feed handle monitored maintained unofficial temporarily
+0.687 : cancer thyroid melanoma ovarian pancreatic survivorship cervical scleroderma hereditary strokes
+0.653 : music musician singer jazz musical drummer percussionist songwriting clarinetist musics
+0.493 : human justice peace earth citizen humanity humanitarian universal peaceful liberation
+0.562 : change youth leaders communities positive impact inspire empowering inspiring changing
+0.538 : speaker trainer instructor facilitator presenter speaking motivational tedx keynote workshop
+0.550 : blog tips money site reviews articles links blogging blogs tricks
+0.678 : noel janice rodney jameson mclaughlin sheppard frazier davison nicholson michaela
+0.617 : ireland england scotland irish wales scottish edinburgh welsh kilkenny wicklow
+0.705 : disease diseases population infectious epidemiology epidemiologist immunology infection immunity viruses
+0.693 : reader runner amateur wannabe cyclist gardener hiker extraordinaire novice jogger
+0.660 : english language french spanish languages bilingual german translator italian chinese
+0.613 : congolese harare uzbekistan libyan eswatini kenyatta mysuru hussein akbar pakistanis
+0.620 : germany netherlands latvia bucharest belgrade bermuda slovakia singaporean newzealand strasbourg
+0.644 : psychology psychologist emotional neuroscience cognitive occupational developmental psychotherapist psychological psychotherapy
+0.613 : person opinionated genuinely enthusiastically insanely dangerously excitable oxymoron exuberant gregarious
+0.620 : research methods researchers interdisciplinary qualitative researches researched transdisciplinary kuleuven uptake
+0.563 : products shop creations inventory greeting item novelty merchandising accessory gifting
+0.649 : reading photography running outdoors cooking traveling cycling enjoys travelling gardening
+0.595 : public library librarian libraries commons librarians mlis archived librarianship librarylife
+0.577 : writer advocate blogger creator freelance aspiring storyteller podcaster accidental advocator
+0.654 : marketing content communications strategy brand strategist marketer branding advertising marketeer
+0.738 : tbtimes motherjones nytopinion fivethirtyeight theobserver bopinion timeout dailycaller thenewsminute popmech
+0.654 : medical healthcare clinical medicine physician pharmacist informatics dental clinician dentistry
+0.544 : students teachers academic career skills programs opportunities educators learners levels
+0.421 : home local independent proprietor friendliest schoolhouse independents housekeeping pickering buylocal
+0.758 : security cybersecurity cyber infosec cybersec itsecurity cyberspace pentesting insecurity datasecurity
+0.632 : nature wildlife conservation conservationist foraging wildflower wildflowers conservancy dragonfly seaweed
+0.566 : lifestyle hospitality luxury destination culinary restaurant restaurants catering leisure hotels
+0.492 : social digital media online communication internet consumer identity multimedia comm
+0.615 : learning learner teaching lifelong classroom learnings instructure instructions servicelearning explorelearning
+0.800 : blacklivesmatter resist allblacklivesmatter fullyvaccinated warrendemocrat wearadamnmask postcardstovoters presidentbiden eattherich geeksresist
+0.483 : follow instagram updates stay related facebook insta date moved followers
+0.690 : arsenal footballer everton liverpoolfc spursofficial manchesterunited saracens bwfc whufc englandrugby
+0.476 : share join bring created ready coming discover started week excited
+0.646 : founder entrepreneur cofounder rainmaker kiva jtbd adplist proctergamble wellsfargo pagerduty
+0.657 : fashion style makeup stylist fashionista hairstylist wardrobe styling dresses fashionable
+0.785 : digitalstrategy productmanagement businessdevelopment informationtechnology peopleanalytics productdevelopment marketingdigital businessmodel businesstransformation businessmodels
+0.665 : coach sports football basketball baseball soccer hockey golf tennis athlete
+0.579 : future futures shape shaping brighter reshaping tomorrows futur futura futuring
+0.540 : global international worldwide countries globally globe internationally intl overseas inter
+0.569 : district county superintendent serves unified districts counties township approximately supt
+0.592 : guacamole handful goldfish crocs pretzels fudge dumplings skittles tofu throttle
+0.513 : rights freedom equality speech liberty democracy equal rule accountability independence
+0.593 : health mental healthy wellness wellbeing nutrition holistic mentalhealth healthier nutritionist
+0.575 : technology tech innovation technologies smart technologist integration emerging edge innovations
+0.722 : canada canadian toronto ontario alberta ottawa vancouver calgary edmonton waterloo
+0.692 : counselor counseling counsellor counselors schoolcounselor counsellors asca scchat schoolcounseling counsels
+0.766 : biology biologist molecular genetics microbiology biotechnology microbiologist biochemistry geneticist bioscience
+0.571 : business businesses sales companies customer clients customers results employee productivity
+0.657 : financial finance market investment investing banking investments asset financing finances
+0.591 : school principal schools middle academy grades charter preschool magnet academies
+0.575 : editor magazine publishing published press journal publisher newsletter review editorial
+0.734 : solutions cloud enterprise infrastructure itsolutions deployments enterprisemobility hybridcloud liferay multicloud
+0.557 : student graduate master candidate current studying major degree masters doctoral
+0.571 : corporate legal lawyer attorney litigation corporations paralegal regulations antitrust appeals
+0.617 : retired country veteran army military navy usaf retiree colonel widower
+0.625 : leading dedicated sharing supporting focused creating committed promoting bringing connecting
+0.628 : researcher lecturer prof researching phding univgroningen pracademic reseacher profesor keeleuniversity
+0.536 : science computer stem space mathematics computing programming coding robotics computers
+0.634 : love family loves passion loving friends enjoy movies laughter passions
+0.537 : college primary secondary mary collegiate distinction coeducational headmaster marist augustine
+0.609 : university professor assistant associate department faculty sciences campus dean dept
+0.648 : industry construction industrial industries manufacturing automotive contractor contractors engineered trucking
+0.564 : goal striving believes commitment determination progression tenacity instincts willingness consideration
+0.519 : policy issues relations affairs advocacy governance reform civic policies tank
+0.653 : autism adults disability adhd autistic depression neurodiversity bipolar aspergers cerebral
+0.515 : community support team information project network supports initiatives collaborations springboard
+0.673 : lborouniversity edgehill uninorthants smsc ceiag mhfaengland qtls primaryrocks athrawes ddsl
+0.796 : javascript stack java backend fullstack microservices symfony reactnative jamstack csharp
+0.684 : alum grad alumni alumna alumnus alumn ncat alumnae siuc alums
+0.587 : free gmail website info check email contact visit link click
+0.631 : icon cartoon persona cringe slots animes webcomics furries webtoon deviantart
+0.618 : helping create build mission grow improve connect achieve organizations helps
+0.692 : journalist reporter journalism journo photojournalist newsroom newshour journalistic newsday newsreader
+0.605 : history politics culture studies literature philosophy historian humanities anthropology histories
+0.638 : host podcast producer talk podcasting podcasters talkshow talksport radiohost creativemornings
+0.657 : grade elementary kindergarten prek intermediate fourth elem graders kinder fcps
+0.722 : husband father brother daddy grandfather uncle fisherman grandpa papa outdoorsman
+0.614 : author books book novelist kidslisten docuseries bookouture authorship scwbi penguinukbooks
+0.693 : wife mother proud friend daughter believer sister mama blessed mommy
+0.643 : hospital surgery surgeon pediatric physiotherapist clinic rehabilitation surgical paediatric physio
+0.572 : leadership diversity inclusion transformation inclusive empowerment mentoring organizational transformational effectiveness
+0.801 : crypto blockchain bitcoin cryptocurrency defi currency cryptocurrencies currencies altcoin bullish
+0.538 : platform professionals experts insights brings creators conversations managers valuable directory
+0.799 : queer lesbian intersectional bisexual nonbinary asexual agender polyamorous genderqueer demisexual
+0.624 : tweet stuff tweeting random lots occasionally silly posting retweeting rarely
+0.583 : writing write words poetry writes written copy poems letters prose
+0.747 : lover enthusiast nerd geek avid traveler addict junkie fanatic foodie
+0.763 : conservative trump maga patriot constitution constitutional constitutionalist americafirst deplorable conservatives
+0.572 : leader lead mentor servantleader ringleader onshape wellspringat ncsa leaderinme colead
+0.645 : environment energy climate sustainability sustainable environmental economy environmentally environmentalism groundwater
+0.691 : scientist computational physicist astrophysicist geoscientist geophysicist roboticist biophysicist lmumuenchen informaticist
+0.560 : mind soul spirit mantra intuition manifesting heals flowing meditations stretching
+0.599 : artist photographer design creative designer graphic visual photographic artistry photographe
+0.519 : news events stories daily source entertainment covering breaking weather features
+0.649 : data analyst analytics intelligence analysis machine artificial visualization algorithms predictive
+0.682 : christian jesus christ follower faith grace disciple preacher romans missionary
+0.609 : mobile tools application tool allowing fingertips authoring clicks effortless effortlessly
+0.726 : views tweets opinions personal endorsements endorsement retweets expressed likes opinion
+0.448 : learn heart teach read hard laugh feel speak smile leave
+0.541 : prevention preventing exploitation stalking protective responding corrections threatening detention hazardous
+0.609 : forgetting deciding guessing convincing vengeance tagline undecided relying annoyance doubting
+0.616 : growth startups startup entrepreneurship capital entrepreneurs scale saas ecosystem venture
+0.745 : frankfort brandywine canandaigua susquehanna chattahoochee oakridge millville tallwood sheboygan wentzville
+0.492 : women american america african female latin asian mexican caribbean refugee
+0.504 : save fighting planet fight saving deal campaigning fights stopping rebuilding
+0.514 : living born native raised resident birth lived roots expat transplant
+0.568 : motorcycle scooter skipper motorcycling tripping carp backcountry paragliding volvo motocross
+0.830 : brownuniversity riceuniversity miamiuniversity elonuniversity drakeuniversity universityofri cmuniversity rowanuniversity senecacollege brynmawrcollege
+0.773 : internist gastroenterologist rheumatologist pedsicu clevelandclinic radonc gastrointestinal neuroradiologist bidmchealth cardiotwitter
+0.659 : authoritarian lefties dictatorship hateful gaslighting brainwashed pissing rampant disgrace disgusting
+0.610 : animal dogs cats animals humans pets horses puppy rescuer companion
+0.598 : cauldron eeyore huzzah risotto spqr xotwod albatross hunnid plunder treble
+0.561 : real agent commercial estate insurance property licensed realtor homes broker
+0.651 : michigan tennessee missouri mississippi connecticut montana charleston jacksonville chattanooga knoxville
+Mean: 0.619, var:0.007
+NPMI:0.61923
+NPMI Mean:0.61923
 NPMI Var:0.0
 
 ******************************************
