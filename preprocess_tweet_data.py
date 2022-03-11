@@ -13,9 +13,10 @@ curdir = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 from nltk.corpus import stopwords
 nltk_stopwords = set(stopwords.words('english'))
 profile_stopwords = set([line.strip() for line in open(os.path.join(curdir, 'stopwords-twitter-profile.txt'))])
+topic_stopwords = set([line.strip() for line in open(os.path.join(curdir, 'stopwords-twitter-topic.txt'))])
 senti_stopwords = set([line.strip() for line in open(os.path.join(curdir, 'stopwords-en-senti.txt'))])
-senti_stopwords.update(set(nltk_stopwords))
 profile_stopwords.update(set(nltk_stopwords))
+topic_stopwords.update(set(nltk_stopwords))
 
 tqdm.pandas()
 
@@ -84,7 +85,27 @@ def preprocess_profile_desc(profile, lemmatize=False):
 senti_tokenizer = Tokenizer(usernames="", urls='', hashtags=False, phonenumbers='', 
                 times='', numbers='', ignorequotes=False, ignorestopwords=False, lowercase=True) 
 
-def preprocess_tweet_senti(tweet, lemmatize=False, tokenizer = senti_tokenizer):
+topic_tokenizer = Tokenizer(usernames="username", urls='', hashtags=False, phonenumbers='', 
+                times='', numbers='', ignorequotes=False, ignorestopwords=False, lowercase=True) 
+
+def preprocess_tweet_topic(tweet, lemmatize=True, tokenizer = topic_tokenizer):
+	# tokenize using tweetokenizer 
+	tokens = tokenizer.tokenize(tweet)
+	#replace contractions: https://en.wikipedia.org/wiki/Contraction_%28grammar%29
+	tokens = [contractions_dict[word] if word in contractions_dict else word for word in tokens] 
+	#contractions replacement can create multiple word
+	tokens = list(itertools.chain(*[token.strip().split(' ') for token in tokens])) 
+
+	# remove stopwords
+	tokens = [word.lower() for word in tokens if word not in topic_stopwords and len(word)>2]
+	# Remove remaining special characters
+	tweet = re.sub(r'\W', ' ', ' '.join(tokens))
+
+	if lemmatize:
+		tweet = ' '.join([w.lemma_.strip() for w in lemmatizer(tweet)])
+	return tweet
+
+def preprocess_tweet_senti(tweet, lemmatize=True, tokenizer = senti_tokenizer):
 	# tokenize using tweetokenizer 
 	tokens = tokenizer.tokenize(tweet)
 	# replace emoticons, source: https://en.wikipedia.org/wiki/List_of_emoticons
