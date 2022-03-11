@@ -96,10 +96,11 @@ def preprocess_tweet_topic(tweet, lemmatize=True, tokenizer = topic_tokenizer):
 	#contractions replacement can create multiple word
 	tokens = list(itertools.chain(*[token.strip().split(' ') for token in tokens])) 
 
-	# remove stopwords
-	tokens = [word.lower() for word in tokens if word not in topic_stopwords and len(word)>2]
 	# Remove remaining special characters
 	tweet = re.sub(r'\W', ' ', ' '.join(tokens))
+
+	# remove stopwords
+	tweet = ' '.join([word.lower() for word in tweet.split() if word not in topic_stopwords and len(word)>2])
 
 	if lemmatize:
 		tweet = ' '.join([w.lemma_.strip() for w in lemmatizer(tweet)])
@@ -115,10 +116,12 @@ def preprocess_tweet_senti(tweet, lemmatize=True, tokenizer = senti_tokenizer):
 	#contractions replacement can create multiple word
 	tokens = list(itertools.chain(*[token.strip().split(' ') for token in tokens])) 
 
-	# remove stopwords
-	tokens = [word.lower() for word in tokens if word not in senti_stopwords and len(word)>2]
 	# Remove remaining special characters
 	tweet = re.sub(r'\W', ' ', ' '.join(tokens))
+
+	# remove stopwords
+	tweet = ' '.join([word.lower() for word in tweet.split() if word not in senti_stopwords and len(word)>1])
+	
 
 	if lemmatize:
 		tweet = ' '.join([w.lemma_.strip() for w in lemmatizer(tweet)])
