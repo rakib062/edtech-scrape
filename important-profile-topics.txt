@@ -1,32 +1,49 @@
 -personal
---academic
-1 : teacher school principal middle westlake multiage prekindergarten middierising ycsd lpselma
-6 : research researcher ercresearch reseach sangerinstitute universitysa uniinnsbruck unigoettingen universitelaval mindresearch
-8 : students college academic program career programs opportunities academics vocational graduates
-21 : educator passionate professional learner advocate leader consultant specialist trainer lifelong
-25 : education learning teaching educational continuation educationaltechnology educative educations explorelearning curriculumassoc
-30 : alum riceuniversity universityofga miamiuniversity elonuniversity drakeuniversity rowanuniversity cmuniversity universityofri colgateuniv
-42 : science university student professor studies graduate univeristy brockuniversity reseacher studier
+**academic
+2 : school principal hillcrest elmhurst oakdale annandale haddonfield prekindergarten olmsted beechwood
+9 : research researcher researching lunduniversity researched keeleuniversity reseach stfxuniversity universitysa simaduniversity
+10 : teacher learner math lifelong multiage lpselma paraeducator nkcsd classkick lbpsb
+24 : university director professor assistant associate universityofky professors drakeuniversity educause rowanuniversity
 
---techie
-2 : lover enthusiast nerd geek avid traveler wannabe adventurer techie afficianado
-4 : software sassoftware outsystems liferay microfocus synopsys ovhcloud qkrmcnlmcu snyksec enterprisearchitecture
-23 : technology tech digital innovation technologies innovations informationtechnology technolgy technologie techology
 
---contentcreator
-28 : writer author blogger host storyteller podcaster novelist mastermind memoirist juggernaut
 
---affilated
-36 : director founder manager head senior executive exec founding activision codirector
+**academic-techie
+1 : education student technology learn tech passionate teach teaching techology msuepet
+27 : educator specialist certified trainer integrationist nearpodcertified classcraft certifiedmie edtechie edugator
+
+**techie
+7 : software engineer developer programmer developper coldfusion softwares getpostman klarna couchbase
+30 : data scientist datum analytics analytic visualization analysts datavisualization boozallen linkeddata
+
+**personal-brand
+3 : founder entrepreneur entreprise dealmaker wantrepreneur angellist entrepreneure exited capitalfactory businessperson
+13 : lead professional provide development experience training focus expert develop include
+22 : create inspire empower mission difference strive bringing collectively striving invigorate
 
 -business
---contentcreator
-12 : world people learn future share create creating everyday changing difference
-17 : development services training management solutions service leading company experience providing
-20 : online free website info blog check visit fingertips blogspot directories
+0 : online website start check visit click standout blogspot prospectus peruse
+25 : service company solution solutions operation multinational enabling managment caliber allocation
+31 : follow twitter account official instagram page update office feed facebook
+35 : business social digital marketing medium media strategy market strategist programmatic
 
---official
-32 : twitter follow account official instagram page updates feed facebook handle
-33 : support helping dedicated mission supporting focused committed focus empowering facilitating
-35 : news daily headlines reporters homepage journalistic headline newsfeed infotainment newsworthy
-41 : business marketing media communications strategy strategist bussiness rebranding mediarelations blackbaud
+-news
+4 : editor journalist fivethirtyeight primetime journaliste wlrn journalistin geekwire journos thismorne
+5 : news information event bring late source daily issue cover relate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
