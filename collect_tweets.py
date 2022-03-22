@@ -25,7 +25,7 @@ import tweepy
 from twitter_authentication import bearer_token
 import pandas as pd
 import datetime
-import time, os, sys
+import time, os, sys, traceback
 import csv
 client = tweepy.Client(bearer_token, wait_on_rate_limit=True)
 
@@ -54,8 +54,6 @@ def media_to_df(response):
     Converts Media objects returned with tweets to a dataframe.
     '''
     media = []
-    if "media" not in response.includes:
-        return None
     for m in response:
         media.append(
             { 
@@ -189,7 +187,8 @@ def search_tweets(query, start_time, since_id, outdir, count):
 
             user_df = users_to_df(response.includes['users'])
             tweet_df = tweets_to_df(response)
-            media_df = media_to_df(response.includes['media'])
+            if "media" in response.includes:
+                media_df = media_to_df(response.includes['media'])
             included_tweet_df = included_tweets_to_df(response.includes['tweets'])
 
 
@@ -215,7 +214,7 @@ def search_tweets(query, start_time, since_id, outdir, count):
             return True
 
     except Exception as e:
-        print("Exception for query:{}.\nError:{}".format(query, e))
+        print("Exception for query:{}.\nError:{}".format(query, traceback.format_exc()))
         with open('exceptions.txt', 'a') as file:
             file.write("query:{}, exception:{}\n".format(query, e))
         return False
