@@ -123,8 +123,6 @@ def tweet_to_row(tweet):
 
 def included_tweets_to_df(response):
     result = []
-    if "tweets" not in response.includes:
-        return None
     for tweet in response:
         result.append(tweet_to_row(tweet))
 
@@ -187,9 +185,11 @@ def search_tweets(query, start_time, since_id, outdir, count):
 
             user_df = users_to_df(response.includes['users'])
             tweet_df = tweets_to_df(response)
+            media_df, included_tweet_df = None, None
             if "media" in response.includes:
                 media_df = media_to_df(response.includes['media'])
-            included_tweet_df = included_tweets_to_df(response.includes['tweets'])
+            if "tweets" in response.includes:
+                included_tweet_df = included_tweets_to_df(response.includes['tweets'])
 
 
             if user_df is not None:
