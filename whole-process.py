@@ -33,10 +33,11 @@ EN_TWEET_DF_FILE = join(DATA_ROOT,'tweets-en.pkl') #dataframe with english tweet
 PRIV_TWEET_DF = join(DATA_ROOT,'tweets-priv.pkl') #dataframe containing sec/priv related tweets 
 PRIV_TWEET_TEXT = join(DATA_ROOT,'tweet-text-priv.txt') #file containing sec/priv tweet texts 
 PRIV_TWEET_MODEL_PATH=join(DATA_ROOT, 'priv-tweet-models/') #directory for ft and cluster models for sec/priv related tweets
-PRIV_FT_MODEL  = join(PRIV_TWEET_MODEL_PATH, 'ft-priv-tweet-sg/') #ft model name for sec/priv related tweets
+PRIV_FT_MODEL  = join(PRIV_TWEET_MODEL_PATH, 'ft-priv-tweet-sg') #ft model name for sec/priv related tweets
 USR_CLUSTER_DIR = join(DATA_ROOT, 'profile-cluster-models') #directory to save profile cluster models and outputs
 USR_CLUSTER_MOD = join(USR_CLUSTER_DIR, 'model-KMeans-{}-0.model'.format(NUM_USR_PROF_CLUSTER))
 TWEET_TOPIC_DIR = join(DATA_ROOT, 'tweet-topic') #directory to contain topic models and outputs for tweets
+TWEET_SENTI_TRAIN_TEXT=join(DATA_ROOT,'tweet-senti-text.txt') #file containing text for training sentiment model
 
 if not os.path.exists(TWEET_TOPIC_DIR):
 	os.makedirs(TWEET_TOPIC_DIR)
@@ -59,9 +60,9 @@ def get_text_topic(text, topic_words):
     '''Assigns topic cluster to text based on the number of
         topic words are present in it'''
     idx= np.zeros(len(topic_words))
-    for word in text.split():
-        for t in range(len(topic_words)):
-            if word in topic_words[t]:
+    for t in range(len(topic_words)):
+        for word in topic_words[t]:
+            if word in text:
                 idx[t]+=1
     if np.max(idx) == 0: #if no topic words are found in text
         return -1
@@ -164,9 +165,11 @@ profile_words, profile_sentences = get_topic_words('user-profile-words.txt')
 
 user_df_en['profile_cluster_cos'] = user_df_en.progress_apply(lambda u: 
                     get_text_topic_cos(u.profile_desc_clean, profile_sentences, prof_ft_model) \
-                    if len(u.profile_desc_clean.strip())>=3 else -1, axis=1)
-user_df_en['profile_cluster'] = user_df_en.apply(lambda row: row.profile_cluster_cos[0], axis=1)
-user_df_en['profile_cluster_con'] = user_df_en.apply(lambda row: row.profile_cluster_cos[1], axis=1) 
+                    if len(u.profile_desc_clean.strip())>=3 else (-1,0), axis=1)
+user_df_en['profile_cluster'] = user_df_en.progress_apply(lambda row: 
+                    row.profile_cluster_cos[0] if type(row.profile_cluster_cos)!=int else -1, axis=1)
+user_df_en['profile_cluster_con'] = user_df_en.progress_apply(lambda row: 
+                    row.profile_cluster_cos[1] if type(row.profile_cluster_cos)!=int else 0, axis=1) 
 
 user_df_en.to_pickle(TWEET_USER_DF_EN_UNIQUE)
 
@@ -176,18 +179,24 @@ tweet_df_en = tweet_df[tweet_df.lang=='en']
 tweet_df_en['author_id'] = tweet_df_en.author_id.astype('str')
 
 print('cleaning tweet text...')
-tweet_df_en['clean_text'] = tweet_df_en.progress_apply(lambda tweet:
-                            text_processing.preprocess_text(tweet.text, lemmatize=True), axis=1)
+# use the same preprocessing as for the sentiment 
+tweet_df_en['text_clean_senti'] = tweet_df_en.progress_apply(lambda tweet:
+                            preprocess_tweet_data.preprocess_tweet_senti(tweet.text, lemmatize=True) \
+                            if isinstance(tweet.text, str) else ' ', axis=1)
 print('writing clean tweet text in file...')
 with open(CLEAN_TWEET_TEXT_EN, 'w') as file:
     tweet_df_en.progress_apply(lambda tweet:
-        file.write(tweet.clean_text+'\n'), axis=1)
+        file.write(tweet.text_clean+'\n'), axis=1)
     file.close()
 
 print('#################### Sentiment of Tweet Texts ####################\n')
-vader = SentimentIntensityAnalyzer()
-tweet_df_en['senti'] = tweet_df_en.progress_apply(lambda tweet: vader.polarity_scores(
-        ' '.join(process_tweet_data.senti_tokenizer.tokenize(tweet.text))), axis=1)
+# vader = SentimentIntensityAnalyzer()
+# tweet_df_en['senti'] = tweet_df_en.progress_apply(lambda tweet: vader.polarity_scores(
+#         ' '.join(process_tweet_data.senti_tokenizer.tokenize(tweet.text))), axis=1)
+senti_model = ft.train_supervised(input=TWEET_SENTI_TRAIN_TEXT, dim=100, epoch=10, wordNgrams=2)
+senti_model.save_model(DATA_ROOT+'senti_model.bin')
+tweet_df_en['senti'] = tweet_df_en.progress_apply(lambda tweet: 
+                    senti_model.predict(tweet.text_clean)[0][0].split('__')[-1], axis=1)
 tweet_df_en.to_pickle(EN_TWEET_DF_FILE)
 
 print('\n\n#################### Identifying security/privacy related tweets ####################\n')
@@ -201,16 +210,21 @@ def contains_any_keyword(text, kws):
 
 sec_priv_df = tweet_df_en[tweet_df_en.progress_apply(lambda tweet: 
                 contains_any_keyword(tweet.text, sec_priv_kws), axis=1)]
+
+sec_priv_df['text_clean_topic'] = sec_priv_df.progress_apply(lambda tweet:
+                            preprocess_tweet_data.preprocess_tweet_topic(tweet.text, lemmatize=True) \
+                            if isinstance(tweet.text, str) else ' ', axis=1)
+
 sec_priv_df.to_pickle(PRIV_TWEET_DF)
 print('\tclustering security-privacy related tweets')
 with open(PRIV_TWEET_TEXT, 'w') as file:
     sec_priv_df.progress_apply(lambda tweet:
-        file.write(tweet.clean_text+'\n'), axis=1)
+        file.write(tweet.text_clean_topic+'\n'), axis=1)
     file.close()
 
 
 print('\ttraining fastText skipgram model with priv-sec tweets...')
-os.system('./helpers/fastText/fasttext skipgram -input {} -output {} -dim 300'.format(PRIV_TWEET_TEXT, PRIV_FT_MODEL))
+os.system('./helpers/fastText/fasttext skipgram -input {} -output {} -dim 100'.format(PRIV_TWEET_TEXT, PRIV_FT_MODEL))
 os.system('python3 -Xfaulthandler helpers/cluster-analysis/main.py \
             --entities fasttext \
             --ftmodel {}.bin\
@@ -226,14 +240,25 @@ os.system('python3 -Xfaulthandler helpers/cluster-analysis/main.py \
                 PRIV_TWEET_MODEL_PATH, PRIV_TWEET_MODEL_PATH, PRIV_TWEET_MODEL_PATH))
 
 priv_ft_model = ft.load_model(PRIV_FT_MODEL+'.bin')
-priv_cluster_model = pickle.load(open(PRIV_TWEET_MODEL_PATH+'model-KMeans-20-0.model', 'rb'))
+priv_cluster_model = pickle.load(open(PRIV_TWEET_MODEL_PATH+'model-KMeans-10-0.model', 'rb'))
 
 
 
-priv_topic_words = get_topic_words('priv-tweet-topics.txt')
+priv_topic_words, priv_topic_sentences = get_topic_words('priv-tweet-topics.txt')
 sec_priv_df['topic'] = sec_priv_df.progress_apply(lambda tweet: 
-                get_text_topic(tweet.clean_text, priv_topic_words) \
-                if len(tweet.clean_text.strip())>3 else -1, axis=1)
+                get_text_topic(tweet.text_clean_topic, priv_topic_words) \
+                if len(tweet.text_clean_topic.strip())>3 else -1, axis=1)
+
+topic_cos = sec_priv_df.progress_apply(lambda tweet: 
+                get_text_topic_cos(tweet.text_clean_topic, priv_topic_sentences, priv_ft_model) \
+                if len(tweet.text_clean_topic.strip())>3 else (-1, 0), axis=1)
+sec_priv_df['topic_cos'] = topic_cos.apply(lambda r: r[0])
+sec_priv_df['topic_con'] = topic_cos.apply(lambda r: r[1])
+
+sec_priv_df['senti'] = sec_priv_df.progress_apply(lambda tweet: 
+                    senti_model.predict(tweet.text_clean_senti)[0][0].split('__')[-1], axis=1)
+
+sec_priv_df.to_pickle(PRIV_TWEET_DF)
 
 # print('#################### Preprocessing Tweet Texts ####################\n')
 # text_processing.create_preprocessed_tweet_data(outfile=EN_TWEET_DF_FILE, data_frame_file=EN_TWEET_DF_FILE)
