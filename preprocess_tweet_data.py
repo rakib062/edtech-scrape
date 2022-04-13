@@ -131,7 +131,7 @@ def preprocess_user_df(infile, outfile):
 	user_df = pd.read_pickle(infile)
 
 	user_df['profile_desc_clean']= user_df.progress_apply(lambda row: 
-		' '.join(text_processing.preprocess_text(row.profile_desc, lemmatize=True))\
+		preprocess_profile_desc(row.profile_desc, lemmatize=True)\
 		 if isinstance(row.profile_desc, str) else '', axis=1)
 	print('detecting profile language...')
 	user_df['lang1'] = user_df.progress_apply(lambda row: text_processing.detect_lang(row.profile_desc_clean, detector='langid') \
